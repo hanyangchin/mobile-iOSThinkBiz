@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */; };
+		86FD7D201E8B46E600C412C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1F1E8B46E600C412C0 /* ViewController.swift */; };
+		86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D211E8B46E600C412C0 /* Main.storyboard */; };
+		86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */; };
+		86FD7D281E8B46E600C412C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D271E8B46E600C412C0 /* Assets.xcassets */; };
+		86FD7D2B1E8B46E600C412C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D291E8B46E600C412C0 /* LaunchScreen.storyboard */; };
+		86FD7D361E8B46E600C412C0 /* ThinkBizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D351E8B46E600C412C0 /* ThinkBizTests.swift */; };
+		86FD7D411E8B46E700C412C0 /* ThinkBizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D401E8B46E700C412C0 /* ThinkBizUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86FD7D321E8B46E600C412C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86FD7D121E8B46E600C412C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86FD7D191E8B46E600C412C0;
+			remoteInfo = ThinkBiz;
+		};
+		86FD7D3D1E8B46E700C412C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86FD7D121E8B46E600C412C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86FD7D191E8B46E600C412C0;
+			remoteInfo = ThinkBiz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		86FD7D1F1E8B46E600C412C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		86FD7D221E8B46E600C412C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		86FD7D251E8B46E600C412C0 /* ThinkBiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ThinkBiz.xcdatamodel; sourceTree = "<group>"; };
+		86FD7D271E8B46E600C412C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86FD7D2A1E8B46E600C412C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86FD7D2C1E8B46E600C412C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FD7D311E8B46E600C412C0 /* ThinkBizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkBizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FD7D351E8B46E600C412C0 /* ThinkBizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkBizTests.swift; sourceTree = "<group>"; };
+		86FD7D371E8B46E700C412C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FD7D3C1E8B46E700C412C0 /* ThinkBizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkBizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FD7D401E8B46E700C412C0 /* ThinkBizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkBizUITests.swift; sourceTree = "<group>"; };
+		86FD7D421E8B46E700C412C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86FD7D171E8B46E600C412C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FD7D2E1E8B46E600C412C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FD7D391E8B46E700C412C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86FD7D111E8B46E600C412C0 = {
+			isa = PBXGroup;
+			children = (
+				86FD7D1C1E8B46E600C412C0 /* ThinkBiz */,
+				86FD7D341E8B46E600C412C0 /* ThinkBizTests */,
+				86FD7D3F1E8B46E700C412C0 /* ThinkBizUITests */,
+				86FD7D1B1E8B46E600C412C0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86FD7D1B1E8B46E600C412C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */,
+				86FD7D311E8B46E600C412C0 /* ThinkBizTests.xctest */,
+				86FD7D3C1E8B46E700C412C0 /* ThinkBizUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86FD7D1C1E8B46E600C412C0 /* ThinkBiz */ = {
+			isa = PBXGroup;
+			children = (
+				86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */,
+				86FD7D1F1E8B46E600C412C0 /* ViewController.swift */,
+				86FD7D211E8B46E600C412C0 /* Main.storyboard */,
+				86FD7D271E8B46E600C412C0 /* Assets.xcassets */,
+				86FD7D291E8B46E600C412C0 /* LaunchScreen.storyboard */,
+				86FD7D2C1E8B46E600C412C0 /* Info.plist */,
+				86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */,
+			);
+			path = ThinkBiz;
+			sourceTree = "<group>";
+		};
+		86FD7D341E8B46E600C412C0 /* ThinkBizTests */ = {
+			isa = PBXGroup;
+			children = (
+				86FD7D351E8B46E600C412C0 /* ThinkBizTests.swift */,
+				86FD7D371E8B46E700C412C0 /* Info.plist */,
+			);
+			path = ThinkBizTests;
+			sourceTree = "<group>";
+		};
+		86FD7D3F1E8B46E700C412C0 /* ThinkBizUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86FD7D401E8B46E700C412C0 /* ThinkBizUITests.swift */,
+				86FD7D421E8B46E700C412C0 /* Info.plist */,
+			);
+			path = ThinkBizUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86FD7D191E8B46E600C412C0 /* ThinkBiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86FD7D451E8B46E700C412C0 /* Build configuration list for PBXNativeTarget "ThinkBiz" */;
+			buildPhases = (
+				86FD7D161E8B46E600C412C0 /* Sources */,
+				86FD7D171E8B46E600C412C0 /* Frameworks */,
+				86FD7D181E8B46E600C412C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThinkBiz;
+			productName = ThinkBiz;
+			productReference = 86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86FD7D301E8B46E600C412C0 /* ThinkBizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86FD7D481E8B46E700C412C0 /* Build configuration list for PBXNativeTarget "ThinkBizTests" */;
+			buildPhases = (
+				86FD7D2D1E8B46E600C412C0 /* Sources */,
+				86FD7D2E1E8B46E600C412C0 /* Frameworks */,
+				86FD7D2F1E8B46E600C412C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86FD7D331E8B46E600C412C0 /* PBXTargetDependency */,
+			);
+			name = ThinkBizTests;
+			productName = ThinkBizTests;
+			productReference = 86FD7D311E8B46E600C412C0 /* ThinkBizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86FD7D3B1E8B46E700C412C0 /* ThinkBizUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86FD7D4B1E8B46E700C412C0 /* Build configuration list for PBXNativeTarget "ThinkBizUITests" */;
+			buildPhases = (
+				86FD7D381E8B46E700C412C0 /* Sources */,
+				86FD7D391E8B46E700C412C0 /* Frameworks */,
+				86FD7D3A1E8B46E700C412C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86FD7D3E1E8B46E700C412C0 /* PBXTargetDependency */,
+			);
+			name = ThinkBizUITests;
+			productName = ThinkBizUITests;
+			productReference = 86FD7D3C1E8B46E700C412C0 /* ThinkBizUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86FD7D121E8B46E600C412C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Han Yang Chin";
+				TargetAttributes = {
+					86FD7D191E8B46E600C412C0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = J23LX68XNV;
+						ProvisioningStyle = Automatic;
+					};
+					86FD7D301E8B46E600C412C0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = J23LX68XNV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 86FD7D191E8B46E600C412C0;
+					};
+					86FD7D3B1E8B46E700C412C0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = J23LX68XNV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 86FD7D191E8B46E600C412C0;
+					};
+				};
+			};
+			buildConfigurationList = 86FD7D151E8B46E600C412C0 /* Build configuration list for PBXProject "ThinkBiz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86FD7D111E8B46E600C412C0;
+			productRefGroup = 86FD7D1B1E8B46E600C412C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86FD7D191E8B46E600C412C0 /* ThinkBiz */,
+				86FD7D301E8B46E600C412C0 /* ThinkBizTests */,
+				86FD7D3B1E8B46E700C412C0 /* ThinkBizUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86FD7D181E8B46E600C412C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FD7D2B1E8B46E600C412C0 /* LaunchScreen.storyboard in Resources */,
+				86FD7D281E8B46E600C412C0 /* Assets.xcassets in Resources */,
+				86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FD7D2F1E8B46E600C412C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FD7D3A1E8B46E700C412C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86FD7D161E8B46E600C412C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FD7D201E8B46E600C412C0 /* ViewController.swift in Sources */,
+				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
+				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FD7D2D1E8B46E600C412C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FD7D361E8B46E600C412C0 /* ThinkBizTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FD7D381E8B46E700C412C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FD7D411E8B46E700C412C0 /* ThinkBizUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86FD7D331E8B46E600C412C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86FD7D191E8B46E600C412C0 /* ThinkBiz */;
+			targetProxy = 86FD7D321E8B46E600C412C0 /* PBXContainerItemProxy */;
+		};
+		86FD7D3E1E8B46E700C412C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86FD7D191E8B46E600C412C0 /* ThinkBiz */;
+			targetProxy = 86FD7D3D1E8B46E700C412C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		86FD7D211E8B46E600C412C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86FD7D221E8B46E600C412C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		86FD7D291E8B46E600C412C0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86FD7D2A1E8B46E600C412C0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		86FD7D431E8B46E700C412C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86FD7D441E8B46E700C412C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86FD7D461E8B46E700C412C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J23LX68XNV;
+				INFOPLIST_FILE = ThinkBiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyangchin.ThinkBiz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		86FD7D471E8B46E700C412C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J23LX68XNV;
+				INFOPLIST_FILE = ThinkBiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyangchin.ThinkBiz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		86FD7D491E8B46E700C412C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J23LX68XNV;
+				INFOPLIST_FILE = ThinkBizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyangchin.ThinkBizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThinkBiz.app/ThinkBiz";
+			};
+			name = Debug;
+		};
+		86FD7D4A1E8B46E700C412C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J23LX68XNV;
+				INFOPLIST_FILE = ThinkBizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyangchin.ThinkBizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThinkBiz.app/ThinkBiz";
+			};
+			name = Release;
+		};
+		86FD7D4C1E8B46E700C412C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = J23LX68XNV;
+				INFOPLIST_FILE = ThinkBizUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyangchin.ThinkBizUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ThinkBiz;
+			};
+			name = Debug;
+		};
+		86FD7D4D1E8B46E700C412C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = J23LX68XNV;
+				INFOPLIST_FILE = ThinkBizUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanyangchin.ThinkBizUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ThinkBiz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86FD7D151E8B46E600C412C0 /* Build configuration list for PBXProject "ThinkBiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FD7D431E8B46E700C412C0 /* Debug */,
+				86FD7D441E8B46E700C412C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86FD7D451E8B46E700C412C0 /* Build configuration list for PBXNativeTarget "ThinkBiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FD7D461E8B46E700C412C0 /* Debug */,
+				86FD7D471E8B46E700C412C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		86FD7D481E8B46E700C412C0 /* Build configuration list for PBXNativeTarget "ThinkBizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FD7D491E8B46E700C412C0 /* Debug */,
+				86FD7D4A1E8B46E700C412C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		86FD7D4B1E8B46E700C412C0 /* Build configuration list for PBXNativeTarget "ThinkBizUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FD7D4C1E8B46E700C412C0 /* Debug */,
+				86FD7D4D1E8B46E700C412C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				86FD7D251E8B46E600C412C0 /* ThinkBiz.xcdatamodel */,
+			);
+			currentVersion = 86FD7D251E8B46E600C412C0 /* ThinkBiz.xcdatamodel */;
+			path = ThinkBiz.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 86FD7D121E8B46E600C412C0 /* Project object */;
+}
