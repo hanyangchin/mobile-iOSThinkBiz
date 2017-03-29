@@ -1,0 +1,6 @@
+framework module Pods_ThinkBiz {
+  umbrella header "Pods-ThinkBiz-umbrella.h"
+
+  export *
+  module * { export * }
+}
