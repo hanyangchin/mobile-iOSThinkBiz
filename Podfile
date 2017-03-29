@@ -10,6 +10,8 @@ target 'ThinkBiz' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  
+  pod 'SwiftKeychainWrapper'
 
   target 'ThinkBizTests' do
     inherit! :search_paths
