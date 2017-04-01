@@ -18,13 +18,17 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-//        self.scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+
         self.scrollView.delegate = self
 
-        self.loadOnBoardingScreens()
-
         self.pageControl.currentPage = 0
+        
+        self.loadOnBoardingScreens()
+    }
+
+    override func viewDidLayoutSubviews() {
+        // Update scroll view content size and its internal UI elements after its frame size has been calculated by Auto Layout
+        self.updateUIElements()
     }
 
     private func loadOnBoardingScreens() -> Void {
@@ -75,21 +79,31 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func addOnBoardingScreen(screen: UIView!) -> Void {
-        let scrollViewWidth: CGFloat = self.scrollView.frame.width
-        let scrollViewHeight: CGFloat = self.scrollView.frame.height
-        
-        print("\n*******************************\(scrollView.frame.width) \(self.view.frame.width)")
         
         self.onBoardingScreens.append(screen)
         
-        // Modify screen's frame to include offsets
-        screen.frame = CGRect(x: scrollViewWidth * CGFloat(self.onBoardingScreens.count - 1), y: 0, width: scrollViewWidth, height: scrollViewHeight)
+        self.updateScreenFrame(screen: screen, index: self.onBoardingScreens.count - 1)
         
-        self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width * CGFloat(onBoardingScreens.count), height: self.scrollView.bounds.height)
+        // This scrollview content size will be updated after viewDidLayoutSubviews
+        self.scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(onBoardingScreens.count), height: scrollView.frame.height)
         
         self.pageControl.numberOfPages = self.onBoardingScreens.count
         
         self.scrollView.addSubview(screen)
+    }
+    
+    private func updateUIElements() {
+        
+        self.scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(onBoardingScreens.count), height: scrollView.frame.height)
+        
+        // Update all UI element frames inside the scroll view
+        for (index, value) in onBoardingScreens.enumerated() {
+            self.updateScreenFrame(screen: value, index: index)
+        }
+    }
+    
+    private func updateScreenFrame(screen: UIView!, index: Int!) {
+        screen.frame = CGRect(x: self.scrollView.frame.width * CGFloat(index), y: 0, width: self.scrollView.frame.width, height: scrollView.frame.height)
     }
 
 }
