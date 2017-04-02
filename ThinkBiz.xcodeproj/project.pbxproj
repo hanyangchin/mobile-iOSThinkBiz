@@ -288,7 +288,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Han Yang Chin";
 				TargetAttributes = {
 					86FD7D191E8B46E600C412C0 = {
@@ -645,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB31F37EDD4E336FAD050446 /* Pods-ThinkBiz.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J23LX68XNV;
 				INFOPLIST_FILE = ThinkBiz/Info.plist;
@@ -659,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 242EF6DA92BA284B388DD433 /* Pods-ThinkBiz.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J23LX68XNV;
 				INFOPLIST_FILE = ThinkBiz/Info.plist;
