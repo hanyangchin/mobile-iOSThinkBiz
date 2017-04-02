@@ -11,6 +11,7 @@ import UIKit
 class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var paddingLeft: NSLayoutConstraint!
     
     var onBoardingScreens = [UIView]()
 
@@ -103,7 +104,8 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func updateScreenFrame(screen: UIView!, index: Int!) {
-        screen.frame = CGRect(x: self.scrollView.frame.width * CGFloat(index), y: 0, width: self.scrollView.frame.width, height: scrollView.frame.height)
+        // Apply padding (using same padding as the bottom) to individual on boarding screens.
+        screen.frame = CGRect(x: self.scrollView.frame.width * CGFloat(index) + paddingLeft.constant, y: 0, width: self.scrollView.frame.width - CGFloat(paddingLeft.constant*2), height: scrollView.frame.height)
     }
 
 }
