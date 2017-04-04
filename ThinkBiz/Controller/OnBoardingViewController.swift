@@ -108,4 +108,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         screen.frame = CGRect(x: self.scrollView.frame.width * CGFloat(index) + paddingLeft.constant, y: 0, width: self.scrollView.frame.width - CGFloat(paddingLeft.constant*2), height: scrollView.frame.height)
     }
 
+    @IBAction func onGetStartedButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: SEGUE_SIGNUP, sender: self)
+    }
 }

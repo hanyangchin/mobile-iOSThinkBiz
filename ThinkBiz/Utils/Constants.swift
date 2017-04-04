@@ -11,3 +11,4 @@ let KEY_UID = "uid"
 // View Controllers
 let SEGUE_ONBOARDING = "OnBoardingViewController"
 let SEGUE_MAINTABBAR = "MainTabBarController"
+let SEGUE_SIGNUP = "SignUpViewController"

@@ -12,6 +12,9 @@
 		863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */; };
 		8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC11E8C5AB0005E353A /* Constants.swift */; };
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
+		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
+		8658FC571E91DD2500D50AB3 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* LogInViewController.swift */; };
+		8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC581E931FC100D50AB3 /* InputTextField.swift */; };
 		86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */; };
 		86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D211E8B46E600C412C0 /* Main.storyboard */; };
 		86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */; };
@@ -49,6 +52,9 @@
 		864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkBizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8652ACC11E8C5AB0005E353A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Controller/OnBoardingViewController.swift; sourceTree = "<group>"; };
+		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
+		8658FC561E91DD2500D50AB3 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = Controller/LogInViewController.swift; sourceTree = "<group>"; };
+		8658FC581E931FC100D50AB3 /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTextField.swift; path = View/InputTextField.swift; sourceTree = "<group>"; };
 		86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86FD7D221E8B46E600C412C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 		863C65661E8B52A70093C3F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8658FC581E931FC100D50AB3 /* InputTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -139,6 +146,8 @@
 			children = (
 				863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */,
 				8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */,
+				8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */,
+				8658FC561E91DD2500D50AB3 /* LogInViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -489,8 +498,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,
+				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
 				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
 				863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */,
+				8658FC571E91DD2500D50AB3 /* LogInViewController.swift in Sources */,
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,
 				8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */,
