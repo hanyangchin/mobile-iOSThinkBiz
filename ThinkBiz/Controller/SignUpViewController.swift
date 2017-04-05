@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailField: InputTextField!
     @IBOutlet weak var passwordField: InputTextField!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var haveAccountButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
         
         let attributedString = NSAttributedString(string: "Forgot your password?", attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
-        forgotPasswordButton.setAttributedTitle(attributedString, for: .normal)
+        haveAccountButton.setAttributedTitle(attributedString, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +85,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         return false
+    }
+    @IBAction func signUpButtonPressed(_ sender: Any) {
     }
 
 }
