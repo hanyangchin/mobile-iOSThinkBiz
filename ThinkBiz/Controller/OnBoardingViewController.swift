@@ -111,4 +111,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func onGetStartedButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: SEGUE_SIGNUP, sender: self)
     }
+    @IBAction func onSignInButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: SEGUE_LOGIN, sender: self)
+    }
 }
