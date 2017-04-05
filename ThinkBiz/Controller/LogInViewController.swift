@@ -39,9 +39,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.unRegisterForKeyboardNotifications()
     }
     
-    @IBAction func onSignInButtonPressed(_ sender: Any) {
+    @IBAction func onLogInButtonPressed(_ sender: Any) {
     }
-    
     @IBAction func onForgotPasswordButtonPressed(_ sender: Any) {
     }
 
@@ -92,4 +91,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return false
     }
 
+    @IBAction func onSignUpButtonPressed(_ sender: Any) {
+        let presentingVC = self.presentingViewController
+        self.dismiss(animated: true) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_SIGNUP) as! SignUpViewController
+            self.presentingViewController?.present(vc, animated: true, completion: nil)
+            if let pVC = presentingVC {
+                pVC.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }

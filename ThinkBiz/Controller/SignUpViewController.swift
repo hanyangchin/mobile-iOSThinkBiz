@@ -16,14 +16,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var haveAccountButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         // Set up textfied delegates
         emailField.delegate = self
         passwordField.delegate = self
         
-        let attributedString = NSAttributedString(string: "Forgot your password?", attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
+        let attributedString = NSAttributedString(string: (haveAccountButton.titleLabel?.text)!, attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
         haveAccountButton.setAttributedTitle(attributedString, for: .normal)
     }
     
@@ -38,17 +36,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         self.unRegisterForKeyboardNotifications()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     private func registerForKeyboardNotifications() -> Void {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -89,4 +76,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpButtonPressed(_ sender: Any) {
     }
 
+    @IBAction func onAccountExistedButtonPressed(_ sender: Any) {
+        let presentingVC = self.presentingViewController
+        self.dismiss(animated: true) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_LOGIN) as! LogInViewController
+            self.presentingViewController?.present(vc, animated: true, completion: nil)
+            if let pVC = presentingVC {
+                pVC.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
 }

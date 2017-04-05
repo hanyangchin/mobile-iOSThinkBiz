@@ -109,9 +109,13 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     }
 
     @IBAction func onGetStartedButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: SEGUE_SIGNUP, sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_SIGNUP) as! SignUpViewController
+        self.present(vc, animated: true, completion: nil)
     }
     @IBAction func onSignInButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: SEGUE_LOGIN, sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_LOGIN) as! LogInViewController
+        self.present(vc, animated: true, completion: nil)
     }
 }
