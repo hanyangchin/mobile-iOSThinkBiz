@@ -115,7 +115,8 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     }
     @IBAction func onSignInButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_LOGIN) as! LogInViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_SIGNIN) as! SignInViewController
         self.present(vc, animated: true, completion: nil)
     }
+    
 }

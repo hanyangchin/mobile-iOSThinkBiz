@@ -8,20 +8,33 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate, SignInViewModelControllerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var emailFeedbackLabel: UILabel!
     @IBOutlet weak var emailField: InputTextField!
+    @IBOutlet weak var passwordFeedbackLabel: UILabel!
     @IBOutlet weak var passwordField: InputTextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
+    
+    private var responderFields: Dictionary! = [Int: UIResponder!]()
+    
+    fileprivate var signInViewModel: SignInViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        // Set up textfied delegates
-        emailField.delegate = self
-        passwordField.delegate = self
+        signInViewModel = SignInViewModel(inputValidator: InputValidator())
+        signInViewModel.delegate = self
+        
+        configureViews()
+        
+        responderFields[emailField.tag] = emailField
+        responderFields[passwordField.tag] = passwordField
         
         let attributedString = NSAttributedString(string: "Forgot your password?", attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
         forgotPasswordButton.setAttributedTitle(attributedString, for: .normal)
@@ -39,20 +52,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.unRegisterForKeyboardNotifications()
     }
     
-    @IBAction func onLogInButtonPressed(_ sender: Any) {
-    }
-    @IBAction func onForgotPasswordButtonPressed(_ sender: Any) {
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - Keyboard Delegates & Handling
     
     private func registerForKeyboardNotifications() -> Void {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -79,16 +79,31 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.scrollView.contentInset = contentInset
     }
     
+    //MARK: - Text Field Delegates
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         // Try find the next responder
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+        let field = responderFields[textField.tag+1]
+        
+        if let nextField = field as? UITextField {
             nextField.becomeFirstResponder()
         } else {
             // No responder left, dismiss keyboard
             textField.resignFirstResponder()
         }
-        
         return false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text: NSString = (textField.text ?? "") as NSString
+        let textUpdate = text.replacingCharacters(in: range, with: string)
+        
+        if textField == emailField {
+            self.signInViewModel.emailTextDidChange(text: textUpdate)
+        } else if textField == passwordField {
+            self.signInViewModel.passwordTextDidChange(text: textUpdate)
+        }
+        return true
     }
 
     @IBAction func onSignUpButtonPressed(_ sender: Any) {
@@ -102,4 +117,55 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    // MARK: - Button Handling
+    
+    @IBAction func onSignInButtonPressed(_ sender: Any) {
+        signInViewModel.signInButtonPressed()
+    }
+    @IBAction func onForgotPasswordButtonPressed(_ sender: Any) {
+    }
+    
+    // MARK: - SignUpViewModelControllerDelegate methods
+    func reloadViews() {
+        configureViews()
+    }
+    
+    func signInSuccess() {
+        self.performSegue(withIdentifier: SEGUE_MAINTABBAR, sender: self)
+    }
+    
+    // MARK: - View configuration
+    fileprivate func configureViews() {
+        configureEmailTextField()
+        configureEmailFeedback()
+        
+        configurePasswordTextField()
+        configurePasswordFeedback()
+        
+        configureSignInButton()
+    }
+    
+    private func configureEmailTextField() {
+        emailField.delegate = self
+        emailField.placeholder = signInViewModel.emailPlaceholderText
+    }
+    
+    private func configureEmailFeedback() {
+        emailFeedbackLabel.text = signInViewModel.emailErrorText
+    }
+    
+    private func configurePasswordTextField() {
+        passwordField.delegate = self
+        passwordField.placeholder = signInViewModel.passwordPlaceholderText
+    }
+    
+    private func configurePasswordFeedback() {
+        passwordFeedbackLabel.text = signInViewModel.passwordErrorText
+    }
+    
+    private func configureSignInButton() {
+        signInButton.isEnabled = signInViewModel.signInButtonEnabled
+    }
+
 }

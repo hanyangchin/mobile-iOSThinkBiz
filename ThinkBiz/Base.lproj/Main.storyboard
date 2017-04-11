@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,11 +21,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtD-T0-ZC4">
-                                <rect key="frame" x="40" y="86" width="240" height="128"/>
+                                <rect key="frame" x="40" y="86" width="295" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="L7C-dV-Pwi"/>
                                 </constraints>
@@ -56,17 +56,17 @@
                         <viewControllerLayoutGuide type="bottom" id="XQt-ic-arO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7eM-lM-xTr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lHD-m2-HRq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-vR-ayP">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="397.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X55-0Q-f0a">
-                                                <rect key="frame" x="0.0" y="30" width="320" height="367.5"/>
+                                                <rect key="frame" x="0.0" y="30" width="375" height="437"/>
                                             </scrollView>
                                         </subviews>
                                         <constraints>
@@ -77,17 +77,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeV-mo-zAT">
-                                        <rect key="frame" x="0.0" y="397.5" width="320" height="170.5"/>
+                                        <rect key="frame" x="0.0" y="467" width="375" height="200"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1LH-hu-4dO">
-                                                <rect key="frame" x="30" y="0.0" width="260" height="150.5"/>
+                                                <rect key="frame" x="30" y="0.0" width="315" height="180"/>
                                                 <subviews>
                                                     <pageControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-H0-dpo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="47"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="56.5"/>
                                                         <color key="pageIndicatorTintColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </pageControl>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYN-g7-r3i">
-                                                        <rect key="frame" x="0.0" y="52" width="260" height="46.5"/>
+                                                        <rect key="frame" x="0.0" y="61.5" width="315" height="57"/>
                                                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="GET STARTED"/>
                                                         <connections>
@@ -95,13 +95,13 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPS-l3-LA6">
-                                                        <rect key="frame" x="0.0" y="103.5" width="260" height="47"/>
+                                                        <rect key="frame" x="0.0" y="123.5" width="315" height="56.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7E-He-RgO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="260" height="47"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="56.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HUg-Cx-QXt">
-                                                                        <rect key="frame" x="4" y="8.5" width="253" height="30"/>
+                                                                        <rect key="frame" x="31.5" y="13" width="253" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-rc-ymP">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="196" height="30"/>
@@ -170,61 +170,80 @@
                         <viewControllerLayoutGuide type="bottom" id="nqE-0r-1R4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iZt-K3-vvR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWD-cd-ihe">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Au-cu-NSE">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbP-wn-5jB">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-Ey-DVJ">
-                                                <rect key="frame" x="32" y="57" width="256" height="454"/>
+                                                <rect key="frame" x="37" y="67" width="301" height="533"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightbulb" translatesAutoresizingMaskIntoConstraints="NO" id="uL0-Fz-83U">
-                                                        <rect key="frame" x="60.5" y="22" width="136" height="136.5"/>
+                                                        <rect key="frame" x="71" y="26" width="160" height="159.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="uL0-Fz-83U" secondAttribute="height" multiplier="1:1" id="s1J-hN-qyj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThinkBiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efn-WI-JXd">
-                                                        <rect key="frame" x="60.5" y="165.5" width="136" height="34.5"/>
+                                                        <rect key="frame" x="71" y="192.5" width="160" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-F8-kA7">
-                                                        <rect key="frame" x="0.0" y="227" width="256" height="227"/>
+                                                        <rect key="frame" x="0.0" y="266.5" width="301" height="266.5"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5ty-z1-Cz0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="114"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5ty-z1-Cz0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="133.5"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-gC-Vkx" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="57"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                                                    </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YT4-Pi-5qa" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="67" width="256" height="47"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
-                                                                    </textField>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="OtV-6P-iev">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="301" height="61.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFv-uu-tsO">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="30.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <color key="textColor" red="1" green="0.0" blue="0.19766298530000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-gC-Vkx" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="33.5" width="301" height="28"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EMy-WY-l2X">
+                                                                        <rect key="frame" x="0.0" y="71.5" width="301" height="62"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-FP-rRV">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="34"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <color key="textColor" red="1" green="0.0" blue="0.19766298530000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YT4-Pi-5qa" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="34" width="301" height="28"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="9nt-gC-Vkx" firstAttribute="height" secondItem="5ty-z1-Cz0" secondAttribute="height" multiplier="0.5" id="hnm-ZL-vy5"/>
-                                                                </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="O9g-Jt-8wk">
-                                                                <rect key="frame" x="0.0" y="144" width="256" height="83"/>
+                                                                <rect key="frame" x="0.0" y="163.5" width="301" height="103"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="my0-uH-48I">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="301" height="61"/>
                                                                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <state key="normal" title="SIgn Up"/>
                                                                         <connections>
@@ -232,7 +251,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-tU-crY">
-                                                                        <rect key="frame" x="0.0" y="54" width="256" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="66" width="301" height="37"/>
                                                                         <state key="normal" title="Already have an account? Sign In"/>
                                                                         <connections>
                                                                             <action selector="onAccountExistedButtonPressed:" destination="wj9-ny-oX0" eventType="touchUpInside" id="e2f-vZ-T0w"/>
@@ -297,88 +316,111 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="9nt-gC-Vkx" id="al7-Vs-ITC"/>
+                        <outlet property="emailFeedbackLabel" destination="bFv-uu-tsO" id="bpK-QB-XsZ"/>
+                        <outlet property="emailField" destination="9nt-gC-Vkx" id="uWz-vz-Gfc"/>
                         <outlet property="haveAccountButton" destination="lxD-tU-crY" id="uFG-bC-kL8"/>
-                        <outlet property="passwordField" destination="YT4-Pi-5qa" id="HzP-Dj-h04"/>
+                        <outlet property="passwordFeedbackLabel" destination="b2f-FP-rRV" id="yHA-Nw-Ib1"/>
+                        <outlet property="passwordField" destination="YT4-Pi-5qa" id="Bck-yk-EMh"/>
                         <outlet property="scrollView" destination="zWD-cd-ihe" id="3fJ-9R-jK5"/>
+                        <outlet property="signUpButton" destination="my0-uH-48I" id="RPK-Qd-uGQ"/>
+                        <segue destination="miV-E5-MS1" kind="show" identifier="MainTabBarController" id="Lgz-Co-kSC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8g-M4-k31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2070" y="-266"/>
         </scene>
-        <!--Log In View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="Xwg-Pr-uYn">
             <objects>
-                <viewController storyboardIdentifier="LogInViewController" id="8nl-6M-dGO" customClass="LogInViewController" customModule="ThinkBiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="8nl-6M-dGO" customClass="SignInViewController" customModule="ThinkBiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fAs-XN-ltr"/>
                         <viewControllerLayoutGuide type="bottom" id="p0U-iR-C3s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ji8-eo-smf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdX-6j-pcy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S1-IZ-soV">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i8D-gm-3Qo">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hse-gF-Pxx">
-                                                <rect key="frame" x="32" y="57" width="256" height="454"/>
+                                                <rect key="frame" x="37" y="67" width="301" height="533"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightbulb" translatesAutoresizingMaskIntoConstraints="NO" id="bSY-m6-3md">
-                                                        <rect key="frame" x="60.5" y="22" width="136" height="136.5"/>
+                                                        <rect key="frame" x="71" y="26" width="160" height="159.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="bSY-m6-3md" secondAttribute="height" multiplier="1:1" id="R4r-bd-E1b"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThinkBiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLO-XK-n8W">
-                                                        <rect key="frame" x="60.5" y="165.5" width="136" height="34.5"/>
+                                                        <rect key="frame" x="71" y="192.5" width="160" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="heN-9B-PK2">
-                                                        <rect key="frame" x="0.0" y="227" width="256" height="227"/>
+                                                        <rect key="frame" x="0.0" y="266.5" width="301" height="266.5"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WjK-hy-zLL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="114"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WjK-hy-zLL">
+                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="133.5"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLq-2N-PAQ" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="57"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                                                    </textField>
-                                                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiF-MO-MjQ" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="67" width="256" height="47"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
-                                                                    </textField>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="BS0-g8-FSD">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="301" height="61.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWv-ed-F1l">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="30.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <color key="textColor" red="1" green="0.0" blue="0.19766298530000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLq-2N-PAQ" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="33.5" width="301" height="28"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVQ-39-eZ1">
+                                                                        <rect key="frame" x="0.0" y="71.5" width="301" height="62"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-Oo-3J9">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="34"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <color key="textColor" red="1" green="0.0" blue="0.19766298530000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiF-MO-MjQ" customClass="InputTextField" customModule="ThinkBiz" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="34" width="301" height="28"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="HLq-2N-PAQ" firstAttribute="height" secondItem="WjK-hy-zLL" secondAttribute="height" multiplier="0.5" id="18I-hx-hQZ"/>
-                                                                </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="30x-MB-dHI">
-                                                                <rect key="frame" x="0.0" y="144" width="256" height="83"/>
+                                                                <rect key="frame" x="0.0" y="163.5" width="301" height="103"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4a-DI-Qlf">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="301" height="61"/>
                                                                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <state key="normal" title="Log In"/>
+                                                                        <state key="normal" title="Sign In"/>
                                                                         <connections>
-                                                                            <action selector="onLogInButtonPressed:" destination="8nl-6M-dGO" eventType="touchUpInside" id="lnC-jd-UiO"/>
+                                                                            <action selector="onSignInButtonPressed:" destination="8nl-6M-dGO" eventType="touchUpInside" id="6oZ-Lu-oQS"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZA-xD-j6d">
-                                                                        <rect key="frame" x="0.0" y="54" width="256" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="66" width="301" height="37"/>
                                                                         <state key="normal" title="Forgot your password?"/>
                                                                         <connections>
                                                                             <action selector="onForgotPasswordButtonPressed:" destination="8nl-6M-dGO" eventType="touchUpInside" id="EHa-0r-Qub"/>
@@ -423,7 +465,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fye-fN-tvh">
-                                        <rect key="frame" x="32.5" y="530" width="256" height="30"/>
+                                        <rect key="frame" x="37.5" y="629" width="301" height="30"/>
                                         <state key="normal" title="Don't have an account? Sign Up"/>
                                         <connections>
                                             <action selector="onSignUpButtonPressed:" destination="8nl-6M-dGO" eventType="touchUpInside" id="2jJ-4H-QpG"/>
@@ -452,15 +494,20 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="HLq-2N-PAQ" id="BPb-Rs-U7R"/>
+                        <outlet property="emailFeedbackLabel" destination="iWv-ed-F1l" id="Pco-bp-Sn6"/>
+                        <outlet property="emailField" destination="HLq-2N-PAQ" id="IoP-mD-Hjr"/>
                         <outlet property="forgotPasswordButton" destination="tZA-xD-j6d" id="FiC-xf-7Ff"/>
-                        <outlet property="passwordField" destination="XiF-MO-MjQ" id="EQe-ub-tSe"/>
+                        <outlet property="passwordFeedbackLabel" destination="fuk-Oo-3J9" id="7NN-jh-dkh"/>
+                        <outlet property="passwordField" destination="XiF-MO-MjQ" id="hZK-in-6C9"/>
                         <outlet property="scrollView" destination="VdX-6j-pcy" id="m7f-Zz-dqs"/>
+                        <outlet property="signInButton" destination="R4a-DI-Qlf" id="Nnx-j6-GTo"/>
+                        <outlet property="signUpButton" destination="Fye-fN-tvh" id="ALj-xw-8UR"/>
+                        <segue destination="miV-E5-MS1" kind="show" identifier="MainTabBarController" id="VQS-Zu-IxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8N5-xC-Ugu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068.125" y="400"/>
+            <point key="canvasLocation" x="2070" y="586"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="W8y-es-h26">
@@ -471,7 +518,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ovw-mk-VMQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Oay-XJ-PTw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -490,7 +537,7 @@
                         <viewControllerLayoutGuide type="bottom" id="K6d-SJ-tXc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nr6-kX-oqj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -522,4 +569,7 @@
     <resources>
         <image name="lightbulb" width="360" height="429"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lgz-Co-kSC"/>
+    </inferredMetricsTieBreakers>
 </document>

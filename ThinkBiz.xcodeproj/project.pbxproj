@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		4280C214998EAC8A5826D2EE /* Pods_ThinkBizUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EAD133FF7E8BB47A3FB6FB /* Pods_ThinkBizUITests.framework */; };
 		61DAA5CDD75EBA0E72AE66ED /* Pods_ThinkBizTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */; };
+		860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567AE1E95E1BE00FCB03E /* UIView+Extensions.swift */; };
+		860567B61E99B11900FCB03E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567B51E99B11900FCB03E /* SignUpViewModel.swift */; };
+		860567B81E99C0CF00FCB03E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567B71E99C0CF00FCB03E /* Helper.swift */; };
+		860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */; };
+		860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */; };
+		860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */; };
 		863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */; };
 		8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC11E8C5AB0005E353A /* Constants.swift */; };
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
-		8658FC571E91DD2500D50AB3 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* LogInViewController.swift */; };
+		8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* SignInViewController.swift */; };
 		8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC581E931FC100D50AB3 /* InputTextField.swift */; };
 		86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */; };
 		86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D211E8B46E600C412C0 /* Main.storyboard */; };
@@ -48,12 +54,18 @@
 		242EF6DA92BA284B388DD433 /* Pods-ThinkBiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkBiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkBiz/Pods-ThinkBiz.release.xcconfig"; sourceTree = "<group>"; };
 		38612E25D9FE671466A5E8C7 /* Pods-ThinkBizTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkBizTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkBizTests/Pods-ThinkBizTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FEA9E491AD523E0F99E2638 /* Pods-ThinkBizUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkBizUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkBizUITests/Pods-ThinkBizUITests.release.xcconfig"; sourceTree = "<group>"; };
+		860567AE1E95E1BE00FCB03E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		860567B51E99B11900FCB03E /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewModel.swift; path = ViewModel/SignUpViewModel.swift; sourceTree = "<group>"; };
+		860567B71E99C0CF00FCB03E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Utils/Helper.swift; sourceTree = "<group>"; };
+		860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewModelProtocol.swift; path = Protocols/SignUpViewModelProtocol.swift; sourceTree = "<group>"; };
+		860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModelProtocol.swift; path = Protocols/SignInViewModelProtocol.swift; sourceTree = "<group>"; };
+		860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModel.swift; path = ViewModel/SignInViewModel.swift; sourceTree = "<group>"; };
 		863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controller/LandingViewController.swift; sourceTree = "<group>"; };
 		864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkBizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8652ACC11E8C5AB0005E353A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Controller/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
-		8658FC561E91DD2500D50AB3 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = Controller/LogInViewController.swift; sourceTree = "<group>"; };
+		8658FC561E91DD2500D50AB3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controller/SignInViewController.swift; sourceTree = "<group>"; };
 		8658FC581E931FC100D50AB3 /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTextField.swift; path = View/InputTextField.swift; sourceTree = "<group>"; };
 		86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +138,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		860567AD1E95E19200FCB03E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				860567AE1E95E1BE00FCB03E /* UIView+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		860567B01E96F38A00FCB03E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				860567B51E99B11900FCB03E /* SignUpViewModel.swift */,
+				860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		860567B91E99CB1500FCB03E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */,
+				860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		863C65651E8B525E0093C3F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +185,7 @@
 				863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */,
 				8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */,
 				8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */,
-				8658FC561E91DD2500D50AB3 /* LogInViewController.swift */,
+				8658FC561E91DD2500D50AB3 /* SignInViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -156,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				8652ACC11E8C5AB0005E353A /* Constants.swift */,
+				860567B71E99C0CF00FCB03E /* Helper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -192,10 +231,13 @@
 		86FD7D1C1E8B46E600C412C0 /* ThinkBiz */ = {
 			isa = PBXGroup;
 			children = (
+				860567B91E99CB1500FCB03E /* Protocols */,
+				860567AD1E95E19200FCB03E /* Extensions */,
 				863C656A1E8B53160093C3F9 /* Services */,
 				863C65691E8B530A0093C3F9 /* Utils */,
 				863C65651E8B525E0093C3F9 /* Model */,
 				863C65661E8B52A70093C3F9 /* View */,
+				860567B01E96F38A00FCB03E /* ViewModel */,
 				863C65671E8B52B70093C3F9 /* Controller */,
 				86FD7D4E1E8B4B1600C412C0 /* GoogleService-Info.plist */,
 				86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */,
@@ -498,13 +540,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */,
+				860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */,
 				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,
+				860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */,
 				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
 				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
 				863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */,
-				8658FC571E91DD2500D50AB3 /* LogInViewController.swift in Sources */,
+				8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */,
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,
+				860567B81E99C0CF00FCB03E /* Helper.swift in Sources */,
+				860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */,
+				860567B61E99B11900FCB03E /* SignUpViewModel.swift in Sources */,
 				8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
