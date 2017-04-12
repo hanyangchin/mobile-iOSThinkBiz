@@ -108,4 +108,15 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         screen.frame = CGRect(x: self.scrollView.frame.width * CGFloat(index) + paddingLeft.constant, y: 0, width: self.scrollView.frame.width - CGFloat(paddingLeft.constant*2), height: scrollView.frame.height)
     }
 
+    @IBAction func onGetStartedButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_SIGNUP) as! SignUpViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    @IBAction func onSignInButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_SIGNIN) as! SignInViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
