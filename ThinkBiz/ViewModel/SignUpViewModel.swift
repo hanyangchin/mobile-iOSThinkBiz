@@ -16,8 +16,7 @@ class SignUpViewModel : SignUpViewModelProtocol {
     
     let emailPlaceholderText: String? = "Email"
     let passwordPlaceholderText: String? = "Password"
-    var emailErrorText: String? = ""
-    var passwordErrorText: String? = ""
+    var errorText: String? = ""
     
     var signUpButtonEnabled: Bool {
         return emailValid && passwordValid
@@ -39,7 +38,7 @@ class SignUpViewModel : SignUpViewModelProtocol {
     
     func emailTextDidChange(text: String?) {
         self.emailText = text ?? ""
-        self.emailErrorText = ""
+        self.errorText = ""
         do {
             try inputValidator.validateEmail(email: self.emailText)
             emailValid = true
@@ -51,7 +50,7 @@ class SignUpViewModel : SignUpViewModelProtocol {
     
     func passwordTextDidChange(text: String?) {
         self.passwordText = text ?? ""
-        self.passwordErrorText = ""
+        self.errorText = ""
         do {
             try inputValidator.validatePassword(password: self.passwordText)
             passwordValid = true
@@ -78,14 +77,16 @@ class SignUpViewModel : SignUpViewModelProtocol {
                     switch errorCode {
                     case .errorCodeInvalidEmail:
                         errorMessage = "Invalid email"
-                        self.emailErrorText = "Invalid email"
+                    case .errorCodeWeakPassword:
+                        errorMessage = "Password should be at least 6 characters"
+                    case .errorCodeNetworkError:
+                        errorMessage = "Network error. Please try again"
                     case .errorCodeEmailAlreadyInUse:
                         errorMessage = "Email already been used"
-                        self.emailErrorText = "Email already been used"
                     default:
-                        errorMessage = "Error occurred"
-                        self.emailErrorText = "Error occurred. Please try again."
+                        errorMessage = error?.localizedDescription ?? "Error occurred"
                     }
+                    self.errorText = error?.localizedDescription ?? "Unknown error occurred"
                     failure?(errorMessage)
                 }
             } else {

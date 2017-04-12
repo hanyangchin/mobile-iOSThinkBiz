@@ -11,14 +11,16 @@ import UIKit
 class SignInViewController: UIViewController, UITextFieldDelegate, SignInViewModelControllerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var emailFeedbackLabel: UILabel!
-    @IBOutlet weak var emailField: InputTextField!
-    @IBOutlet weak var passwordFeedbackLabel: UILabel!
-    @IBOutlet weak var passwordField: InputTextField!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
+
+    @IBOutlet weak var emailField: UITextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var passwordField: UITextField!
+    
     @IBOutlet weak var signInButton: UIButton!
     
+    @IBOutlet weak var signUpView: UIStackView!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     private var responderFields: Dictionary! = [Int: UIResponder!]()
     
     fileprivate var signInViewModel: SignInViewModel!
@@ -106,6 +108,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SignInViewMod
         return true
     }
 
+    @IBAction func onBackButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func onSignUpButtonPressed(_ sender: Any) {
         let presentingVC = self.presentingViewController
         self.dismiss(animated: true) {
@@ -138,11 +143,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SignInViewMod
     // MARK: - View configuration
     fileprivate func configureViews() {
         configureEmailTextField()
-        configureEmailFeedback()
-        
         configurePasswordTextField()
-        configurePasswordFeedback()
-        
+        configureErrorLabel()
         configureSignInButton()
     }
     
@@ -151,18 +153,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SignInViewMod
         emailField.placeholder = signInViewModel.emailPlaceholderText
     }
     
-    private func configureEmailFeedback() {
-        emailFeedbackLabel.text = signInViewModel.emailErrorText
-    }
-    
     private func configurePasswordTextField() {
         passwordField.delegate = self
         passwordField.placeholder = signInViewModel.passwordPlaceholderText
     }
     
-    private func configurePasswordFeedback() {
-        passwordFeedbackLabel.text = signInViewModel.passwordErrorText
-    }
+    private func configureErrorLabel() {
+            errorLabel.text = signInViewModel.errorText
+        }
     
     private func configureSignInButton() {
         signInButton.isEnabled = signInViewModel.signInButtonEnabled

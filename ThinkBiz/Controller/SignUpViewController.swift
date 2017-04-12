@@ -9,12 +9,13 @@
 import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, SignUpViewModelControllerDelegate {
-
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var emailFeedbackLabel: UILabel!
-    @IBOutlet weak var emailField: InputTextField!
-    @IBOutlet weak var passwordFeedbackLabel: UILabel!
-    @IBOutlet weak var passwordField: InputTextField!
+    @IBOutlet weak var emailField: UITextField!
+
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var haveAccountButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -105,6 +106,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, SignUpViewMod
     }
     
     // MARK: - Button Handling
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func signUpButtonPressed(_ sender: Any) {
         signUpViewModel.signUpButtonPressed()
     }
@@ -134,12 +138,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, SignUpViewMod
     // MARK: - View configuration
     fileprivate func configureViews() {
         configureEmailTextField()
-        configureEmailFeedback()
-        
         configurePasswordTextField()
-        configurePasswordFeedback()
-        
-        configureSignUpButton()
+        configureErrorLabel()
+        configureSignInButton()
     }
     
     private func configureEmailTextField() {
@@ -147,20 +148,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, SignUpViewMod
         emailField.placeholder = signUpViewModel.emailPlaceholderText
     }
     
-    private func configureEmailFeedback() {
-        emailFeedbackLabel.text = signUpViewModel.emailErrorText
-    }
-    
     private func configurePasswordTextField() {
         passwordField.delegate = self
         passwordField.placeholder = signUpViewModel.passwordPlaceholderText
     }
     
-    private func configurePasswordFeedback() {
-        passwordFeedbackLabel.text = signUpViewModel.passwordErrorText
+    private func configureErrorLabel() {
+        errorLabel.text = signUpViewModel.errorText
     }
     
-    private func configureSignUpButton() {
+    private func configureSignInButton() {
         signUpButton.isEnabled = signUpViewModel.signUpButtonEnabled
     }
 }

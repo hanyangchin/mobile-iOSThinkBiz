@@ -14,8 +14,7 @@ protocol SignInViewModelProtocol {
     
     var emailPlaceholderText: String? { get }
     var passwordPlaceholderText: String? { get }
-    var emailErrorText: String? { get }
-    var passwordErrorText: String? { get }
+    var errorText: String? { get }
     var signInButtonEnabled: Bool { get }
     
     // MARK: - Protocol functions
