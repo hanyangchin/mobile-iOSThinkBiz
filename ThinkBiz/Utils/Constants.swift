@@ -8,8 +8,17 @@
 
 let KEY_UID = "uid"
 
-// View Controllers
+// Storyboard View Controllers
+let ID_LANDINGVIEWCONTROLLER = "LandingViewController"
+let ID_ONBOARDINGVIEWCONTROLLER = "OnBoardingViewController"
+let ID_WEBVIEWCONTROLLER = "WebViewController"
+
+// SEGUE IDENTIFIERS
 let SEGUE_ONBOARDING = "OnBoardingViewController"
 let SEGUE_MAINTABBAR = "MainTabBarController"
 let SEGUE_SIGNUP = "SignUpViewController"
 let SEGUE_SIGNIN = "SignInViewController"
+
+// Storybord cell ID
+let ID_SETTINGSITEMCELLDISCLOSURE = "SettingsItemCellDisclosure"
+let ID_SETTINGSSECTIONTITLECELL = "SettingsSectionTitleCell"

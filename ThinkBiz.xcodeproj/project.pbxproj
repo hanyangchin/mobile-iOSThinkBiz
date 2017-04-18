@@ -15,12 +15,23 @@
 		860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */; };
 		860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */; };
 		860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */; };
+		8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E47E1EA6BBDF00E17624 /* WebViewController.swift */; };
+		8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4801EA6C48300E17624 /* WebViewViewModel.swift */; };
+		8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4821EA6CD5E00E17624 /* WebPage.swift */; };
 		863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */; };
 		8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC11E8C5AB0005E353A /* Constants.swift */; };
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
 		8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* SignInViewController.swift */; };
 		8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC581E931FC100D50AB3 /* InputTextField.swift */; };
+		86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */; };
+		86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */; };
+		86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */; };
+		86BE2E1F1E9F16F8008E05E0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1E1E9F16F8008E05E0 /* SettingsTableViewCell.swift */; };
+		86BE2E211E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E201E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift */; };
+		86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */; };
+		86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */; };
+		86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */; };
 		86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */; };
 		86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D211E8B46E600C412C0 /* Main.storyboard */; };
 		86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */; };
@@ -60,6 +71,9 @@
 		860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewModelProtocol.swift; path = Protocols/SignUpViewModelProtocol.swift; sourceTree = "<group>"; };
 		860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModelProtocol.swift; path = Protocols/SignInViewModelProtocol.swift; sourceTree = "<group>"; };
 		860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModel.swift; path = ViewModel/SignInViewModel.swift; sourceTree = "<group>"; };
+		8617E47E1EA6BBDF00E17624 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controller/WebViewController.swift; sourceTree = "<group>"; };
+		8617E4801EA6C48300E17624 /* WebViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewModel.swift; path = ViewModel/WebViewViewModel.swift; sourceTree = "<group>"; };
+		8617E4821EA6CD5E00E17624 /* WebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPage.swift; path = Model/WebPage.swift; sourceTree = "<group>"; };
 		863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controller/LandingViewController.swift; sourceTree = "<group>"; };
 		864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkBizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8652ACC11E8C5AB0005E353A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
@@ -67,6 +81,14 @@
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		8658FC561E91DD2500D50AB3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controller/SignInViewController.swift; sourceTree = "<group>"; };
 		8658FC581E931FC100D50AB3 /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTextField.swift; path = View/InputTextField.swift; sourceTree = "<group>"; };
+		86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controller/SettingsViewController.swift; sourceTree = "<group>"; };
+		86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewViewModel.swift; path = ViewModel/SettingsTableViewViewModel.swift; sourceTree = "<group>"; };
+		86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewViewModelProtocol.swift; path = Protocols/SettingsTableViewViewModelProtocol.swift; sourceTree = "<group>"; };
+		86BE2E1E1E9F16F8008E05E0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewCell.swift; path = View/SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		86BE2E201E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewSectionHeaderCell.swift; path = View/SettingsTableViewSectionHeaderCell.swift; sourceTree = "<group>"; };
+		86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewCellViewModel.swift; path = ViewModel/SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Model/Setting.swift; sourceTree = "<group>"; };
+		86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSetting.swift; path = Model/URLSetting.swift; sourceTree = "<group>"; };
 		86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86FD7D221E8B46E600C412C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +173,9 @@
 			children = (
 				860567B51E99B11900FCB03E /* SignUpViewModel.swift */,
 				860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */,
+				86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */,
+				86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */,
+				8617E4801EA6C48300E17624 /* WebViewViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -160,6 +185,7 @@
 			children = (
 				860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */,
 				860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */,
+				86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -167,6 +193,9 @@
 		863C65651E8B525E0093C3F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */,
+				86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */,
+				8617E4821EA6CD5E00E17624 /* WebPage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -175,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				8658FC581E931FC100D50AB3 /* InputTextField.swift */,
+				86BE2E1E1E9F16F8008E05E0 /* SettingsTableViewCell.swift */,
+				86BE2E201E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -186,6 +217,8 @@
 				8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */,
 				8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */,
 				8658FC561E91DD2500D50AB3 /* SignInViewController.swift */,
+				86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */,
+				8617E47E1EA6BBDF00E17624 /* WebViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -544,16 +577,27 @@
 				860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */,
 				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,
 				860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */,
+				86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */,
 				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
+				86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */,
+				8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */,
 				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
+				86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */,
 				863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */,
 				8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */,
+				86BE2E211E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift in Sources */,
+				86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */,
+				86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */,
+				8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */,
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,
 				860567B81E99C0CF00FCB03E /* Helper.swift in Sources */,
 				860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */,
 				860567B61E99B11900FCB03E /* SignUpViewModel.swift in Sources */,
+				86BE2E1F1E9F16F8008E05E0 /* SettingsTableViewCell.swift in Sources */,
 				8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */,
+				8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */,
+				86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
