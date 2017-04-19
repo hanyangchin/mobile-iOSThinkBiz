@@ -106,14 +106,14 @@ class SettingsTableViewViewModel: SettingsTableViewViewModelProtocol {
     }
     
     func logout() {
-        do {
-            try FIRAuth.auth()?.signOut()
-            // TODO: Remove UID from keychain
-            
-            delegate?.navigateToRootView()
-        } catch {
-            // TODO: Handle logout errors
-        }
+        AuthService.sharedInstance.signOut(completion: { (error: String?) in
+            // Check if there is an error
+            if let errorMessage = error {
+                
+            } else {
+                self.delegate?.navigateToRootView()
+            }
+        })
     }
     
     func deleteAccount() {
