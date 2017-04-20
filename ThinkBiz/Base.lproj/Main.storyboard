@@ -464,10 +464,10 @@
             </objects>
             <point key="canvasLocation" x="3731" y="1424"/>
         </scene>
-        <!--View Controller-->
+        <!--Ideas-->
         <scene sceneID="hjR-eI-Kab">
             <objects>
-                <viewController id="4A8-wF-6es" sceneMemberID="viewController">
+                <viewController id="4A8-wF-6es" customClass="IdeasViewController" customModule="ThinkBiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4g1-yD-zv6"/>
                         <viewControllerLayoutGuide type="bottom" id="K6d-SJ-tXc"/>
@@ -475,13 +475,70 @@
                     <view key="view" contentMode="scaleToFill" id="Nr6-kX-oqj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1en-09-pZk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1cS-Vh-LOQ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="m8z-RB-pis">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1en-09-pZk" firstAttribute="top" secondItem="4g1-yD-zv6" secondAttribute="bottom" id="7lF-fa-hx6"/>
+                            <constraint firstItem="1en-09-pZk" firstAttribute="leading" secondItem="Nr6-kX-oqj" secondAttribute="leading" id="8nX-nh-faR"/>
+                            <constraint firstAttribute="trailing" secondItem="1en-09-pZk" secondAttribute="trailing" id="kFy-xL-JJJ"/>
+                            <constraint firstItem="K6d-SJ-tXc" firstAttribute="top" secondItem="1en-09-pZk" secondAttribute="bottom" id="qHY-m1-gAC"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="di2-CX-kfz"/>
+                    <navigationItem key="navigationItem" title="Ideas" id="ccm-JS-1Ld">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="MBv-AS-0en">
+                            <connections>
+                                <action selector="addIdeaOnButtonPressed:" destination="4A8-wF-6es" id="4u5-ol-2Yw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addIdeaButton" destination="MBv-AS-0en" id="OEu-an-XgQ"/>
+                        <outlet property="ideasCollectionView" destination="1en-09-pZk" id="0hn-cL-WkN"/>
+                        <segue destination="svo-3d-LC9" kind="show" id="Aj9-Mf-sDZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMN-E9-bV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2970" y="747.5"/>
+        </scene>
+        <!--New Idea View Controller-->
+        <scene sceneID="HlF-jK-sIa">
+            <objects>
+                <viewController storyboardIdentifier="NewIdeaViewController" id="svo-3d-LC9" customClass="NewIdeaViewController" customModule="ThinkBiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tYr-HV-hSx"/>
+                        <viewControllerLayoutGuide type="bottom" id="jiW-oy-sr1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yhE-Ji-8pu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xA8-is-Vyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3782" y="748"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Fdt-ZI-rTe">

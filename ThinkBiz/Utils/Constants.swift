@@ -11,6 +11,7 @@ let KEY_UID = "uid"
 // Storyboard View Controllers
 let ID_LANDINGVIEWCONTROLLER = "LandingViewController"
 let ID_ONBOARDINGVIEWCONTROLLER = "OnBoardingViewController"
+let ID_NEWIDEAVIEWCONTROLLER = "NewIdeaViewController"
 let ID_WEBVIEWCONTROLLER = "WebViewController"
 
 // SEGUE IDENTIFIERS

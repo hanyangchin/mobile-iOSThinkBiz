@@ -34,6 +34,8 @@
 		86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */; };
 		86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */; };
 		86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */; };
+		86EED4661EA84502007D14B4 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED4651EA84502007D14B4 /* IdeasViewController.swift */; };
+		86EED4681EA847D7007D14B4 /* NewIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */; };
 		86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */; };
 		86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D211E8B46E600C412C0 /* Main.storyboard */; };
 		86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */; };
@@ -93,6 +95,8 @@
 		86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewCellViewModel.swift; path = ViewModel/SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Model/Setting.swift; sourceTree = "<group>"; };
 		86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSetting.swift; path = Model/URLSetting.swift; sourceTree = "<group>"; };
+		86EED4651EA84502007D14B4 /* IdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeasViewController.swift; path = Controller/IdeasViewController.swift; sourceTree = "<group>"; };
+		86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewController.swift; path = Controller/NewIdeaViewController.swift; sourceTree = "<group>"; };
 		86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86FD7D221E8B46E600C412C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				8658FC561E91DD2500D50AB3 /* SignInViewController.swift */,
 				86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */,
 				8617E47E1EA6BBDF00E17624 /* WebViewController.swift */,
+				86EED4651EA84502007D14B4 /* IdeasViewController.swift */,
+				86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -604,8 +610,10 @@
 				860567B61E99B11900FCB03E /* SignUpViewModel.swift in Sources */,
 				86BE2E1F1E9F16F8008E05E0 /* SettingsTableViewCell.swift in Sources */,
 				8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */,
+				86EED4661EA84502007D14B4 /* IdeasViewController.swift in Sources */,
 				8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */,
 				86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */,
+				86EED4681EA847D7007D14B4 /* NewIdeaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
