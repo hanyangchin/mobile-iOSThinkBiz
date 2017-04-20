@@ -14,9 +14,8 @@ final class AuthService : AuthServiceProtocol {
     // MARK: - Shared Instance
     static let sharedInstance: AuthService = AuthService()
     
-    private init() {
-        
-    }
+    // Singleton
+    private init() { }
     
     // MARK: - AuthServiceProtocol
     
@@ -57,9 +56,45 @@ final class AuthService : AuthServiceProtocol {
         })
     }
     
+    func signUp(withEmail email: String, password: String, completion:((_ errorDescription: String?) -> Void)?) -> Void {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+            if error != nil {
+                var errorMessage: String
+                
+                // TODO: May need to handle certain conditions
+//                print(error.debugDescription)
+//                if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
+//                    switch errorCode {
+//                    case .errorCodeInvalidEmail:
+//                        errorMessage = "Invalid email"
+//                    case .errorCodeWeakPassword:
+//                        errorMessage = "Password should be at least 6 characters"
+//                    case .errorCodeNetworkError:
+//                        errorMessage = "Network error. Please try again"
+//                    case .errorCodeEmailAlreadyInUse:
+//                        errorMessage = "Email already been used"
+//                    default:
+//                        errorMessage = error?.localizedDescription ?? "Error occurred"
+//                    }
+//                }
+
+                errorMessage = error?.localizedDescription ?? "Unknown error occurred"
+                completion?(errorMessage)
+            } else {
+                if let user = user {
+                    let userData = ["provider": user.providerID]
+                    self.completeSignIn(id: user.uid, userData: userData)
+                    completion?(nil)
+                } else {
+                    completion?("Failed to sign up.")
+                }
+            }
+        })
+    }
+    
     private func completeSignIn(id: String, userData: Dictionary<String, String>) -> Void {
-        //        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
-        //
+        ApiService.sharedInstance.createFirebaseDBUser(uid: id, userData: userData)
+
         let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keyChainResult) with ID \(id)")
     }
@@ -80,6 +115,7 @@ final class AuthService : AuthServiceProtocol {
 }
 
 protocol AuthServiceProtocol {
+    func signUp(withEmail email: String, password: String, completion:((_ errorDescription: String?) -> Void)?) -> Void
     func signIn(withEmail email: String, password: String, completion:((_ errorDescription: String?) -> Void)?) -> Void
     func signOut(completion:((_ errorDescription: String?) -> Void)?) -> Void
 }

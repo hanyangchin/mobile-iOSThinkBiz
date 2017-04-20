@@ -19,7 +19,7 @@ class SignInViewModel : SignInViewModelProtocol {
     var errorText: String? = ""
     
     var signInButtonEnabled: Bool {
-        return emailValid && passwordValid && !processingLogin
+        return emailValid && passwordValid && !processingSignin
     }
     
     // MARK: - Private
@@ -30,7 +30,7 @@ class SignInViewModel : SignInViewModelProtocol {
     private var emailValid: Bool = false
     private var passwordValid: Bool = false
     
-    private var processingLogin = false
+    private var processingSignin = false
     
     init(inputValidator: InputValidator) {
         self.inputValidator = inputValidator
@@ -63,7 +63,7 @@ class SignInViewModel : SignInViewModelProtocol {
     }
     
     func signInButtonPressed() {
-        processingLogin = true
+        processingSignin = true
         AuthService.sharedInstance.signIn(withEmail: emailText, password: passwordText) { (error) in
             // Check if there is an error
             if let errorMessage = error {
@@ -73,7 +73,7 @@ class SignInViewModel : SignInViewModelProtocol {
                 self.delegateSignInSuccess()
             }
             
-            self.processingLogin = false
+            self.processingSignin = false
         }
         delegateReloadViews()
     }
