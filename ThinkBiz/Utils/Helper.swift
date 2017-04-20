@@ -6,6 +6,8 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
+// MARK: - UITextField Helper
+
 enum InputValidatorError : Error {
     case EmptyUsername
     case EmptyPassword
@@ -24,4 +26,26 @@ class InputValidator {
             throw InputValidatorError.EmptyPassword
         }
     }
+}
+
+// MARK: - UITableView Helper
+
+enum SectionType {
+    case SettingsAbout
+    case SettingsOther
+}
+
+enum SectionItem {
+    case SettingsUserAgreement
+    case SettingsContentPolicy
+    case SettingsPrivacyPolicy
+    
+    case SettingsLogout
+    case SettingsDeleteAccount
+}
+
+struct Section {
+    var name: String
+    var type: SectionType
+    var items: [SectionItem]
 }
