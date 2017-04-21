@@ -8,21 +8,29 @@
 
 import UIKit
 
-class IdeasViewController: UIViewController {
+class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
 
     @IBOutlet weak var ideasCollectionView: UICollectionView!
     @IBOutlet weak var addIdeaButton: UIBarButtonItem!
+    
+    var viewModel: IdeasViewViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        viewModel = IdeasViewViewModel()
+        viewModel.delegate = self
+        
+        ideasCollectionView.delegate = self
+        ideasCollectionView.dataSource = self
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        configureView()
     }
     
+    func configureView() {
+        self.navigationItem.title = viewModel.title
+        ideasCollectionView.alwaysBounceVertical = true
+    }
 
     /*
     // MARK: - Navigation
@@ -39,4 +47,32 @@ class IdeasViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+}
+
+extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        // If no data, display message
+        let emptyMessageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: ideasCollectionView.bounds.width, height: ideasCollectionView.bounds.height))
+        emptyMessageLabel.text = "Plan your new idea by pressing the + button"
+        emptyMessageLabel.textColor = UIColor.lightGray
+        emptyMessageLabel.textAlignment = .center
+
+        ideasCollectionView.backgroundView = emptyMessageLabel
+        
+        return viewModel.numberOfSections
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: ID_IDEACELL, for: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItems(inSection: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50)
+    }
+    
 }

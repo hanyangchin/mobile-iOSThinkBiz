@@ -21,5 +21,6 @@ let SEGUE_SIGNUP = "SignUpViewController"
 let SEGUE_SIGNIN = "SignInViewController"
 
 // Storybord cell ID
+let ID_IDEACELL = "IdeaCell"
 let ID_SETTINGSITEMCELLDISCLOSURE = "SettingsItemCellDisclosure"
 let ID_SETTINGSSECTIONTITLECELL = "SettingsSectionTitleCell"

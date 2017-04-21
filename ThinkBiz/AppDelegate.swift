@@ -21,7 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+        configureAppearance()
+        
         return true
+    }
+    
+    func configureAppearance() {
+        
+        // Set bar tint color
+        UINavigationBar.appearance().barTintColor = GlobalVariables.white
+        
+        // Set Navigation bar title text attribute
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        UIApplication.shared.statusBarStyle = .default
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

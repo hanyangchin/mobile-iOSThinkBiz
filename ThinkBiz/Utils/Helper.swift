@@ -6,6 +6,14 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
+import UIKit
+
+// MARK: - Global
+
+struct GlobalVariables {
+    static let white = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+}
+
 // MARK: - UITextField Helper
 
 enum InputValidatorError : Error {
