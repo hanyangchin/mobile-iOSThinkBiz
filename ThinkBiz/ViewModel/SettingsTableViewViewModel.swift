@@ -46,8 +46,8 @@ class SettingsTableViewViewModel: SettingsTableViewViewModelProtocol {
     
     private func generateStaticSettingsTable() {
         
-        sections.append(Section(name: "Terms", type: .SettingsAbout, items: [.SettingsUserAgreement, .SettingsContentPolicy, .SettingsPrivacyPolicy]))
-        sections.append(Section(name: "Accounts", type: .SettingsOther, items: [.SettingsLogout, .SettingsDeleteAccount]))
+        sections.append(Section(name: "Terms", type: .Settings, items: [.SettingsUserAgreement, .SettingsContentPolicy, .SettingsPrivacyPolicy]))
+        sections.append(Section(name: "Accounts", type: .Settings, items: [.SettingsLogout, .SettingsDeleteAccount]))
         
         s1Data.append(URLSetting(name: "User Agreement", url: "https://www.google.com"))
         s1Data.append(URLSetting(name: "Content Policy", url: "https://www.google.com"))

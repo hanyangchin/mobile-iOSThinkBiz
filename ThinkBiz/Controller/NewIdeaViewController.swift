@@ -31,5 +31,10 @@ class NewIdeaViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Button handler
 
+    @IBAction func onCancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

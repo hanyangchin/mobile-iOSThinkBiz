@@ -12,6 +12,7 @@ import UIKit
 
 struct GlobalVariables {
     static let white = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+    static let gray = UIColor(red: 155/255, green: 161/255, blue: 171/255, alpha: 1)
 }
 
 // MARK: - UITextField Helper
@@ -39,8 +40,8 @@ class InputValidator {
 // MARK: - UITableView Helper
 
 enum SectionType {
-    case SettingsAbout
-    case SettingsOther
+    case Settings
+    case Form
 }
 
 enum SectionItem {

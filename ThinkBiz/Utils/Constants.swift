@@ -19,6 +19,7 @@ let SEGUE_ONBOARDING = "OnBoardingViewController"
 let SEGUE_MAINTABBAR = "MainTabBarController"
 let SEGUE_SIGNUP = "SignUpViewController"
 let SEGUE_SIGNIN = "SignInViewController"
+let SEGUE_NEWIDEA = "NewIdeaViewController"
 
 // Storybord cell ID
 let ID_IDEACELL = "IdeaCell"

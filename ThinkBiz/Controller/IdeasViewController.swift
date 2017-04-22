@@ -42,10 +42,9 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     }
     */
 
+    // MARK: - Action handlers
     @IBAction func addIdeaOnButtonPressed(_ sender: Any) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: ID_NEWIDEAVIEWCONTROLLER) {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        self.performSegue(withIdentifier: SEGUE_NEWIDEA, sender: self)
     }
 }
 
@@ -72,7 +71,12 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+        
+        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            return CGSize(width: view.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right), height: 200)
+        }
+        
+        return CGSize(width: view.frame.width, height: 200)
     }
     
 }
