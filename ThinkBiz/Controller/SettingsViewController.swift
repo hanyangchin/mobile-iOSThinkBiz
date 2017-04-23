@@ -93,12 +93,10 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
 // MARK: - TableView UITableViewDelegate, UITableViewDataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("Number sections is \(self.settingsViewModel.numberOfSections)")
         return self.settingsViewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of row in section \(section) is \(self.settingsViewModel.numberOfRows(inSection: section))")
         return self.settingsViewModel.numberOfRows(inSection: section)
     }
     

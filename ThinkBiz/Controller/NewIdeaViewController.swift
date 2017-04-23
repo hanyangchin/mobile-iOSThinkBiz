@@ -8,19 +8,22 @@
 
 import UIKit
 
-class NewIdeaViewController: UIViewController {
+class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var viewModel: NewIdeaViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ideaForm: IdeaForm = IdeaForm(nameLabelText: "Name", namePlaceholderText: "e.g ThinkBiz, Google, Starbucks, IKEA", ideaLabelText: "Description", ideaPlaceholderText: "Short description of your business idea. e.g ThinkBiz helps store and manage your business ideas for entrepreneurs", notesLabelText: "Notes", notesPlaceholderText: "Other information such as target audience, busniess model...")
+        viewModel = NewIdeaViewModel(withIdeaForm: ideaForm)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -36,5 +39,19 @@ class NewIdeaViewController: UIViewController {
 
     @IBAction func onCancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewIdeaViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows(inSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: ID_TEXTFIELDCELL, for: indexPath)
     }
 }

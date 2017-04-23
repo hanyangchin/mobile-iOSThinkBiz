@@ -44,17 +44,22 @@ enum SectionType {
     case Form
 }
 
-enum SectionItem {
+enum SettingType: String {
     case SettingsUserAgreement
     case SettingsContentPolicy
     case SettingsPrivacyPolicy
-    
+
     case SettingsLogout
     case SettingsDeleteAccount
 }
 
+struct RowItem {
+    var id: String!
+    var data: AnyObject?
+}
+
 struct Section {
-    var name: String
-    var type: SectionType
-    var items: [SectionItem]
+    var id: String!
+    var data: AnyObject?
+    var rows: [RowItem]
 }

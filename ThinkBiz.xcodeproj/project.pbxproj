@@ -21,6 +21,11 @@
 		8617E4851EA6E9D800E17624 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4841EA6E9D800E17624 /* AuthService.swift */; };
 		8617E4871EA8209200E17624 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4861EA8209200E17624 /* ApiService.swift */; };
 		863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */; };
+		8649AAA21EAB03D900122586 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA11EAB03D900122586 /* TextFieldTableViewCell.swift */; };
+		8649AAA41EAB2CC300122586 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA31EAB2CC300122586 /* TextViewTableViewCell.swift */; };
+		8649AAA61EAB446100122586 /* NewIdeaViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */; };
+		8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */; };
+		8649AAAA1EAB569C00122586 /* IdeaForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA91EAB569C00122586 /* IdeaForm.swift */; };
 		8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC11E8C5AB0005E353A /* Constants.swift */; };
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
@@ -87,6 +92,11 @@
 		8617E4861EA8209200E17624 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Services/ApiService.swift; sourceTree = "<group>"; };
 		863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controller/LandingViewController.swift; sourceTree = "<group>"; };
 		864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkBizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8649AAA11EAB03D900122586 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldTableViewCell.swift; path = View/TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		8649AAA31EAB2CC300122586 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewTableViewCell.swift; path = View/TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModelProtocol.swift; path = Protocols/NewIdeaViewModelProtocol.swift; sourceTree = "<group>"; };
+		8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModel.swift; path = ViewModel/NewIdeaViewModel.swift; sourceTree = "<group>"; };
+		8649AAA91EAB569C00122586 /* IdeaForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaForm.swift; path = Model/IdeaForm.swift; sourceTree = "<group>"; };
 		8652ACC11E8C5AB0005E353A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Controller/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +206,7 @@
 				8617E4801EA6C48300E17624 /* WebViewViewModel.swift */,
 				86EED4691EA84BE0007D14B4 /* IdeasViewViewModel.swift */,
 				86EED46F1EA9AFE1007D14B4 /* IdeaCellViewModel.swift */,
+				8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 				86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */,
 				86EED46B1EA86812007D14B4 /* IdeasViewModelProtocol.swift */,
 				86EED4711EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift */,
+				8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -218,6 +230,7 @@
 				86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */,
 				86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */,
 				8617E4821EA6CD5E00E17624 /* WebPage.swift */,
+				8649AAA91EAB569C00122586 /* IdeaForm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +242,8 @@
 				86BE2E1E1E9F16F8008E05E0 /* SettingsTableViewCell.swift */,
 				86BE2E201E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift */,
 				86EED46D1EA8A396007D14B4 /* IdeaCell.swift */,
+				8649AAA11EAB03D900122586 /* TextFieldTableViewCell.swift */,
+				8649AAA31EAB2CC300122586 /* TextViewTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -609,13 +624,16 @@
 				86EED46A1EA84BE0007D14B4 /* IdeasViewViewModel.swift in Sources */,
 				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
 				86EED4701EA9AFE1007D14B4 /* IdeaCellViewModel.swift in Sources */,
+				8649AAA21EAB03D900122586 /* TextFieldTableViewCell.swift in Sources */,
 				86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */,
 				8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */,
 				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
 				86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */,
 				863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */,
+				8649AAAA1EAB569C00122586 /* IdeaForm.swift in Sources */,
 				8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */,
 				86BE2E211E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift in Sources */,
+				8649AAA41EAB2CC300122586 /* TextViewTableViewCell.swift in Sources */,
 				86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */,
 				86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */,
 				8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */,
@@ -626,9 +644,11 @@
 				860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */,
 				860567B61E99B11900FCB03E /* SignUpViewModel.swift in Sources */,
 				86BE2E1F1E9F16F8008E05E0 /* SettingsTableViewCell.swift in Sources */,
+				8649AAA61EAB446100122586 /* NewIdeaViewModelProtocol.swift in Sources */,
 				8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */,
 				86EED4661EA84502007D14B4 /* IdeasViewController.swift in Sources */,
 				8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */,
+				8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */,
 				86EED46E1EA8A396007D14B4 /* IdeaCell.swift in Sources */,
 				86EED46C1EA86812007D14B4 /* IdeasViewModelProtocol.swift in Sources */,
 				86EED4721EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift in Sources */,

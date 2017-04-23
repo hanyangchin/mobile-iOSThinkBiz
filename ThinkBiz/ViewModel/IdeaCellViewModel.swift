@@ -8,7 +8,10 @@
 
 import Foundation
 
-class IdeaCellViewModel: IdeaCellViewModelProtocol{
+class IdeaCellViewModel: IdeaCellViewModelProtocol {
+    
+    // MARK: - Properties
+    
     var title: String!
     var ideaText: String!
     var imagePath: String!
