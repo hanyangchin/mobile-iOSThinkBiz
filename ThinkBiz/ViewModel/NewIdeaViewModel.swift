@@ -12,16 +12,15 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
     
     var delegate: NewIdeaViewModelControllerDelegate?
     
-    var nameLabelText: String! = ""
-    var namePlaceholder: String! = ""
-    
     var numberOfSections: Int! {
-        return 0
+        return form.count
     }
     
     // MARK: - Private
     
     private var form: [Section]! = []
+    
+    private let ideaForm: IdeaForm!
     
     private var name: String! = ""
     private var idea: String! = ""
@@ -30,18 +29,55 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
     // MARK: - Functions
     
     required init(withIdeaForm ideaForm: IdeaForm) {
-        name = ideaForm.nameLabelText
-        namePlaceholder = ideaForm.ideaPlaceholderText
         
+        self.ideaForm = ideaForm
         generateForm()
     }
     
+    // Generate form using Idea Form
     private func generateForm() {
-
+        form.append(Section(id: "New Idea", data: "New Idea" as AnyObject, rows: [
+            RowItem(id: FormType.FormName.rawValue, data: TextForm(withName: ideaForm.nameLabelText, placeholderText: ideaForm.namePlaceholderText)),
+            RowItem(id: FormType.FormIdea.rawValue, data: TextForm(withName: ideaForm.ideaLabelText, placeholderText: ideaForm.ideaPlaceholderText)),
+            RowItem(id: FormType.FormNotes.rawValue, data: TextForm(withName: ideaForm.notesLabelText, placeholderText: ideaForm.notesPlaceholderText))
+        ]))
     }
     
+    // MARK: - NewIdeaViewModelProtocol
+    
     func numberOfRows(inSection section: Int) -> Int {
-        return 0
+        print("Number of rows in section \(section) is \(form[section].rows.count)")
+        return form[section].rows.count
+    }
+    
+    // Returns a cell view model depending on the cell type
+    func viewModelForCell(inSection section: Int, at index: Int) -> AnyObject? {
+        // Check for cell type and generate the appropriate view model for display
+        let rowId: String = form[section].rows[index].id
+        if let model = form[section].rows[index].data as? TextForm {
+            if rowId == FormType.FormName.rawValue {
+                return TextFieldCellViewModel(initWithModel: model)
+            } else {
+                return TextViewCellViewModel(initWithModel: model)
+            }
+        }
+        return nil
+    }
+    
+    func reuseIdentifierForCellItem(inSection section: Int, at index: Int) -> String {
+        let rowItem: RowItem = form[section].rows[index]
+        
+        var reuseIdentifier: String
+        
+        switch rowItem.id {
+        case FormType.FormName.rawValue:
+            reuseIdentifier = ID_TEXTFIELDCELL
+        case FormType.FormIdea.rawValue, FormType.FormNotes.rawValue:
+            reuseIdentifier = ID_TEXTVIEWCELL
+        default:
+            reuseIdentifier = ""
+        }
+        return reuseIdentifier
     }
     
     func saveIdea() {

@@ -44,6 +44,12 @@ enum SectionType {
     case Form
 }
 
+enum FormType: String {
+    case FormName
+    case FormIdea
+    case FormNotes
+}
+
 enum SettingType: String {
     case SettingsUserAgreement
     case SettingsContentPolicy

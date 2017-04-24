@@ -15,6 +15,10 @@
 		860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */; };
 		860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */; };
 		860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */; };
+		8614C26B1EAD500F00099F38 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26A1EAD500E00099F38 /* Form.swift */; };
+		8614C26E1EAD617F00099F38 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */; };
+		8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26F1EAD6C8A00099F38 /* TextForm.swift */; };
+		8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */; };
 		8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E47E1EA6BBDF00E17624 /* WebViewController.swift */; };
 		8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4801EA6C48300E17624 /* WebViewViewModel.swift */; };
 		8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4821EA6CD5E00E17624 /* WebPage.swift */; };
@@ -85,6 +89,10 @@
 		860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewModelProtocol.swift; path = Protocols/SignUpViewModelProtocol.swift; sourceTree = "<group>"; };
 		860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModelProtocol.swift; path = Protocols/SignInViewModelProtocol.swift; sourceTree = "<group>"; };
 		860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModel.swift; path = ViewModel/SignInViewModel.swift; sourceTree = "<group>"; };
+		8614C26A1EAD500E00099F38 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Form.swift; path = Model/Form.swift; sourceTree = "<group>"; };
+		8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCellViewModel.swift; path = ViewModel/TextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		8614C26F1EAD6C8A00099F38 /* TextForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextForm.swift; path = Model/TextForm.swift; sourceTree = "<group>"; };
+		8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCellViewModel.swift; path = ViewModel/TextViewCellViewModel.swift; sourceTree = "<group>"; };
 		8617E47E1EA6BBDF00E17624 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controller/WebViewController.swift; sourceTree = "<group>"; };
 		8617E4801EA6C48300E17624 /* WebViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewModel.swift; path = ViewModel/WebViewViewModel.swift; sourceTree = "<group>"; };
 		8617E4821EA6CD5E00E17624 /* WebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPage.swift; path = Model/WebPage.swift; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 		860567B01E96F38A00FCB03E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8614C26C1EAD611200099F38 /* Cell */,
 				860567B51E99B11900FCB03E /* SignUpViewModel.swift */,
 				860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */,
 				86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */,
@@ -224,6 +233,15 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		8614C26C1EAD611200099F38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */,
+				8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		863C65651E8B525E0093C3F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +249,8 @@
 				86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */,
 				8617E4821EA6CD5E00E17624 /* WebPage.swift */,
 				8649AAA91EAB569C00122586 /* IdeaForm.swift */,
+				8614C26A1EAD500E00099F38 /* Form.swift */,
+				8614C26F1EAD6C8A00099F38 /* TextForm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -616,6 +636,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */,
+				8614C26E1EAD617F00099F38 /* TextFieldCellViewModel.swift in Sources */,
+				8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */,
 				860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */,
 				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,
 				860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */,
@@ -632,10 +654,12 @@
 				863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */,
 				8649AAAA1EAB569C00122586 /* IdeaForm.swift in Sources */,
 				8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */,
+				8614C26B1EAD500F00099F38 /* Form.swift in Sources */,
 				86BE2E211E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift in Sources */,
 				8649AAA41EAB2CC300122586 /* TextViewTableViewCell.swift in Sources */,
 				86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */,
 				86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */,
+				8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */,
 				8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */,
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,

@@ -11,9 +11,7 @@ protocol NewIdeaViewModelProtocol {
     // MARK: - Properties
     
     weak var delegate: NewIdeaViewModelControllerDelegate? { get set }
-    
-    var nameLabelText: String! { get }
-    var namePlaceholder: String! { get }
+
     var numberOfSections: Int! { get }
     
     // MARK: - Functions
@@ -21,8 +19,8 @@ protocol NewIdeaViewModelProtocol {
     
     //    func settingsTitleTextForSection(section: Int) -> String
     func numberOfRows(inSection section: Int) -> Int
-    //    func viewModelForCell(inSection section: Int, at index:Int) -> SettingsTableViewCellViewModel
-    //    func reuseIdentifierForCellItem(inSection section: Int, at index: Int) -> String
+    func viewModelForCell(inSection section: Int, at index:Int) -> AnyObject?
+    func reuseIdentifierForCellItem(inSection section: Int, at index: Int) -> String
     //    func didSelectRow(inSection section: Int, at index: Int)
     
     func saveIdea()
