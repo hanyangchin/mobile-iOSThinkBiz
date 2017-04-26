@@ -12,12 +12,16 @@ class IdeaCellViewModel: IdeaCellViewModelProtocol {
     
     // MARK: - Properties
     
-    var title: String!
-    var ideaText: String!
+    var title: String! {
+        return self.idea.name
+    }
+    var ideaText: String! {
+        return self.idea.idea
+    }
     var imagePath: String!
     
     // MARK: - Private
-    fileprivate let idea: Idea!
+    private let idea: Idea!
     
     init(withIdea idea: Idea) {
         self.idea = idea

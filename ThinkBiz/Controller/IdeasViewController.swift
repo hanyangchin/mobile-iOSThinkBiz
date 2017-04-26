@@ -7,29 +7,67 @@
 //
 
 import UIKit
+import CoreData
 
 class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var ideasCollectionView: UICollectionView!
     @IBOutlet weak var addIdeaButton: UIBarButtonItem!
     
     var viewModel: IdeasViewViewModel!
     
+    // MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = IdeasViewViewModel()
+        // Get context
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        viewModel = IdeasViewViewModel(initWithContext: context)
         viewModel.delegate = self
         
         ideasCollectionView.delegate = self
         ideasCollectionView.dataSource = self
 
         configureView()
+
+        viewModel.fetchData()
     }
     
     func configureView() {
         self.navigationItem.title = viewModel.title
         ideasCollectionView.alwaysBounceVertical = true
+    }
+    
+    // MARK: - IdeasViewModelControllerDelegate
+    
+    // Perform batch operations on ideas collection view from view model
+    func performBatchUpdates(_ batchOperations: (() -> Void)?) {
+        ideasCollectionView.performBatchUpdates({ 
+            batchOperations?()
+        }) { (completed) in
+            print("Completed updating batch updates on ideas collection view")
+        }
+    }
+    
+    // This function should not be called directly, should be used with batch operations from view model
+    func insertIdea(at indexPath: IndexPath) {
+        ideasCollectionView.insertItems(at: [indexPath])
+    }
+    
+    // This function should not be called directly, should be used with batch operations from view model
+    func updateIdea(at indexPath: IndexPath) {
+        if let cell = ideasCollectionView.cellForItem(at: indexPath) as? IdeaCell {
+            cell.viewModel = viewModel.viewModelForCell(at: indexPath)
+        }
+    }
+    
+    // This function should not be called directly, should be used with batch operations from view model
+    func deleteIdea(at indexPath: IndexPath) {
+        ideasCollectionView.deleteItems(at: [indexPath])
     }
 
     /*
@@ -63,6 +101,12 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ID_IDEACELL, for: indexPath) as? IdeaCell {
+            let ideaCellVM = viewModel.viewModelForCell(at: indexPath)
+            cell.viewModel = ideaCellVM
+            return cell
+        }
+        
         return collectionView.dequeueReusableCell(withReuseIdentifier: ID_IDEACELL, for: indexPath)
     }
     
@@ -78,5 +122,5 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         return CGSize(width: view.frame.width, height: 200)
     }
-    
 }
+

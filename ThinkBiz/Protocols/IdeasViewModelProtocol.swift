@@ -18,14 +18,19 @@ protocol IdeasViewModelProtocol {
     var numberOfSections: Int! { get }
     
     // MARK: - Functions
-//    func settingsTitleTextForSection(section: Int) -> String
     func numberOfItems(inSection section: Int) -> Int
-//    func viewModelForCell(inSection section: Int, at index:Int) -> SettingsTableViewCellViewModel
-//    func reuseIdentifierForCellItem(inSection section: Int, at index: Int) -> String
+    func viewModelForCell(at indexPath: IndexPath) -> IdeaCellViewModel
 //    func didSelectRow(inSection section: Int, at index: Int)
+    
+    func fetchData()
 
 }
 
 protocol IdeasViewModelControllerDelegate: class {
     
+    func performBatchUpdates(_ batchOperations:(() -> Void)?)
+    
+    func insertIdea(at indexPath: IndexPath)
+    func updateIdea(at indexPath: IndexPath)
+    func deleteIdea(at indexPath: IndexPath)
 }

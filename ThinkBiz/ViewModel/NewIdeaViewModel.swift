@@ -6,6 +6,8 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
+import CoreData
+
 class NewIdeaViewModel: NewIdeaViewModelProtocol {
     
     // MARK: - Properties
@@ -80,7 +82,33 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
         return reuseIdentifier
     }
     
-    func saveIdea() {
+    func textDidChange(tag: Int, text: String!) {
+        switch tag {
+        case 0:
+            name = text
+        case 1:
+            idea = text
+        case 2:
+            notes = text
+        default:
+            print("Warning, text input with tag \(tag) change unhandled")
+        }
+        print("\nName is \(name)\nIdea is \(idea)\nNotes is \(notes)")
+    }
+    
+    func saveIdea(context: NSManagedObjectContext) {
+        let ideaObj = Idea(context: context)
+        ideaObj.name = name
+        ideaObj.idea = idea
+        ideaObj.notes = notes
+        ideaObj.created = NSDate()
         
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("\(error)")
+        }
+        
+//        DataService.sharedInstance.saveIdea(ideaObj)
     }
 }

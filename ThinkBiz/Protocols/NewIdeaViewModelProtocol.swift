@@ -6,6 +6,8 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
+import CoreData
+
 protocol NewIdeaViewModelProtocol {
     
     // MARK: - Properties
@@ -14,7 +16,7 @@ protocol NewIdeaViewModelProtocol {
 
     var numberOfSections: Int! { get }
     
-    // MARK: - Functions
+    // MARK: - Protocol Functions
     init(withIdeaForm ideaForm: IdeaForm)
     
     //    func settingsTitleTextForSection(section: Int) -> String
@@ -23,7 +25,9 @@ protocol NewIdeaViewModelProtocol {
     func reuseIdentifierForCellItem(inSection section: Int, at index: Int) -> String
     //    func didSelectRow(inSection section: Int, at index: Int)
     
-    func saveIdea()
+    func textDidChange(tag: Int, text: String!)
+    
+    func saveIdea(context: NSManagedObjectContext)
 }
 
 protocol NewIdeaViewModelControllerDelegate: class {

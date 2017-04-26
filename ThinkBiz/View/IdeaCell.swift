@@ -10,6 +10,16 @@ import UIKit
 
 class IdeaCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
+    var viewModel: IdeaCellViewModel! {
+        didSet {
+            configureCell(withViewModel: self.viewModel)
+        }
+    }
+    
+    // MARK: - Functions
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -19,6 +29,11 @@ class IdeaCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupViews()
+    }
+    
+    func configureCell(withViewModel viewModel: IdeaCellViewModel) {
+        self.titleLabel.text = viewModel.title
+        self.ideaTextView.text = viewModel.ideaText
     }
     
     func setupViews() {

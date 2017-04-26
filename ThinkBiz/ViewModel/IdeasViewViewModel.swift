@@ -6,9 +6,9 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
-import Foundation
+import CoreData
 
-class IdeasViewViewModel: IdeasViewModelProtocol {
+class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
     
     // MARK: - Properties
     
@@ -19,13 +19,115 @@ class IdeasViewViewModel: IdeasViewModelProtocol {
     }
     
     var numberOfSections: Int! {
-        return 1
+        return fetchResultsController.sections?.count
     }
+    
+    // MARK: - Private
+    
+    fileprivate var fetchResultsController: NSFetchedResultsController<Idea>!
+    
+    fileprivate var blockOperations = [BlockOperation]()
+    
+    private let context: NSManagedObjectContext!
     
     // MARK: - IdeasViewModelProtocol
     
+    required init(initWithContext context: NSManagedObjectContext) {
+        self.context = context
+    }
+    
     func numberOfItems(inSection section: Int) -> Int {
-        return 3
+        if let count = fetchResultsController.sections?[section].numberOfObjects {
+            return count
+        }
+        return 0
+    }
+    
+    func viewModelForCell(at indexPath: IndexPath) -> IdeaCellViewModel {
+        let idea = fetchResultsController.object(at: indexPath)
+        let cellVM = IdeaCellViewModel(withIdea: idea)
+        return cellVM
+    }
+    
+    func fetchData() {
+        let fetchRequest: NSFetchRequest<Idea> = Idea.fetchRequest()
+        
+        // Sort by date - newest first
+        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+        
+        // Sort by name
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        
+        // TODO: Sort ideas by name/date/tag using filter
+        fetchRequest.sortDescriptors = [dateSort]
+        //        fetchRequest.sortDescriptors = [nameSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        controller.delegate = self
+        
+        self.fetchResultsController = controller
+        
+        // Now perform actual fetch
+        do {
+            try self.fetchResultsController.performFetch()
+        } catch let error as NSError {
+            print("\(error)")
+        }
     }
     
 }
+
+extension IdeasViewViewModel: NSFetchedResultsControllerDelegate {
+    
+    // Whenever the table view is about to update, it will listen for changes and handle the changes for you
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+        self.delegate?.performBatchUpdates({
+            for operation in self.blockOperations {
+                operation.start()
+            }
+        })
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIP = newIndexPath {
+                blockOperations.append(BlockOperation(block: {
+                    self.delegate?.insertIdea(at: newIP)
+                }))
+            }
+        case.delete:
+            if let ip = indexPath {
+                blockOperations.append(BlockOperation(block: {
+                    self.delegate?.deleteIdea(at: ip)
+                }))
+            }
+        case.update:
+            if let ip = indexPath {
+                blockOperations.append(BlockOperation(block: {
+                    self.delegate?.updateIdea(at: ip)
+                }))
+            }
+        case.move:
+            // Remove at old index path
+            if let ip = indexPath {
+                blockOperations.append(BlockOperation(block: {
+                    self.delegate?.deleteIdea(at: ip)
+                }))
+            }
+            // Insert at new index path
+            if let newIP = newIndexPath {
+                blockOperations.append(BlockOperation(block: {
+                    self.delegate?.insertIdea(at: newIP)
+                }))
+            }
+            
+        }
+    }
+}
+

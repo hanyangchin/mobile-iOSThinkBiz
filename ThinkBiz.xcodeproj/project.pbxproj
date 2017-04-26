@@ -19,6 +19,7 @@
 		8614C26E1EAD617F00099F38 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */; };
 		8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26F1EAD6C8A00099F38 /* TextForm.swift */; };
 		8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */; };
+		8614C2741EADF32E00099F38 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2731EADF32E00099F38 /* DataService.swift */; };
 		8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E47E1EA6BBDF00E17624 /* WebViewController.swift */; };
 		8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4801EA6C48300E17624 /* WebViewViewModel.swift */; };
 		8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4821EA6CD5E00E17624 /* WebPage.swift */; };
@@ -93,6 +94,7 @@
 		8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCellViewModel.swift; path = ViewModel/TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		8614C26F1EAD6C8A00099F38 /* TextForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextForm.swift; path = Model/TextForm.swift; sourceTree = "<group>"; };
 		8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCellViewModel.swift; path = ViewModel/TextViewCellViewModel.swift; sourceTree = "<group>"; };
+		8614C2731EADF32E00099F38 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
 		8617E47E1EA6BBDF00E17624 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controller/WebViewController.swift; sourceTree = "<group>"; };
 		8617E4801EA6C48300E17624 /* WebViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewModel.swift; path = ViewModel/WebViewViewModel.swift; sourceTree = "<group>"; };
 		8617E4821EA6CD5E00E17624 /* WebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPage.swift; path = Model/WebPage.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				8617E4841EA6E9D800E17624 /* AuthService.swift */,
 				8617E4861EA8209200E17624 /* ApiService.swift */,
+				8614C2731EADF32E00099F38 /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -326,14 +329,14 @@
 		86FD7D1C1E8B46E600C412C0 /* ThinkBiz */ = {
 			isa = PBXGroup;
 			children = (
-				860567B91E99CB1500FCB03E /* Protocols */,
-				860567AD1E95E19200FCB03E /* Extensions */,
-				863C656A1E8B53160093C3F9 /* Services */,
-				863C65691E8B530A0093C3F9 /* Utils */,
-				863C65651E8B525E0093C3F9 /* Model */,
-				863C65661E8B52A70093C3F9 /* View */,
-				860567B01E96F38A00FCB03E /* ViewModel */,
 				863C65671E8B52B70093C3F9 /* Controller */,
+				860567B01E96F38A00FCB03E /* ViewModel */,
+				860567B91E99CB1500FCB03E /* Protocols */,
+				863C65661E8B52A70093C3F9 /* View */,
+				863C65651E8B525E0093C3F9 /* Model */,
+				863C656A1E8B53160093C3F9 /* Services */,
+				860567AD1E95E19200FCB03E /* Extensions */,
+				863C65691E8B530A0093C3F9 /* Utils */,
 				86FD7D4E1E8B4B1600C412C0 /* GoogleService-Info.plist */,
 				86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */,
 				86FD7D211E8B46E600C412C0 /* Main.storyboard */,
@@ -662,6 +665,7 @@
 				8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */,
 				8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */,
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
+				8614C2741EADF32E00099F38 /* DataService.swift in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,
 				860567B81E99C0CF00FCB03E /* Helper.swift in Sources */,
 				8617E4851EA6E9D800E17624 /* AuthService.swift in Sources */,
