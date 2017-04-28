@@ -17,9 +17,7 @@ class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ideaForm: IdeaForm = IdeaForm(nameLabelText: "Name", namePlaceholderText: "e.g ThinkBiz, Google, Starbucks, IKEA", ideaLabelText: "Description", ideaPlaceholderText: "Short description of your business idea. e.g ThinkBiz helps store and manage your business ideas for entrepreneurs", notesLabelText: "Notes", notesPlaceholderText: "Other information such as target audience, busniess model...")
-        
-        viewModel = NewIdeaViewModel(withIdeaForm: ideaForm)
+        viewModel = NewIdeaViewModel(withIdeaForm: IdeaForm.form)
         
         tableView.delegate = self
         tableView.dataSource = self

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
-
+    
     // MARK: - Properties
     
     @IBOutlet weak var ideasCollectionView: UICollectionView!
@@ -22,7 +22,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Get context
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -31,9 +31,9 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         
         ideasCollectionView.delegate = self
         ideasCollectionView.dataSource = self
-
+        
         configureView()
-
+        
         viewModel.fetchData()
     }
     
@@ -46,7 +46,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     
     // Perform batch operations on ideas collection view from view model
     func performBatchUpdates(_ batchOperations: (() -> Void)?) {
-        ideasCollectionView.performBatchUpdates({ 
+        ideasCollectionView.performBatchUpdates({
             batchOperations?()
         }) { (completed) in
             print("Completed updating batch updates on ideas collection view")
@@ -69,17 +69,23 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     func deleteIdea(at indexPath: IndexPath) {
         ideasCollectionView.deleteItems(at: [indexPath])
     }
-
-    /*
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == ID_IDEADETAILVIEWCONTROLLER {
+            if let ideaDetailVC = segue.destination as? IdeaDetailViewController {
+                if let ideaDetailVM = sender as? IdeaDetailViewModel {
+                    ideaDetailVC.viewModel = ideaDetailVM
+                }
+            }
+        }
     }
-    */
-
+    
     // MARK: - Action handlers
     @IBAction func addIdeaOnButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: SEGUE_NEWIDEA, sender: self)
@@ -94,7 +100,7 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         emptyMessageLabel.text = "Plan your new idea by pressing the + button"
         emptyMessageLabel.textColor = UIColor.lightGray
         emptyMessageLabel.textAlignment = .center
-
+        
         ideasCollectionView.backgroundView = emptyMessageLabel
         
         return viewModel.numberOfSections
@@ -121,6 +127,11 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         
         return CGSize(width: view.frame.width, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let ideaDetailVM = viewModel.viewModelForDetailViewControlller(at: indexPath)
+        performSegue(withIdentifier: SEGUE_IDEADETAIL, sender: ideaDetailVM)
     }
 }
 

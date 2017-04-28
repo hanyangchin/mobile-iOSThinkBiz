@@ -517,6 +517,7 @@
                         <outlet property="addIdeaButton" destination="MBv-AS-0en" id="OEu-an-XgQ"/>
                         <outlet property="ideasCollectionView" destination="1en-09-pZk" id="0hn-cL-WkN"/>
                         <segue destination="d6j-6d-LYh" kind="presentation" identifier="NewIdeaViewController" id="Aj9-Mf-sDZ"/>
+                        <segue destination="NBR-zE-xNa" kind="show" identifier="IdeaDetailViewController" id="ida-Yv-7ST"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMN-E9-bV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -879,6 +880,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccv-Oc-f5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781" y="748"/>
+        </scene>
+        <!--Idea Detail View Controller-->
+        <scene sceneID="1jm-h3-RVL">
+            <objects>
+                <viewController storyboardIdentifier="IdeaDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="NBR-zE-xNa" customClass="IdeaDetailViewController" customModule="ThinkBiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a9c-U1-kCo"/>
+                        <viewControllerLayoutGuide type="bottom" id="liF-iY-f66"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aeJ-j7-WEq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xEu-Cq-tKl">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xEu-Cq-tKl" firstAttribute="top" secondItem="a9c-U1-kCo" secondAttribute="bottom" id="2Kl-KR-Boi"/>
+                            <constraint firstItem="liF-iY-f66" firstAttribute="top" secondItem="xEu-Cq-tKl" secondAttribute="bottom" id="H3P-z4-LDF"/>
+                            <constraint firstItem="xEu-Cq-tKl" firstAttribute="leading" secondItem="aeJ-j7-WEq" secondAttribute="leading" id="YY0-ns-M4L"/>
+                            <constraint firstAttribute="trailing" secondItem="xEu-Cq-tKl" secondAttribute="trailing" id="bD4-99-91h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hC5-Tv-BQk">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="VyA-Ba-k3Q">
+                            <connections>
+                                <action selector="onBackButtonPressed:" destination="NBR-zE-xNa" id="EfJ-Bh-im0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="eSF-un-XVD"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSQ-Hw-HTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3781.875" y="48.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z70-cv-crS">

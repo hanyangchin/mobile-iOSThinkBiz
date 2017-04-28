@@ -20,6 +20,7 @@ protocol IdeasViewModelProtocol {
     // MARK: - Functions
     func numberOfItems(inSection section: Int) -> Int
     func viewModelForCell(at indexPath: IndexPath) -> IdeaCellViewModel
+    func viewModelForDetailViewControlller(at indexPath: IndexPath) -> IdeaDetailViewModel
 //    func didSelectRow(inSection section: Int, at index: Int)
     
     func fetchData()

@@ -13,4 +13,7 @@ struct IdeaForm {
     var ideaPlaceholderText: String!
     var notesLabelText: String!
     var notesPlaceholderText: String!
+    
+    // MARK: - IdeaForm helper
+    static let form: IdeaForm = IdeaForm(nameLabelText: "Name", namePlaceholderText: "e.g ThinkBiz, Google, Starbucks, IKEA", ideaLabelText: "Description", ideaPlaceholderText: "Short description of your business idea. e.g ThinkBiz helps store and manage your business ideas for entrepreneurs", notesLabelText: "Notes", notesPlaceholderText: "Other information such as target audience, busniess model...")
 }

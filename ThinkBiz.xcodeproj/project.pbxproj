@@ -20,6 +20,11 @@
 		8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26F1EAD6C8A00099F38 /* TextForm.swift */; };
 		8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */; };
 		8614C2741EADF32E00099F38 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2731EADF32E00099F38 /* DataService.swift */; };
+		8614C2761EB0399A00099F38 /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */; };
+		8614C2781EB049C400099F38 /* IdeaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2771EB049C400099F38 /* IdeaDetailViewModel.swift */; };
+		8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */; };
+		8614C2CD1EB3443500099F38 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */; };
+		8614C2CF1EB3445F00099F38 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */; };
 		8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E47E1EA6BBDF00E17624 /* WebViewController.swift */; };
 		8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4801EA6C48300E17624 /* WebViewViewModel.swift */; };
 		8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4821EA6CD5E00E17624 /* WebPage.swift */; };
@@ -95,6 +100,11 @@
 		8614C26F1EAD6C8A00099F38 /* TextForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextForm.swift; path = Model/TextForm.swift; sourceTree = "<group>"; };
 		8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCellViewModel.swift; path = ViewModel/TextViewCellViewModel.swift; sourceTree = "<group>"; };
 		8614C2731EADF32E00099F38 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
+		8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewController.swift; path = Controller/IdeaDetailViewController.swift; sourceTree = "<group>"; };
+		8614C2771EB049C400099F38 /* IdeaDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewModel.swift; path = ViewModel/IdeaDetailViewModel.swift; sourceTree = "<group>"; };
+		8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewModelProtocol.swift; path = Protocols/IdeaDetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewCell.swift; path = View/BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = View/BaseTableViewCell.swift; sourceTree = "<group>"; };
 		8617E47E1EA6BBDF00E17624 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controller/WebViewController.swift; sourceTree = "<group>"; };
 		8617E4801EA6C48300E17624 /* WebViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewModel.swift; path = ViewModel/WebViewViewModel.swift; sourceTree = "<group>"; };
 		8617E4821EA6CD5E00E17624 /* WebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPage.swift; path = Model/WebPage.swift; sourceTree = "<group>"; };
@@ -218,6 +228,7 @@
 				86EED4691EA84BE0007D14B4 /* IdeasViewViewModel.swift */,
 				86EED46F1EA9AFE1007D14B4 /* IdeaCellViewModel.swift */,
 				8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */,
+				8614C2771EB049C400099F38 /* IdeaDetailViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 				86EED46B1EA86812007D14B4 /* IdeasViewModelProtocol.swift */,
 				86EED4711EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift */,
 				8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */,
+				8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -266,6 +278,8 @@
 				86EED46D1EA8A396007D14B4 /* IdeaCell.swift */,
 				8649AAA11EAB03D900122586 /* TextFieldTableViewCell.swift */,
 				8649AAA31EAB2CC300122586 /* TextViewTableViewCell.swift */,
+				8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */,
+				8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -281,6 +295,7 @@
 				8617E47E1EA6BBDF00E17624 /* WebViewController.swift */,
 				86EED4651EA84502007D14B4 /* IdeasViewController.swift */,
 				86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */,
+				8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -646,8 +661,11 @@
 				860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */,
 				86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */,
 				8617E4871EA8209200E17624 /* ApiService.swift in Sources */,
+				8614C2781EB049C400099F38 /* IdeaDetailViewModel.swift in Sources */,
 				86EED46A1EA84BE0007D14B4 /* IdeasViewViewModel.swift in Sources */,
 				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
+				8614C2CF1EB3445F00099F38 /* BaseTableViewCell.swift in Sources */,
+				8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */,
 				86EED4701EA9AFE1007D14B4 /* IdeaCellViewModel.swift in Sources */,
 				8649AAA21EAB03D900122586 /* TextFieldTableViewCell.swift in Sources */,
 				86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */,
@@ -677,10 +695,12 @@
 				86EED4661EA84502007D14B4 /* IdeasViewController.swift in Sources */,
 				8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */,
 				8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */,
+				8614C2CD1EB3443500099F38 /* BaseCollectionViewCell.swift in Sources */,
 				86EED46E1EA8A396007D14B4 /* IdeaCell.swift in Sources */,
 				86EED46C1EA86812007D14B4 /* IdeasViewModelProtocol.swift in Sources */,
 				86EED4721EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift in Sources */,
 				86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */,
+				8614C2761EB0399A00099F38 /* IdeaDetailViewController.swift in Sources */,
 				86EED4681EA847D7007D14B4 /* NewIdeaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

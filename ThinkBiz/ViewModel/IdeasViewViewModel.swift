@@ -49,6 +49,12 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         return cellVM
     }
     
+    func viewModelForDetailViewControlller(at indexPath: IndexPath) -> IdeaDetailViewModel {
+        let idea = fetchResultsController.object(at: indexPath)
+        let ideaDetailVM = IdeaDetailViewModel(withIdeaForm: IdeaForm.form, idea: idea)
+        return ideaDetailVM
+    }
+    
     func fetchData() {
         let fetchRequest: NSFetchRequest<Idea> = Idea.fetchRequest()
         

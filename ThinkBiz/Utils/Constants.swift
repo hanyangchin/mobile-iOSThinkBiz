@@ -13,6 +13,7 @@ let ID_LANDINGVIEWCONTROLLER = "LandingViewController"
 let ID_ONBOARDINGVIEWCONTROLLER = "OnBoardingViewController"
 let ID_NEWIDEAVIEWCONTROLLER = "NewIdeaViewController"
 let ID_WEBVIEWCONTROLLER = "WebViewController"
+let ID_IDEADETAILVIEWCONTROLLER = "IdeaDetailViewController"
 
 // SEGUE IDENTIFIERS
 let SEGUE_ONBOARDING = "OnBoardingViewController"
@@ -20,6 +21,7 @@ let SEGUE_MAINTABBAR = "MainTabBarController"
 let SEGUE_SIGNUP = "SignUpViewController"
 let SEGUE_SIGNIN = "SignInViewController"
 let SEGUE_NEWIDEA = "NewIdeaViewController"
+let SEGUE_IDEADETAIL = "IdeaDetailViewController"
 
 // Storybord cell ID
 let ID_IDEACELL = "IdeaCell"
