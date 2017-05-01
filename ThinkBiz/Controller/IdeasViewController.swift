@@ -37,9 +37,21 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         viewModel.fetchData()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        ideasCollectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     func configureView() {
+//        ideasCollectionView.register(IdeaCell.self, forCellWithReuseIdentifier: ID_IDEACELL)
+        
         self.navigationItem.title = viewModel.title
         ideasCollectionView.alwaysBounceVertical = true
+
+//        if let flowLayout = ideasCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+//        }
     }
     
     // MARK: - IdeasViewModelControllerDelegate
@@ -133,5 +145,6 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let ideaDetailVM = viewModel.viewModelForDetailViewControlller(at: indexPath)
         performSegue(withIdentifier: SEGUE_IDEADETAIL, sender: ideaDetailVM)
     }
+    
 }
 

@@ -9,5 +9,19 @@
 import UIKit
 
 class BaseCollectionViewCell: UICollectionViewCell {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        initCell()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        initCell()
+    }
+    
+    // MARK: - Functions
+    func initCell() { }
     
 }

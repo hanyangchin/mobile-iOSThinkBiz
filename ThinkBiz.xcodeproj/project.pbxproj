@@ -25,6 +25,7 @@
 		8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */; };
 		8614C2CD1EB3443500099F38 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */; };
 		8614C2CF1EB3445F00099F38 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */; };
+		8614C2D81EB57D4200099F38 /* lato-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8614C2D71EB57D4200099F38 /* lato-regular.ttf */; };
 		8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E47E1EA6BBDF00E17624 /* WebViewController.swift */; };
 		8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4801EA6C48300E17624 /* WebViewViewModel.swift */; };
 		8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4821EA6CD5E00E17624 /* WebPage.swift */; };
@@ -105,6 +106,7 @@
 		8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewModelProtocol.swift; path = Protocols/IdeaDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewCell.swift; path = View/BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = View/BaseTableViewCell.swift; sourceTree = "<group>"; };
+		8614C2D71EB57D4200099F38 /* lato-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "lato-regular.ttf"; path = "Resources/lato-regular.ttf"; sourceTree = "<group>"; };
 		8617E47E1EA6BBDF00E17624 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controller/WebViewController.swift; sourceTree = "<group>"; };
 		8617E4801EA6C48300E17624 /* WebViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewModel.swift; path = ViewModel/WebViewViewModel.swift; sourceTree = "<group>"; };
 		8617E4821EA6CD5E00E17624 /* WebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPage.swift; path = Model/WebPage.swift; sourceTree = "<group>"; };
@@ -256,6 +258,14 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		8614C2D01EB57BCB00099F38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8614C2D71EB57D4200099F38 /* lato-regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		863C65651E8B525E0093C3F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +354,7 @@
 		86FD7D1C1E8B46E600C412C0 /* ThinkBiz */ = {
 			isa = PBXGroup;
 			children = (
+				8614C2D01EB57BCB00099F38 /* Resources */,
 				863C65671E8B52B70093C3F9 /* Controller */,
 				860567B01E96F38A00FCB03E /* ViewModel */,
 				860567B91E99CB1500FCB03E /* Protocols */,
@@ -505,6 +516,7 @@
 				86FD7D2B1E8B46E600C412C0 /* LaunchScreen.storyboard in Resources */,
 				86FD7D4F1E8B4B1600C412C0 /* GoogleService-Info.plist in Resources */,
 				86FD7D281E8B46E600C412C0 /* Assets.xcassets in Resources */,
+				8614C2D81EB57D4200099F38 /* lato-regular.ttf in Resources */,
 				86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
