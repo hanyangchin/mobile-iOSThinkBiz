@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import UIKit
 
 class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
     
@@ -21,6 +22,8 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
     var numberOfSections: Int! {
         return fetchResultsController.sections?.count
     }
+    
+    var cellWidth: CGFloat?
     
     // MARK: - Private
     

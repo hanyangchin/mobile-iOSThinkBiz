@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class IdeaCellViewModel: IdeaCellViewModelProtocol {
-    
+
     // MARK: - Properties
     
     var title: String! {
@@ -19,6 +20,8 @@ class IdeaCellViewModel: IdeaCellViewModelProtocol {
         return self.idea.idea
     }
     var imagePath: String!
+    
+    var cellWidth: CGFloat?
     
     // MARK: - Private
     private let idea: Idea!

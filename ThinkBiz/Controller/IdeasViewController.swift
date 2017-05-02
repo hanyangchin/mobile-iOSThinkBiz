@@ -40,18 +40,25 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
+        configureLayout()
         ideasCollectionView.collectionViewLayout.invalidateLayout()
     }
     
     func configureView() {
-//        ideasCollectionView.register(IdeaCell.self, forCellWithReuseIdentifier: ID_IDEACELL)
         
         self.navigationItem.title = viewModel.title
         ideasCollectionView.alwaysBounceVertical = true
 
-//        if let flowLayout = ideasCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
-//        }
+        configureLayout()
+    }
+    
+    private func configureLayout() {
+        if let flowLayout = ideasCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            // Calculate cell width based on the the section inset
+            viewModel.cellWidth = view.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        }
     }
     
     // MARK: - IdeasViewModelControllerDelegate
@@ -73,7 +80,10 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     // This function should not be called directly, should be used with batch operations from view model
     func updateIdea(at indexPath: IndexPath) {
         if let cell = ideasCollectionView.cellForItem(at: indexPath) as? IdeaCell {
-            cell.viewModel = viewModel.viewModelForCell(at: indexPath)
+            // This cell have a fixed width
+            let ideaCellVM = viewModel.viewModelForCell(at: indexPath)
+            ideaCellVM.cellWidth = self.viewModel.cellWidth
+            cell.viewModel = ideaCellVM
         }
     }
     
@@ -121,7 +131,11 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ID_IDEACELL, for: indexPath) as? IdeaCell {
             let ideaCellVM = viewModel.viewModelForCell(at: indexPath)
+            
+            // This cell have a fixed width
+            ideaCellVM.cellWidth = self.viewModel.cellWidth
             cell.viewModel = ideaCellVM
+            
             return cell
         }
         
@@ -132,14 +146,14 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return viewModel.numberOfItems(inSection: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            return CGSize(width: view.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right), height: 200)
-        }
-        
-        return CGSize(width: view.frame.width, height: 200)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+//            return CGSize(width: view.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right), height: 200)
+//        }
+//        
+//        return CGSize(width: view.frame.width, height: 200)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ideaDetailVM = viewModel.viewModelForDetailViewControlller(at: indexPath)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol IdeasViewModelProtocol {
     
@@ -16,6 +17,7 @@ protocol IdeasViewModelProtocol {
     
     var title: String! { get }
     var numberOfSections: Int! { get }
+    var cellWidth: CGFloat? { get }
     
     // MARK: - Functions
     func numberOfItems(inSection section: Int) -> Int

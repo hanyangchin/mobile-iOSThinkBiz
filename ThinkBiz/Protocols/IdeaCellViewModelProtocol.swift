@@ -6,12 +6,16 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
+import UIKit
+
 protocol IdeaCellViewModelProtocol {
     
     // MARK: - Properties
     var title: String! { get }
     var ideaText: String! { get }
     var imagePath: String! { get }
+    
+    var cellWidth: CGFloat? { get }
     
     // MARK: - Functions
     func date() -> String
