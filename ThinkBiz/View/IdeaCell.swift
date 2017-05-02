@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IdeaCell: UICollectionViewCell {
+class IdeaCell: BaseCollectionViewCell {
     
     // MARK: - Properties
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
@@ -30,6 +30,7 @@ class IdeaCell: UICollectionViewCell {
         
         // Prevent conflicts from arising by modifying cell constraints
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     func configureCell(withViewModel viewModel: IdeaCellViewModel) {

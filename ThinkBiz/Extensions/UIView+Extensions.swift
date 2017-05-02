@@ -11,6 +11,8 @@ import Foundation
 
 extension UIView {
     
+    // MARK: - Functions
+    
     // Helper function to shorten the add constraints with visual format function
     func addContraintsWithVisualFormat(format: String, views: UIView...) {
         var viewsDictionary = [String: UIView]()
