@@ -497,22 +497,22 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-ck-zK8">
                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="150"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fBD-Fd-pIq">
-                                                            <rect key="frame" x="15" y="15" width="250" height="120"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fBD-Fd-pIq">
+                                                            <rect key="frame" x="12" y="12" width="256" height="126"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nmP-vA-D2i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="22.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZa-UZ-qXp">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="20"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g04-Sd-whb">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="230" height="20"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="236" height="20"/>
                                                                                     <attributedString key="attributedText">
                                                                                         <fragment content="21 May">
                                                                                             <attributes>
-                                                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                <font key="NSFont" size="12" name="Lato-Regular"/>
+                                                                                                <color key="NSColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                <font key="NSFont" size="12" name="Avenir-Book"/>
                                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                             </attributes>
                                                                                         </fragment>
@@ -520,22 +520,22 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO2-xz-Zoe">
-                                                                                    <rect key="frame" x="230" y="0.0" width="20" height="20"/>
+                                                                                    <rect key="frame" x="236" y="0.0" width="20" height="20"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="20" id="AJH-C1-BgK"/>
                                                                                         <constraint firstAttribute="width" constant="20" id="Mrn-1Y-m3L"/>
                                                                                         <constraint firstAttribute="width" secondItem="WO2-xz-Zoe" secondAttribute="height" multiplier="1:1" id="Thq-Rd-oyy"/>
                                                                                     </constraints>
-                                                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <state key="normal" image="menu"/>
                                                                                 </button>
                                                                             </subviews>
                                                                         </stackView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPj-1B-Yfn">
-                                                                            <rect key="frame" x="0.0" y="22" width="250" height="1"/>
-                                                                            <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <rect key="frame" x="0.0" y="22" width="256" height="0.5"/>
+                                                                            <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="1" id="9rV-kt-O7U"/>
+                                                                                <constraint firstAttribute="height" constant="0.5" id="9rV-kt-O7U"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
@@ -545,18 +545,18 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CEI-bl-IKY">
-                                                                    <rect key="frame" x="0.0" y="28" width="250" height="92"/>
+                                                                    <rect key="frame" x="0.0" y="34.5" width="256" height="91.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Xc-3o-Yc2">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="56.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="50.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwx-bh-pEK">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="30.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="25"/>
                                                                                     <attributedString key="attributedText">
                                                                                         <fragment content="ThinkBiz">
                                                                                             <attributes>
-                                                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                                <font key="NSFont" size="22" name="Lato-Regular"/>
+                                                                                                <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                <font key="NSFont" size="18" name="Avenir-Heavy"/>
                                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                             </attributes>
                                                                                         </fragment>
@@ -564,12 +564,12 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgV-uP-K0q">
-                                                                                    <rect key="frame" x="0.0" y="35.5" width="250" height="21"/>
+                                                                                    <rect key="frame" x="0.0" y="30" width="256" height="20.5"/>
                                                                                     <attributedString key="attributedText">
                                                                                         <fragment content="Label">
                                                                                             <attributes>
                                                                                                 <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                                                                                <font key="NSFont" size="15" name="Avenir-Medium"/>
                                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                             </attributes>
                                                                                         </fragment>
@@ -591,7 +591,7 @@
                                                         <constraint firstItem="fBD-Fd-pIq" firstAttribute="leading" secondItem="aSW-ck-zK8" secondAttribute="leadingMargin" id="Ysg-9y-hHm"/>
                                                         <constraint firstItem="fBD-Fd-pIq" firstAttribute="top" secondItem="aSW-ck-zK8" secondAttribute="topMargin" id="psz-TD-kNt"/>
                                                     </constraints>
-                                                    <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>
+                                                    <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="0.0"/>
@@ -618,10 +618,10 @@
                                                 <real key="value" value="0.80000000000000004"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="1" height="1"/>
+                                                <size key="value" width="0.0" height="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="8"/>
+                                                <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCornerRadius">
                                                 <real key="value" value="2"/>
