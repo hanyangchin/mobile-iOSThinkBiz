@@ -42,6 +42,7 @@
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
 		8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* SignInViewController.swift */; };
 		8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC581E931FC100D50AB3 /* InputTextField.swift */; };
+		868808641EB96FB30045D3A5 /* DecoratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808631EB96FB30045D3A5 /* DecoratedView.swift */; };
 		86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */; };
 		86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */; };
 		86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */; };
@@ -124,6 +125,7 @@
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		8658FC561E91DD2500D50AB3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controller/SignInViewController.swift; sourceTree = "<group>"; };
 		8658FC581E931FC100D50AB3 /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTextField.swift; path = View/InputTextField.swift; sourceTree = "<group>"; };
+		868808631EB96FB30045D3A5 /* DecoratedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecoratedView.swift; path = View/DecoratedView.swift; sourceTree = "<group>"; };
 		86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controller/SettingsViewController.swift; sourceTree = "<group>"; };
 		86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewViewModel.swift; path = ViewModel/SettingsTableViewViewModel.swift; sourceTree = "<group>"; };
 		86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewViewModelProtocol.swift; path = Protocols/SettingsTableViewViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				8649AAA31EAB2CC300122586 /* TextViewTableViewCell.swift */,
 				8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */,
 				8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */,
+				868808631EB96FB30045D3A5 /* DecoratedView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
 				8614C2741EADF32E00099F38 /* DataService.swift in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,
+				868808641EB96FB30045D3A5 /* DecoratedView.swift in Sources */,
 				860567B81E99C0CF00FCB03E /* Helper.swift in Sources */,
 				8617E4851EA6E9D800E17624 /* AuthService.swift in Sources */,
 				860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */,
