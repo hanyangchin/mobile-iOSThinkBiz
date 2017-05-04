@@ -26,8 +26,8 @@ let SEGUE_IDEADETAIL = "IdeaDetailViewController"
 // Storybord cell ID
 let ID_IDEACELL = "IdeaCell"
 
-let ID_TEXTFIELDCELL = "TextFieldTableViewCell"
-let ID_TEXTVIEWCELL = "TextViewTableViewCell"
+let ID_TEXTFIELDCELL = "TextFieldCell"
+let ID_TEXTVIEWCELL = "TextViewCell"
 
 let ID_SETTINGSITEMCELLDISCLOSURE = "SettingsItemCellDisclosure"
 let ID_SETTINGSSECTIONTITLECELL = "SettingsSectionTitleCell"

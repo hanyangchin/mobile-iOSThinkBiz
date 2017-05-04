@@ -22,6 +22,17 @@ class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegat
         tableView.delegate = self
         tableView.dataSource = self
 
+        let textFieldNib = UINib(nibName: "TextFieldCell", bundle: nil)
+        tableView.register(textFieldNib, forCellReuseIdentifier: ID_TEXTFIELDCELL)
+        
+        let textViewNib = UINib(nibName: "TextViewCell", bundle: nil)
+        tableView.register(textViewNib, forCellReuseIdentifier: ID_TEXTVIEWCELL)
+        
+        tableView.estimatedRowHeight = 10000
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
     }
 
     /*
@@ -62,14 +73,14 @@ extension NewIdeaViewController: UITableViewDelegate, UITableViewDataSource {
         let reuseIdentifier = viewModel.reuseIdentifierForCellItem(inSection: indexPath.section, at: indexPath.row)
         
         if reuseIdentifier == ID_TEXTFIELDCELL {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TextFieldTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TextFieldCell {
                 cell.viewModel = viewModel.viewModelForCell(inSection: indexPath.section, at: indexPath.row) as! TextFieldCellViewModel
                 cell.textField.delegate = self
                 cell.textField.tag = indexPath.row
                 return cell
             }
         } else if reuseIdentifier == ID_TEXTVIEWCELL {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TextViewTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TextViewCell {
                 cell.viewModel = viewModel.viewModelForCell(inSection: indexPath.section, at: indexPath.row) as! TextViewCellViewModel
                 cell.textView.delegate = self
                 cell.textView.tag = indexPath.row

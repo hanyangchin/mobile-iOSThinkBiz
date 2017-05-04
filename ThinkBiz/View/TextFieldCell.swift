@@ -1,15 +1,15 @@
 //
-//  TextFieldTableViewCell.swift
+//  TextFieldCell.swift
 //  ThinkBiz
 //
-//  Created by Han Yang Chin on 22/04/17.
+//  Created by Han Yang Chin on 3/05/17.
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
 import UIKit
 
-class TextFieldTableViewCell: UITableViewCell {
-
+class TextFieldCell: UITableViewCell {
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
@@ -23,10 +23,10 @@ class TextFieldTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -34,5 +34,5 @@ class TextFieldTableViewCell: UITableViewCell {
         self.nameLabel.text = viewModel.nameLabelText
         self.textField.placeholder = viewModel.placeholderText
     }
-
+    
 }
