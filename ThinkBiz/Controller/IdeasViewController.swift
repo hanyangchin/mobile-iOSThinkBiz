@@ -48,7 +48,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         
         self.navigationItem.title = viewModel.title
         ideasCollectionView.alwaysBounceVertical = true
-
+        
         configureLayout()
     }
     
@@ -145,15 +145,6 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems(inSection: section)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-//            return CGSize(width: view.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right), height: 200)
-//        }
-//        
-//        return CGSize(width: view.frame.width, height: 200)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ideaDetailVM = viewModel.viewModelForDetailViewControlller(at: indexPath)

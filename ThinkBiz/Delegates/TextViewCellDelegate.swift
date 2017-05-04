@@ -6,8 +6,6 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
-import Foundation
-
 protocol TextViewCellDelegate {
     
     // MARK: - Functions
