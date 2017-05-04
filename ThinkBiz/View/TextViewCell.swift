@@ -17,6 +17,8 @@ class TextViewCell: UITableViewCell {
     
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     
+    var delegate: TextViewCellDelegate?
+    
     // MARK: - Private
     
     var minTextViewHeight: CGFloat = 80
@@ -32,6 +34,8 @@ class TextViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        textView.delegate = self
         
         // Store min height from storyboard
         minTextViewHeight = textViewHeightConstraint.constant
@@ -59,4 +63,16 @@ class TextViewCell: UITableViewCell {
         }
     }
     
+}
+
+extension TextViewCell: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText string: String) -> Bool {
+        let text: NSString = (textView.text ?? "") as NSString
+        let textUpdate = text.replacingCharacters(in: range, with: string)
+        
+        delegate?.textViewCellTextDidChange(tag: textView.tag, text: textUpdate)
+        
+        return true
+    }
 }

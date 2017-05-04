@@ -75,14 +75,14 @@ extension NewIdeaViewController: UITableViewDelegate, UITableViewDataSource {
         if reuseIdentifier == ID_TEXTFIELDCELL {
             if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TextFieldCell {
                 cell.viewModel = viewModel.viewModelForCell(inSection: indexPath.section, at: indexPath.row) as! TextFieldCellViewModel
-                cell.textField.delegate = self
+                cell.delegate = self
                 cell.textField.tag = indexPath.row
                 return cell
             }
         } else if reuseIdentifier == ID_TEXTVIEWCELL {
             if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TextViewCell {
                 cell.viewModel = viewModel.viewModelForCell(inSection: indexPath.section, at: indexPath.row) as! TextViewCellViewModel
-                cell.textView.delegate = self
+                cell.delegate = self
                 cell.textView.tag = indexPath.row
                 return cell
             }
@@ -92,24 +92,14 @@ extension NewIdeaViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension NewIdeaViewController: UITextFieldDelegate, UITextViewDelegate {
+// MARK: - TextFieldCellDelegate, TextViewCellDelegate
+extension NewIdeaViewController: TextFieldCellDelegate, TextViewCellDelegate {
     
-    //MARK: - UITextFieldDelegate
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text: NSString = (textField.text ?? "") as NSString
-        let textUpdate = text.replacingCharacters(in: range, with: string)
-        
-        viewModel.textDidChange(tag: textField.tag, text: textUpdate)
-        
-        return true
+    func textFieldCellTextDidChange(tag: Int, text: String) {
+        viewModel.textDidChange(tag: tag, text: text)
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText string: String) -> Bool {
-        let text: NSString = (textView.text ?? "") as NSString
-        let textUpdate = text.replacingCharacters(in: range, with: string)
-        
-        viewModel.textDidChange(tag: textView.tag, text: textUpdate)
-        return true
+    func textViewCellTextDidChange(tag: Int, text: String) {
+        viewModel.textDidChange(tag: tag, text: text)
     }
 }
