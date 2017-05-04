@@ -37,6 +37,8 @@ class TextFieldCell: UITableViewCell {
     func configureCell(withViewModel viewModel: TextFieldCellViewModel) {
         self.nameLabel.text = viewModel.nameLabelText
         self.textField.placeholder = viewModel.placeholderText
+        
+        // TODO: Configure textfield existing text
     }
     
 }

@@ -109,6 +109,7 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
             print("\(error)")
         }
         
+        // TODO: Refactor the saving code to DataService object
 //        DataService.sharedInstance.saveIdea(ideaObj)
     }
 }

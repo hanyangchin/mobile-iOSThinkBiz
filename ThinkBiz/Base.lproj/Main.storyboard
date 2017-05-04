@@ -1019,6 +1019,85 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xEu-Cq-tKl">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="68u-c2-yok">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8X-P2-p94" customClass="DecoratedView" customModule="ThinkBiz" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="25" width="280" height="100"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D5h-qQ-9Gr">
+                                                    <rect key="frame" x="12" y="12" width="256" height="76"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="14g-tO-dL8">
+                                                            <rect key="frame" x="0.0" y="4" width="256" height="68.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmp-jX-iC7">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="49.5"/>
+                                                                    <attributedString key="attributedText">
+                                                                        <fragment content="Start brainstorming a new business idea">
+                                                                            <attributes>
+                                                                                <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <font key="NSFont" size="18" name="Avenir-Book"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eY-8U-QgI">
+                                                                    <rect key="frame" x="0.0" y="54.5" width="256" height="14"/>
+                                                                    <attributedString key="attributedText">
+                                                                        <fragment content="Just put something down, you can change it later">
+                                                                            <attributes>
+                                                                                <color key="NSColor" red="0.68940501774829854" green="0.69623081000323217" blue="0.69623081000323217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <font key="NSFont" size="10" name="Avenir-Book"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="D5h-qQ-9Gr" firstAttribute="top" secondItem="y8X-P2-p94" secondAttribute="topMargin" id="KN3-CQ-Yyo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="D5h-qQ-9Gr" secondAttribute="bottom" id="R5t-vU-idV"/>
+                                                <constraint firstItem="D5h-qQ-9Gr" firstAttribute="leading" secondItem="y8X-P2-p94" secondAttribute="leadingMargin" id="pMz-3J-K0c"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="D5h-qQ-9Gr" secondAttribute="trailing" id="uaT-Gq-i3P"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.80000000000000004"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="0.0" height="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="y8X-P2-p94" firstAttribute="top" secondItem="68u-c2-yok" secondAttribute="topMargin" id="AQC-7j-iHF"/>
+                                        <constraint firstItem="y8X-P2-p94" firstAttribute="bottom" secondItem="68u-c2-yok" secondAttribute="bottomMargin" id="SEZ-Zd-9G9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="y8X-P2-p94" secondAttribute="trailing" id="Xbj-yi-5nr"/>
+                                        <constraint firstItem="y8X-P2-p94" firstAttribute="leading" secondItem="68u-c2-yok" secondAttribute="leadingMargin" id="aJN-Zw-CcP"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="25" left="20" bottom="25" right="20"/>
+                                </view>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1037,6 +1116,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="eSF-un-XVD"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="xEu-Cq-tKl" id="Nla-RM-nVs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSQ-Hw-HTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

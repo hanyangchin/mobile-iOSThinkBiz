@@ -42,7 +42,7 @@ class IdeaCell: BaseCollectionViewCell {
         UIView.animate(withDuration: 0.5,
                                    delay: 0.0,
                                    usingSpringWithDamping: 1,
-                                   initialSpringVelocity: 0.5,
+                                   initialSpringVelocity: 1,
                                    options: .curveEaseIn,
                                    animations: { () -> Void in
                                     // If performing rotation, width needs to be updated as well
