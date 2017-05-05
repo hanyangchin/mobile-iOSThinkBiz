@@ -8,9 +8,12 @@
 
 import UIKit
 
+@IBDesignable
 class TextViewCell: UITableViewCell {
     
     // MARK: - Properties
+    
+    @IBInspectable var textViewPlaceholderTextColor: UIColor = UIColor.lightGray
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -22,6 +25,8 @@ class TextViewCell: UITableViewCell {
     // MARK: - Private
     
     var minTextViewHeight: CGFloat = 80
+    
+    fileprivate var textViewTextColor: UIColor?
     
     var viewModel: TextViewCellViewModel! {
         didSet {
@@ -39,6 +44,9 @@ class TextViewCell: UITableViewCell {
         
         // Store min height from storyboard
         minTextViewHeight = textViewHeightConstraint.constant
+        
+        // Store original text color from storyboard
+        textViewTextColor = textView.textColor
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,9 +57,15 @@ class TextViewCell: UITableViewCell {
     
     func configureCell(withViewModel viewModel: TextViewCellViewModel) {
         self.nameLabel.text = viewModel.nameLabelText
-        self.textView.text = viewModel.text
         
-        // TODO: Add placeholder functionality
+        if viewModel.text == nil {
+            showPlaceholderText()
+        }
+        else if viewModel.text.characters.count > 0 {
+            showText()
+        } else {
+            showPlaceholderText()
+        }
     }
     
     func configureTextView() {
@@ -63,6 +77,16 @@ class TextViewCell: UITableViewCell {
             }, completion: nil)
         }
     }
+    
+    fileprivate func showText() {
+        self.textView.textColor = textViewTextColor
+        self.textView.text = viewModel.text
+    }
+    
+    fileprivate func showPlaceholderText() {
+        self.textView.textColor = textViewPlaceholderTextColor
+        self.textView.text = viewModel.placeholderText
+    }
 }
 
 extension TextViewCell: UITextViewDelegate {
@@ -71,8 +95,26 @@ extension TextViewCell: UITextViewDelegate {
         let text: NSString = (textView.text ?? "") as NSString
         let textUpdate = text.replacingCharacters(in: range, with: string)
         
+        self.viewModel.text = textUpdate
         delegate?.textViewCellTextDidChange(tag: textView.tag, text: textUpdate)
-        
+//        self.configureTextView()
         return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if viewModel.text == nil {
+            self.textView.textColor = textViewTextColor
+            self.textView.text = nil
+        }
+        else if viewModel.text.characters.count == 0 {
+            self.textView.textColor = textViewTextColor
+            self.textView.text = nil
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            self.showPlaceholderText()
+        }
     }
 }
