@@ -8,15 +8,38 @@
 
 class TextViewCellViewModel {
     
-    var form: TextForm!
+    // MARK: - Properties
+    
+    enum FormModelId: String {
+        case Name
+        case Text
+        case PlaceholderText
+    }
+    
+    var form: FormModel!
     
     var nameLabelText: String!
     var placeholderText: String!
+    var text: String!
     
-    init(initWithModel form: TextForm) {
+    init(initWithModel form: FormModel) {
         self.form = form
         
-        nameLabelText = form.name
-        placeholderText = form.placeholderText
+        // Return if data is empty
+        guard let formData = form.data else {
+            return
+        }
+        
+        if let name: String = formData[FormModelId.Name.rawValue] as? String {
+            nameLabelText = name
+        }
+        
+        if let placeholder: String = formData[FormModelId.PlaceholderText.rawValue] as? String {
+            self.placeholderText = placeholder
+        }
+        
+        if let t: String = formData[FormModelId.Text.rawValue] as? String {
+            self.text = t
+        }
     }
 }

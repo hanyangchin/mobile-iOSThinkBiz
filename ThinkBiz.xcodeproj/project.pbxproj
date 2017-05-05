@@ -33,6 +33,7 @@
 		8617E4871EA8209200E17624 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4861EA8209200E17624 /* ApiService.swift */; };
 		861B2CA51EBAB82B00425EFA /* TextFieldCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B2CA41EBAB82B00425EFA /* TextFieldCellDelegate.swift */; };
 		861B2CA71EBABCA600425EFA /* TextViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B2CA61EBABCA600425EFA /* TextViewCellDelegate.swift */; };
+		861B2CAA1EBBE39D00425EFA /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B2CA91EBBE39D00425EFA /* FormModel.swift */; };
 		863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */; };
 		8649AAA61EAB446100122586 /* NewIdeaViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */; };
 		8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */; };
@@ -119,6 +120,7 @@
 		8617E4861EA8209200E17624 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Services/ApiService.swift; sourceTree = "<group>"; };
 		861B2CA41EBAB82B00425EFA /* TextFieldCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCellDelegate.swift; path = Delegates/TextFieldCellDelegate.swift; sourceTree = "<group>"; };
 		861B2CA61EBABCA600425EFA /* TextViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCellDelegate.swift; path = Delegates/TextViewCellDelegate.swift; sourceTree = "<group>"; };
+		861B2CA91EBBE39D00425EFA /* FormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormModel.swift; path = Model/FormModel.swift; sourceTree = "<group>"; };
 		863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controller/LandingViewController.swift; sourceTree = "<group>"; };
 		864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkBizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModelProtocol.swift; path = Protocols/NewIdeaViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				8649AAA91EAB569C00122586 /* IdeaForm.swift */,
 				8614C26A1EAD500E00099F38 /* Form.swift */,
 				8614C26F1EAD6C8A00099F38 /* TextForm.swift */,
+				861B2CA91EBBE39D00425EFA /* FormModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */,
 				86EED4701EA9AFE1007D14B4 /* IdeaCellViewModel.swift in Sources */,
 				86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */,
+				861B2CAA1EBBE39D00425EFA /* FormModel.swift in Sources */,
 				8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */,
 				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
 				86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */,

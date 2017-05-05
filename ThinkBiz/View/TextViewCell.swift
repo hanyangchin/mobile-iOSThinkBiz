@@ -49,8 +49,9 @@ class TextViewCell: UITableViewCell {
     
     func configureCell(withViewModel viewModel: TextViewCellViewModel) {
         self.nameLabel.text = viewModel.nameLabelText
-        //        self.textView. = viewModel.placeholderText
+        self.textView.text = viewModel.text
         
+        // TODO: Add placeholder functionality
     }
     
     func configureTextView() {
@@ -62,7 +63,6 @@ class TextViewCell: UITableViewCell {
             }, completion: nil)
         }
     }
-    
 }
 
 extension TextViewCell: UITextViewDelegate {

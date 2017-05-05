@@ -39,16 +39,15 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
     // Generate form using Idea Form
     private func generateForm() {
         form.append(Section(id: "New Idea", data: "New Idea" as AnyObject, rows: [
-            RowItem(id: FormType.FormName.rawValue, data: TextForm(withName: ideaForm.nameLabelText, placeholderText: ideaForm.namePlaceholderText)),
-            RowItem(id: FormType.FormIdea.rawValue, data: TextForm(withName: ideaForm.ideaLabelText, placeholderText: ideaForm.ideaPlaceholderText)),
-            RowItem(id: FormType.FormNotes.rawValue, data: TextForm(withName: ideaForm.notesLabelText, placeholderText: ideaForm.notesPlaceholderText))
-        ]))
+            RowItem(id: FormType.FormName.rawValue, data: FormModel(withData: [TextFieldCellViewModel.FormModelId.Name.rawValue: ideaForm.nameLabelText, TextFieldCellViewModel.FormModelId.PlaceholderText.rawValue: ideaForm.namePlaceholderText])),
+            RowItem(id: FormType.FormIdea.rawValue, data: FormModel(withData: [TextViewCellViewModel.FormModelId.Name.rawValue: ideaForm.ideaLabelText, TextViewCellViewModel.FormModelId.PlaceholderText.rawValue: ideaForm.ideaPlaceholderText])),
+            RowItem(id: FormType.FormNotes.rawValue, data: FormModel(withData: [TextViewCellViewModel.FormModelId.Name.rawValue: ideaForm.notesLabelText, TextViewCellViewModel.FormModelId.PlaceholderText.rawValue: ideaForm.notesPlaceholderText]))
+            ]))
     }
     
     // MARK: - NewIdeaViewModelProtocol
     
     func numberOfRows(inSection section: Int) -> Int {
-        print("Number of rows in section \(section) is \(form[section].rows.count)")
         return form[section].rows.count
     }
     
@@ -56,7 +55,7 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
     func viewModelForCell(inSection section: Int, at index: Int) -> AnyObject? {
         // Check for cell type and generate the appropriate view model for display
         let rowId: String = form[section].rows[index].id
-        if let model = form[section].rows[index].data as? TextForm {
+        if let model = form[section].rows[index].data as? FormModel {
             if rowId == FormType.FormName.rawValue {
                 return TextFieldCellViewModel(initWithModel: model)
             } else {
@@ -110,6 +109,6 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
         }
         
         // TODO: Refactor the saving code to DataService object
-//        DataService.sharedInstance.saveIdea(ideaObj)
+        //        DataService.sharedInstance.saveIdea(ideaObj)
     }
 }

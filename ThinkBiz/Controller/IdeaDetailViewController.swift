@@ -50,6 +50,10 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
     @IBAction func onBackButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func onSaveButtonPressed(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        viewModel.saveIdea(context: context)
+    }
 }
 
 extension IdeaDetailViewController: UITableViewDelegate, UITableViewDataSource {

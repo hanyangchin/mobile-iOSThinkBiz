@@ -43,14 +43,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="80" id="HAy-vg-Gr7"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="&lt;Text&gt;">
-                                                <attributes>
-                                                    <font key="NSFont" size="12" name="Avenir-Book"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>

@@ -27,6 +27,7 @@ protocol IdeaDetailViewModelProtocol {
     func textDidChange(tag: Int, text: String!)
     
     func saveIdea(context: NSManagedObjectContext)
+    func deleteIdea(context: NSManagedObjectContext)
 }
 
 protocol IdeaDetailViewModelControllerDelegate: class {
