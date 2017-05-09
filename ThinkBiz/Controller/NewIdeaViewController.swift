@@ -9,7 +9,7 @@
 import UIKit
 
 class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: NewIdeaViewModel!
@@ -19,34 +19,49 @@ class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegat
         
         viewModel = NewIdeaViewModel(withIdeaForm: IdeaForm.form)
         
+        setupTableView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewIdeaViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewIdeaViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Functions
+    
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         let textFieldNib = UINib(nibName: "TextFieldCell", bundle: nil)
         tableView.register(textFieldNib, forCellReuseIdentifier: ID_TEXTFIELDCELL)
         
         let textViewNib = UINib(nibName: "TextViewCell", bundle: nil)
         tableView.register(textViewNib, forCellReuseIdentifier: ID_TEXTVIEWCELL)
         
-        tableView.estimatedRowHeight = 10000
+        tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        self.tableView.setNeedsLayout()
-        self.tableView.layoutIfNeeded()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: Keyboard Notifications
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardHeight = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardHeight, 0)
+        }
     }
-    */
+    
+    func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.2, animations: {
+            // For some reason adding inset in keyboardWillShow is animated by itself but removing is not, that's why we have to use animateWithDuration here
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        })
+    }
     
     // MARK: - Button handler
-
+    
     @IBAction func onCancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -56,7 +71,7 @@ class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegat
         viewModel.saveIdea(context: context)
         self.dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
 extension NewIdeaViewController: UITableViewDelegate, UITableViewDataSource {

@@ -24,7 +24,7 @@ class TextViewCell: UITableViewCell {
     
     // MARK: - Private
     
-    var minTextViewHeight: CGFloat = 80
+//    var minTextViewHeight: CGFloat = 80
     
     fileprivate var textViewTextColor: UIColor?
     
@@ -42,8 +42,15 @@ class TextViewCell: UITableViewCell {
         
         textView.delegate = self
         
+        // Remove padding from text input
+        self.textView.textContainerInset = UIEdgeInsetsMake(
+            0,
+            -self.textView.textContainer.lineFragmentPadding,
+            0,
+            -self.textView.textContainer.lineFragmentPadding)
+        
         // Store min height from storyboard
-        minTextViewHeight = textViewHeightConstraint.constant
+//        minTextViewHeight = textViewHeightConstraint.constant
         
         // Store original text color from storyboard
         textViewTextColor = textView.textColor
@@ -53,11 +60,14 @@ class TextViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+        if selected {
+            textView.becomeFirstResponder()
+        }
     }
     
     func configureCell(withViewModel viewModel: TextViewCellViewModel) {
-        self.nameLabel.text = viewModel.nameLabelText
-        
+        self.nameLabel.text = viewModel.nameLabelText.uppercased()
+
         if viewModel.text == nil {
             showPlaceholderText()
         }
@@ -66,16 +76,33 @@ class TextViewCell: UITableViewCell {
         } else {
             showPlaceholderText()
         }
+        
+        // Update
+        self.contentView.setNeedsLayout()
+        self.contentView.layoutIfNeeded()
     }
     
     func configureTextView() {
         let newTextViewHeight = self.textView.intrinsicContentSize.height
+        var textFrame = self.textView.frame
+        textFrame.size.height = newTextViewHeight
+        self.textView.frame = textFrame
+        print("\nCurrent text view height \(newTextViewHeight)")
+//        self.textViewHeightConstraint.constant = newTextViewHeight
+
+//        print("\(self.textViewHeightConstraint.constant)")
         
-        if newTextViewHeight > minTextViewHeight, newTextViewHeight != self.textViewHeightConstraint.constant {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.textViewHeightConstraint.constant = newTextViewHeight
-            }, completion: nil)
-        }
+//        if newTextViewHeight > minTextViewHeight, newTextViewHeight != self.textViewHeightConstraint.constant {
+//            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+//                self.textViewHeightConstraint.constant = newTextViewHeight
+//                self.layoutIfNeeded()
+//                self.textView.layoutIfNeeded()
+//                
+//                print("\nUpdated to new height \(newTextViewHeight)")
+//            }, completion: { (completed: Bool) in
+//                self.layoutIfNeeded()
+//            })
+//        }
     }
     
     fileprivate func showText() {

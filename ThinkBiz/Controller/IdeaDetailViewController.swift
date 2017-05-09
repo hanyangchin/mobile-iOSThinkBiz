@@ -25,6 +25,19 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTableView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(IdeaDetailViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(IdeaDetailViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Functions
+    
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -34,17 +47,28 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
         let textViewNib = UINib(nibName: "TextViewCell", bundle: nil)
         tableView.register(textViewNib, forCellReuseIdentifier: ID_TEXTVIEWCELL)
         
-        tableView.estimatedRowHeight = 10000
+        tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        self.tableView.setNeedsLayout()
-        self.tableView.layoutIfNeeded()
+
     }
-    
-    // MARK: - Functions
     
     func configureViews() {
         
+    }
+    
+    // MARK: Keyboard Notifications
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardHeight = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardHeight, 0)
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.2, animations: {
+            // For some reason adding inset in keyboardWillShow is animated by itself but removing is not, that's why we have to use animateWithDuration here
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        })
     }
 
     @IBAction func onBackButtonPressed(_ sender: Any) {
@@ -98,5 +122,10 @@ extension IdeaDetailViewController: TextFieldCellDelegate, TextViewCellDelegate 
     
     func textViewCellTextDidChange(tag: Int, text: String) {
         viewModel.textDidChange(tag: tag, text: text)
+        
+        // When text view is editing, .rowHeight and .estimatedRowHeight has no effect.
+        // Begin updates and end update is a way to force row height change during editing
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
     }
 }

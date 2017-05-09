@@ -64,10 +64,16 @@ class IdeaDetailViewModel: IdeaDetailViewModelProtocol {
         
     }
     
+    // Trim whitespaces and new lines
+    private func trimData() {
+        name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        ideaText = ideaText.trimmingCharacters(in: .whitespacesAndNewlines)
+        notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
     // MARK: - NewIdeaViewModelProtocol
     
     func numberOfRows(inSection section: Int) -> Int {
-        print("Number of rows in section \(section) is \(form[section].rows.count)")
         return form[section].rows.count
     }
     
@@ -112,10 +118,13 @@ class IdeaDetailViewModel: IdeaDetailViewModelProtocol {
         default:
             print("Warning, text input with tag \(tag) change unhandled")
         }
-        print("\nName is \(name)\nIdea is \(ideaText)\nNotes is \(notes)")
+//        print("\nName is \(name)\nIdea is \(ideaText)\nNotes is \(notes)")
     }
     
     func saveIdea(context: NSManagedObjectContext) {
+        
+        trimData()
+        
         self.idea?.name = name
         self.idea?.idea = ideaText
         self.idea?.notes = notes

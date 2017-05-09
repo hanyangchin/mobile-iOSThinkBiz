@@ -45,6 +45,13 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
             ]))
     }
     
+    // Trim whitespaces and new lines
+    private func trimData() {
+        name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        idea = idea.trimmingCharacters(in: .whitespacesAndNewlines)
+        notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
     // MARK: - NewIdeaViewModelProtocol
     
     func numberOfRows(inSection section: Int) -> Int {
@@ -96,6 +103,9 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
     }
     
     func saveIdea(context: NSManagedObjectContext) {
+        
+        trimData()
+        
         let ideaObj = Idea(context: context)
         ideaObj.name = name
         ideaObj.idea = idea

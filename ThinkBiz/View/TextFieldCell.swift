@@ -26,16 +26,20 @@ class TextFieldCell: UITableViewCell {
         // Initialization code
         
         textField.delegate = self
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+        if selected {
+            textField.becomeFirstResponder()
+        }
     }
     
     func configureCell(withViewModel viewModel: TextFieldCellViewModel) {
-        self.nameLabel.text = viewModel.nameLabelText
+        self.nameLabel.text = viewModel.nameLabelText.uppercased()
         self.textField.placeholder = viewModel.placeholderText
         self.textField.text = viewModel.text
     }
