@@ -14,6 +14,7 @@ protocol IdeaDetailViewModelProtocol {
     
     weak var delegate: IdeaDetailViewModelControllerDelegate? { get set }
     
+    var title: String! { get }
     var numberOfSections: Int! { get }
     
     // MARK: - Protocol Functions

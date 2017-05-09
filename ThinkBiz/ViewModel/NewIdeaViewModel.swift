@@ -14,6 +14,10 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
     
     var delegate: NewIdeaViewModelControllerDelegate?
     
+    var title: String! {
+        return "New"
+    }
+    
     var numberOfSections: Int! {
         return form.count
     }

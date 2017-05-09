@@ -25,7 +25,7 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
+        setupView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(IdeaDetailViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(IdeaDetailViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
@@ -36,6 +36,50 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
     }
     
     // MARK: - Functions
+    
+    private func setupView() {
+        
+        setupNavigationBar()
+        
+        setupTableView()
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationItem.title = viewModel.title
+        
+        setupLeftBarButtonItem()
+        setupRightBarButtonItem()
+    }
+    
+    private func setupLeftBarButtonItem() {
+        
+        let backImage = UIImage(named: "left")
+        backImage?.withRenderingMode(.alwaysTemplate)
+        
+        let backButton = UIButton(type: .system)
+        backButton.setImage(backImage, for: .normal)
+        backButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        backButton.tintColor = Styles.white
+        
+        backButton.addTarget(self, action: #selector(IdeaDetailViewController.onBackButtonPressed(_:)), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    
+    private func setupRightBarButtonItem() {
+        
+        let saveImage = UIImage(named: "save")
+        saveImage?.withRenderingMode(.alwaysTemplate)
+        
+        let saveButton = UIButton(type: .system)
+        saveButton.setImage(saveImage, for: .normal)
+        saveButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        saveButton.tintColor = Styles.white
+        
+        saveButton.addTarget(self, action: #selector(IdeaDetailViewController.onSaveButtonPressed(_:)), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: saveButton)
+    }
     
     private func setupTableView() {
         tableView.delegate = self

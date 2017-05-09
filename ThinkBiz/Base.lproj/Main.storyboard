@@ -640,15 +640,8 @@
                             <constraint firstItem="K6d-SJ-tXc" firstAttribute="top" secondItem="1en-09-pZk" secondAttribute="bottom" id="qHY-m1-gAC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ideas" id="ccm-JS-1Ld">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="MBv-AS-0en">
-                            <connections>
-                                <action selector="addIdeaOnButtonPressed:" destination="4A8-wF-6es" id="4u5-ol-2Yw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Ideas" id="ccm-JS-1Ld"/>
                     <connections>
-                        <outlet property="addIdeaButton" destination="MBv-AS-0en" id="OEu-an-XgQ"/>
                         <outlet property="ideasCollectionView" destination="1en-09-pZk" id="0hn-cL-WkN"/>
                         <segue destination="d6j-6d-LYh" kind="presentation" identifier="NewIdeaViewController" id="Aj9-Mf-sDZ"/>
                         <segue destination="NBR-zE-xNa" kind="show" identifier="IdeaDetailViewController" id="ida-Yv-7ST"/>

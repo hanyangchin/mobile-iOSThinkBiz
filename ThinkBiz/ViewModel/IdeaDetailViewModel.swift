@@ -16,6 +16,10 @@ class IdeaDetailViewModel: IdeaDetailViewModelProtocol {
     
     var idea: Idea?
     
+    var title: String! {
+        return ""
+    }
+    
     var numberOfSections: Int! {
         return form.count
     }

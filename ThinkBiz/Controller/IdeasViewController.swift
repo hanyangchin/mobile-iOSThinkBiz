@@ -32,7 +32,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         ideasCollectionView.delegate = self
         ideasCollectionView.dataSource = self
         
-        configureView()
+        setupView()
         
         viewModel.fetchData()
     }
@@ -44,12 +44,34 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         ideasCollectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func configureView() {
+    func setupView() {
         
-        self.navigationItem.title = viewModel.title
-        ideasCollectionView.alwaysBounceVertical = true
+        setupNavigationBar()
         
         configureLayout()
+
+        ideasCollectionView.alwaysBounceVertical = true
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationItem.title = viewModel.title
+        
+        setupLeftBarButtonItem()
+    }
+    
+    private func setupLeftBarButtonItem() {
+
+        let editImage = UIImage(named: "edit")
+        editImage?.withRenderingMode(.alwaysTemplate)
+        
+        let editButton = UIButton(type: .system)
+        editButton.setImage(editImage, for: .normal)
+        editButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        editButton.tintColor = Styles.white
+        
+        editButton.addTarget(self, action: #selector(IdeasViewController.addIdeaOnButtonPressed(_:)), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: editButton)
     }
     
     private func configureLayout() {
