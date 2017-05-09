@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mtD-T0-ZC4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="59S-k5-bga"/>
                             <constraint firstItem="mtD-T0-ZC4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="LWF-jx-XvR"/>
@@ -1152,6 +1152,6 @@
         <image name="menu" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wmT-wj-OQz"/>
+        <segue reference="bsz-NP-Cr1"/>
     </inferredMetricsTieBreakers>
 </document>

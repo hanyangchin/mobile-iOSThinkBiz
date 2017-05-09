@@ -20,19 +20,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        configureAppearance()
+        configureNavigationBar()
         
         return true
     }
     
-    func configureAppearance() {
+    private func configureNavigationBar() {
         
         // Set bar tint color
-        UINavigationBar.appearance().barTintColor = GlobalVariables.white
+        UINavigationBar.appearance().barTintColor = Styles.accentColor
+        UINavigationBar.appearance().isTranslucent = false
+        
+        // Removes bottom nav bar shadow - make sure to set translucent to false
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         // Set Navigation bar title text attribute
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
-        UIApplication.shared.statusBarStyle = .default
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSForegroundColorAttributeName: Styles.white,
+            NSFontAttributeName: UIFont(name: "Avenir", size: 17)!,
+            NSKernAttributeName:CGFloat(0.5)
+        ]
+
+//        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -10,8 +10,10 @@ import UIKit
 
 // MARK: - Global
 
-struct GlobalVariables {
+struct Styles {
+    static let accentColor = UIColor(red: 254/255, green: 108/255, blue: 108/255, alpha: 1)
     static let white = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+    
     static let gray = UIColor(red: 155/255, green: 161/255, blue: 171/255, alpha: 1)
 }
 

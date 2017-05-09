@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
     func performLogout() {
         
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                 self.settingsViewModel.logout()
             }))
