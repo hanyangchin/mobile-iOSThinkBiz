@@ -17,13 +17,6 @@ struct Styles {
     static let gray = UIColor(red: 155/255, green: 161/255, blue: 171/255, alpha: 1)
 }
 
-// MARK: - UITabBarController
-
-enum TabBar: Int {
-    case ideas
-    case settings
-}
-
 // MARK: - UITextField Helper
 
 enum InputValidatorError : Error {
