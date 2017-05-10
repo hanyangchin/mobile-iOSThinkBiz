@@ -26,7 +26,13 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
         self.tableView.dataSource = self
         
         self.versionLabel.text = settingsViewModel.versionText
+        
+        setupView()
         configureView()
+    }
+    
+    private func setupView() {
+
     }
     
     fileprivate func configureView() {

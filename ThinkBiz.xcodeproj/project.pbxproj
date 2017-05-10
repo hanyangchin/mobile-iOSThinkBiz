@@ -38,6 +38,7 @@
 		8649AAA61EAB446100122586 /* NewIdeaViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */; };
 		8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */; };
 		8649AAAA1EAB569C00122586 /* IdeaForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA91EAB569C00122586 /* IdeaForm.swift */; };
+		864A068F1EC2A14A00FA4F24 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A068E1EC2A14A00FA4F24 /* TabBarController.swift */; };
 		8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC11E8C5AB0005E353A /* Constants.swift */; };
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
@@ -126,6 +127,7 @@
 		8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModelProtocol.swift; path = Protocols/NewIdeaViewModelProtocol.swift; sourceTree = "<group>"; };
 		8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModel.swift; path = ViewModel/NewIdeaViewModel.swift; sourceTree = "<group>"; };
 		8649AAA91EAB569C00122586 /* IdeaForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaForm.swift; path = Model/IdeaForm.swift; sourceTree = "<group>"; };
+		864A068E1EC2A14A00FA4F24 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controller/TabBarController.swift; sourceTree = "<group>"; };
 		8652ACC11E8C5AB0005E353A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Controller/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				86EED4651EA84502007D14B4 /* IdeasViewController.swift */,
 				86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */,
 				8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */,
+				864A068E1EC2A14A00FA4F24 /* TabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */,
 				8614C26E1EAD617F00099F38 /* TextFieldCellViewModel.swift in Sources */,
 				8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */,
+				864A068F1EC2A14A00FA4F24 /* TabBarController.swift in Sources */,
 				860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */,
 				861B2CA71EBABCA600425EFA /* TextViewCellDelegate.swift in Sources */,
 				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,

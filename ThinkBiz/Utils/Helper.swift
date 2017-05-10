@@ -8,13 +8,20 @@
 
 import UIKit
 
-// MARK: - Global
+// MARK: - Styles
 
 struct Styles {
     static let accentColor = UIColor(red: 254/255, green: 108/255, blue: 108/255, alpha: 1)
     static let white = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
     
     static let gray = UIColor(red: 155/255, green: 161/255, blue: 171/255, alpha: 1)
+}
+
+// MARK: - UITabBarController
+
+enum TabBar: Int {
+    case ideas
+    case settings
 }
 
 // MARK: - UITextField Helper

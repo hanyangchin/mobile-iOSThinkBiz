@@ -779,7 +779,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Fdt-ZI-rTe">
             <objects>
-                <tabBarController id="miV-E5-MS1" sceneMemberID="viewController">
+                <tabBarController id="miV-E5-MS1" customClass="TabBarController" customModule="ThinkBiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="tAa-ww-K7a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -953,11 +953,11 @@
             </objects>
             <point key="canvasLocation" x="1783" y="-105"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="UKa-NY-uoK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8KP-Y2-WWi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="AR0-eL-hvn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="AR0-eL-hvn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Iz-9O-31M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -976,13 +976,11 @@
             </objects>
             <point key="canvasLocation" x="1781" y="1610"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Ideas-->
         <scene sceneID="USB-65-ret">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tHz-Zi-eox" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="SSd-eS-cBy">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Ideas" image="notebook" id="SSd-eS-cBy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTO-j7-TPZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1143,6 +1141,8 @@
     <resources>
         <image name="lightbulb" width="360" height="429"/>
         <image name="menu" width="128" height="128"/>
+        <image name="notebook" width="24" height="24"/>
+        <image name="settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bsz-NP-Cr1"/>

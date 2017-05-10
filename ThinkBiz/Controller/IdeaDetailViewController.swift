@@ -41,6 +41,8 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
         
         setupNavigationBar()
         
+        setupTabBarItem()
+        
         setupTableView()
     }
     
@@ -94,6 +96,11 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
 
+    }
+    
+    private func setupTabBarItem() {
+        let tabBarItemImage = UIImage(named: "left")
+        self.tabBarItem = UITabBarItem(title: "Ideas", image: tabBarItemImage, selectedImage: tabBarItemImage)
     }
     
     func configureViews() {
