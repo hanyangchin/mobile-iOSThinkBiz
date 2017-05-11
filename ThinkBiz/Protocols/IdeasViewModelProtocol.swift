@@ -18,6 +18,7 @@ protocol IdeasViewModelProtocol {
     var title: String! { get }
     var numberOfSections: Int! { get }
     var cellWidth: CGFloat? { get }
+    var isInstructionBackgroundHidden: Bool { get }
     
     // MARK: - Functions
     func numberOfItems(inSection section: Int) -> Int
@@ -30,6 +31,8 @@ protocol IdeasViewModelProtocol {
 }
 
 protocol IdeasViewModelControllerDelegate: class {
+    
+    func updateView()
     
     func performBatchUpdates(_ batchOperations:(() -> Void)?)
     

@@ -16,7 +16,9 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     @IBOutlet weak var ideasCollectionView: UICollectionView!
     @IBOutlet weak var addIdeaButton: UIBarButtonItem!
     
+    @IBOutlet var instructionsView: UIView!
     var viewModel: IdeasViewViewModel!
+    
     
     // MARK: -
     
@@ -49,8 +51,8 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         setupNavigationBar()
         
         configureLayout()
-
-        ideasCollectionView.alwaysBounceVertical = true
+        
+        setupCollectionView()
     }
     
     private func setupNavigationBar() {
@@ -83,7 +85,16 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         }
     }
     
+    private func setupCollectionView() {
+        ideasCollectionView.alwaysBounceVertical = true
+        ideasCollectionView.backgroundView = instructionsView
+    }
+    
     // MARK: - IdeasViewModelControllerDelegate
+    
+    func updateView() {
+        ideasCollectionView.backgroundView?.isHidden = viewModel.isInstructionBackgroundHidden
+    }
     
     // Perform batch operations on ideas collection view from view model
     func performBatchUpdates(_ batchOperations: (() -> Void)?) {
@@ -136,17 +147,10 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegate, DataSource, DelegateFlowLayout
 extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        // If no data, display message
-        let emptyMessageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: ideasCollectionView.bounds.width, height: ideasCollectionView.bounds.height))
-        emptyMessageLabel.text = "Plan your new idea by pressing the + button"
-        emptyMessageLabel.textColor = UIColor.lightGray
-        emptyMessageLabel.textAlignment = .center
-        
-        ideasCollectionView.backgroundView = emptyMessageLabel
-        
         return viewModel.numberOfSections
     }
     

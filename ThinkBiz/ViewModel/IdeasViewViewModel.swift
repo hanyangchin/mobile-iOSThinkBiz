@@ -23,6 +23,14 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         return fetchResultsController.sections?.count
     }
     
+    var isInstructionBackgroundHidden: Bool {
+        var hidden = false
+        if let ideaObjects = fetchResultsController.fetchedObjects {
+            hidden = ideaObjects.count > 0
+        }
+        return hidden
+    }
+    
     var cellWidth: CGFloat?
     
     // MARK: - Private
@@ -82,6 +90,7 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         } catch let error as NSError {
             print("\(error)")
         }
+        self.delegate?.updateView()
     }
     
 }
@@ -100,6 +109,7 @@ extension IdeasViewViewModel: NSFetchedResultsControllerDelegate {
                 operation.start()
             }
         })
+        self.delegate?.updateView()
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
