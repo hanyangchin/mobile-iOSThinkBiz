@@ -75,9 +75,18 @@ class SettingsTableViewViewModel: SettingsTableViewViewModelProtocol {
         return reuseIdentifier
     }
     
+    func reuseIdentifierForSectionHeader(section: Int) -> String {
+        return ID_SETTINGSTABLESECTIONHEADER
+    }
+    
     func viewModelForCell(inSection section: Int, at index:Int) -> SettingsTableViewCellViewModel {
         let setting = sections[section].rows[index].data as? Setting
         return SettingsTableViewCellViewModel(initWithModel: setting!)
+    }
+    
+    func viewModelForSectionHeader(section: Int) -> SettingsTableSectionHeaderViewModel {
+        let viewModel = SettingsTableSectionHeaderViewModel(withTitle: settingsTitleTextForSection(section: section))
+        return viewModel
     }
     
     func didSelectRow(inSection section: Int, at index: Int) {

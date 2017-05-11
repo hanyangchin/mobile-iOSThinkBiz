@@ -19,20 +19,26 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.settingsViewModel = SettingsTableViewViewModel()
-        self.settingsViewModel.delegate = self
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        self.versionLabel.text = settingsViewModel.versionText
-        
         setupView()
         configureView()
     }
     
     private func setupView() {
-
+        
+        self.settingsViewModel = SettingsTableViewViewModel()
+        self.settingsViewModel.delegate = self
+        
+        self.versionLabel.text = settingsViewModel.versionText
+        
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        let headerNib = UINib(nibName: ID_SETTINGSTABLESECTIONHEADER, bundle: nil)
+        self.tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: ID_SETTINGSTABLESECTIONHEADER)
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     fileprivate func configureView() {
@@ -106,10 +112,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return self.settingsViewModel.numberOfRows(inSection: section)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.settingsViewModel.settingsTitleTextForSection(section: section)
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let reuseIdentifier = settingsViewModel.reuseIdentifierForCellItem(inSection: indexPath.section, at: indexPath.row)
@@ -126,12 +128,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return 44
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ID_SETTINGSSECTIONTITLECELL) as? SettingsTableViewSectionHeaderCell {
-            cell.titleLabel.text = self.settingsViewModel.settingsTitleTextForSection(section: section)
+        if let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: ID_SETTINGSTABLESECTIONHEADER) as? SettingsTableSectionHeader {
+            cell.viewModel = self.settingsViewModel.viewModelForSectionHeader(section: section)
             return cell
         }
-        return UITableViewCell()
+        return UIView()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

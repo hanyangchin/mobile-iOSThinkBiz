@@ -30,4 +30,4 @@ let ID_TEXTFIELDCELL = "TextFieldCell"
 let ID_TEXTVIEWCELL = "TextViewCell"
 
 let ID_SETTINGSITEMCELLDISCLOSURE = "SettingsItemCellDisclosure"
-let ID_SETTINGSSECTIONTITLECELL = "SettingsSectionTitleCell"
+let ID_SETTINGSTABLESECTIONHEADER = "SettingsTableSectionHeader"

@@ -21,7 +21,9 @@ protocol SettingsTableViewViewModelProtocol {
     func settingsTitleTextForSection(section: Int) -> String
     func numberOfRows(inSection section: Int) -> Int
     func viewModelForCell(inSection section: Int, at index:Int) -> SettingsTableViewCellViewModel
+    func viewModelForSectionHeader(section: Int) -> SettingsTableSectionHeaderViewModel
     func reuseIdentifierForCellItem(inSection section: Int, at index: Int) -> String
+    func reuseIdentifierForSectionHeader(section: Int) -> String
     func didSelectRow(inSection section: Int, at index: Int)
     
     func logout()

@@ -14,14 +14,43 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     
     var viewModel: WebViewViewModel!
     
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+    }
+
+    // MARK: - Functions
+    
+    private func setupView() {
+        setupNavigationBar()
+        
         webView.delegate = self
         
         loadURL()
     }
-
+    
+    private func setupNavigationBar() {
+        setupLeftBarButtonItem()
+    }
+    
+    private func setupLeftBarButtonItem() {
+        
+        let backImage = UIImage(named: "left")
+        backImage?.withRenderingMode(.alwaysTemplate)
+        
+        let backButton = UIButton(type: .system)
+        backButton.setImage(backImage, for: .normal)
+        backButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        backButton.tintColor = Styles.white
+        
+        backButton.addTarget(self, action: #selector(WebViewController.onBackButtonPressed(_:)), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    
     func loadURL() {
         if viewModel == nil {
             return
@@ -38,7 +67,11 @@ class WebViewController: UIViewController, UIWebViewDelegate {
                 webView.loadRequest(request)
             }
         }
-
     }
+    
+    // MARK: - Action handlers
 
+    @IBAction func onBackButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
