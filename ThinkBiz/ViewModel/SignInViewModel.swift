@@ -19,7 +19,7 @@ class SignInViewModel : SignInViewModelProtocol {
     var errorText: String? = ""
     
     var signInButtonEnabled: Bool {
-        return emailValid && passwordValid
+        return emailValid && passwordValid && !processingSignin
     }
     
     // MARK: - Private
@@ -29,6 +29,8 @@ class SignInViewModel : SignInViewModelProtocol {
     private var passwordText: String = ""
     private var emailValid: Bool = false
     private var passwordValid: Bool = false
+    
+    private var processingSignin = false
     
     init(inputValidator: InputValidator) {
         self.inputValidator = inputValidator
@@ -61,52 +63,19 @@ class SignInViewModel : SignInViewModelProtocol {
     }
     
     func signInButtonPressed() {
-        signIn(email: emailText, password: passwordText, {
-            self.delegateSignInSuccess()
-        }) { (error) in
-            self.delegateReloadViews()
-        }
-    }
-    
-    private func signIn(email: String, password: String, _ success:(() -> Void)?, failure:((_ errorDescription: String?) -> Void)?) -> Void {
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
-            if error != nil {
-                var errorMessage: String = ""
-                print(error.debugDescription)
-                if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
-                    switch errorCode {
-                    case .errorCodeInvalidEmail:
-                        errorMessage = "Invalid email"
-                    case .errorCodeNetworkError:
-                        errorMessage = "Network error. Please try again"
-                    case .errorCodeWrongPassword:
-                        errorMessage = "Sorry, wrong password"
-                    case .errorCodeUserNotFound:
-                        errorMessage = "Login does not exists"
-                    default:
-                        errorMessage = "Error occurred"
-                    }
-                    self.errorText = error?.localizedDescription ?? "Unknown error occurred"
-                    failure?(errorMessage)
-                }
+        processingSignin = true
+        AuthService.sharedInstance.signIn(withEmail: emailText, password: passwordText) { (error) in
+            // Check if there is an error
+            if let errorMessage = error {
+                self.errorText = errorMessage
+                self.delegateReloadViews()
             } else {
-                print("Email user authenticated with Firebase")
-                if let user = user {
-                    let userData = ["provider": user.providerID]
-                    self.completeSignIn(id: user.uid, userData: userData)
-                    success?()
-                } else {
-                    failure?("Failed to sign in.")
-                }
+                self.delegateSignInSuccess()
             }
-        })
-    }
-    
-    private func completeSignIn(id: String, userData: Dictionary<String, String>) -> Void {
-        //        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
-        //
-        //        let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
-        //        print("Han Social: Data saved to keychain \(keyChainResult) with ID \(id)")
+            
+            self.processingSignin = false
+        }
+        delegateReloadViews()
     }
     
     // MARK: - Delegate Response
