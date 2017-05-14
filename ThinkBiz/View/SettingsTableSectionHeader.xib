@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SettingsTableSectionHeader" customModule="ThinkBiz" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-8q-jyp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVS-f4-PBZ">
+                            <rect key="frame" x="20" y="18" width="347" height="18"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="FVS-f4-PBZ" firstAttribute="leading" secondItem="e0m-8q-jyp" secondAttribute="leadingMargin" id="6Id-JK-orQ"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="FVS-f4-PBZ" secondAttribute="trailing" id="I4J-Sf-R1P"/>
+                        <constraint firstAttribute="bottom" secondItem="FVS-f4-PBZ" secondAttribute="bottom" constant="2" id="gTR-2B-wTO"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="8"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="e0m-8q-jyp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9oM-00-Jx0"/>
+                <constraint firstAttribute="bottom" secondItem="e0m-8q-jyp" secondAttribute="bottom" id="BXK-qC-p6i"/>
+                <constraint firstItem="e0m-8q-jyp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cbo-87-7Fd"/>
+                <constraint firstAttribute="trailing" secondItem="e0m-8q-jyp" secondAttribute="trailing" id="yxb-BM-wBB"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="FVS-f4-PBZ" id="V6e-X6-aJa"/>
+            </connections>
+            <point key="canvasLocation" x="65.5" y="-316"/>
+        </view>
+    </objects>
+</document>

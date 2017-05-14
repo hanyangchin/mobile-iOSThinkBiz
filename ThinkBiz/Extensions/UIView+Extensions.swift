@@ -11,6 +11,20 @@ import Foundation
 
 extension UIView {
     
+    // MARK: - Functions
+    
+    // Helper function to shorten the add constraints with visual format function
+    func addContraintsWithVisualFormat(format: String, views: UIView...) {
+        var viewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerated() {
+            let key = "v\(index)"
+            viewsDictionary[key] = view
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
+    }
+    
     func shake() -> Void {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)

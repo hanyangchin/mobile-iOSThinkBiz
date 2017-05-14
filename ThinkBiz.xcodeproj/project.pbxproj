@@ -15,17 +15,44 @@
 		860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */; };
 		860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */; };
 		860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */; };
+		8614C26B1EAD500F00099F38 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26A1EAD500E00099F38 /* Form.swift */; };
+		8614C26E1EAD617F00099F38 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */; };
+		8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C26F1EAD6C8A00099F38 /* TextForm.swift */; };
+		8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */; };
+		8614C2741EADF32E00099F38 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2731EADF32E00099F38 /* DataService.swift */; };
+		8614C2761EB0399A00099F38 /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */; };
+		8614C2781EB049C400099F38 /* IdeaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2771EB049C400099F38 /* IdeaDetailViewModel.swift */; };
+		8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */; };
+		8614C2CD1EB3443500099F38 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */; };
+		8614C2CF1EB3445F00099F38 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */; };
+		8614C2D81EB57D4200099F38 /* lato-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8614C2D71EB57D4200099F38 /* lato-regular.ttf */; };
 		8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E47E1EA6BBDF00E17624 /* WebViewController.swift */; };
 		8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4801EA6C48300E17624 /* WebViewViewModel.swift */; };
 		8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4821EA6CD5E00E17624 /* WebPage.swift */; };
 		8617E4851EA6E9D800E17624 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4841EA6E9D800E17624 /* AuthService.swift */; };
 		8617E4871EA8209200E17624 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617E4861EA8209200E17624 /* ApiService.swift */; };
+		861B2CA51EBAB82B00425EFA /* TextFieldCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B2CA41EBAB82B00425EFA /* TextFieldCellDelegate.swift */; };
+		861B2CA71EBABCA600425EFA /* TextViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B2CA61EBABCA600425EFA /* TextViewCellDelegate.swift */; };
+		861B2CAA1EBBE39D00425EFA /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B2CA91EBBE39D00425EFA /* FormModel.swift */; };
 		863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */; };
+		8649AAA61EAB446100122586 /* NewIdeaViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */; };
+		8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */; };
+		8649AAAA1EAB569C00122586 /* IdeaForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649AAA91EAB569C00122586 /* IdeaForm.swift */; };
+		864A068F1EC2A14A00FA4F24 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A068E1EC2A14A00FA4F24 /* TabBarController.swift */; };
+		864A06911EC3CF5600FA4F24 /* SettingsTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A06901EC3CF5600FA4F24 /* SettingsTableSectionHeader.swift */; };
+		864A06931EC3CF9000FA4F24 /* SettingsTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864A06921EC3CF9000FA4F24 /* SettingsTableSectionHeader.xib */; };
+		864A06951EC3ED9600FA4F24 /* SettingsTableSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A06941EC3ED9600FA4F24 /* SettingsTableSectionHeaderViewModel.swift */; };
+		864A06971EC3EF1000FA4F24 /* SettingsTableSectionHeaderViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A06961EC3EF1000FA4F24 /* SettingsTableSectionHeaderViewModelProtocol.swift */; };
 		8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC11E8C5AB0005E353A /* Constants.swift */; };
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
 		8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* SignInViewController.swift */; };
 		8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC581E931FC100D50AB3 /* InputTextField.swift */; };
+		868808641EB96FB30045D3A5 /* DecoratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808631EB96FB30045D3A5 /* DecoratedView.swift */; };
+		868808671EB986210045D3A5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808651EB986210045D3A5 /* TextFieldCell.swift */; };
+		868808681EB986210045D3A5 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868808661EB986210045D3A5 /* TextFieldCell.xib */; };
+		8688086B1EB98B3F0045D3A5 /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808691EB98B3F0045D3A5 /* TextViewCell.swift */; };
+		8688086C1EB98B3F0045D3A5 /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8688086A1EB98B3F0045D3A5 /* TextViewCell.xib */; };
 		86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */; };
 		86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */; };
 		86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */; };
@@ -34,6 +61,13 @@
 		86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */; };
 		86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */; };
 		86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */; };
+		86EED4661EA84502007D14B4 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED4651EA84502007D14B4 /* IdeasViewController.swift */; };
+		86EED4681EA847D7007D14B4 /* NewIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */; };
+		86EED46A1EA84BE0007D14B4 /* IdeasViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED4691EA84BE0007D14B4 /* IdeasViewViewModel.swift */; };
+		86EED46C1EA86812007D14B4 /* IdeasViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED46B1EA86812007D14B4 /* IdeasViewModelProtocol.swift */; };
+		86EED46E1EA8A396007D14B4 /* IdeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED46D1EA8A396007D14B4 /* IdeaCell.swift */; };
+		86EED4701EA9AFE1007D14B4 /* IdeaCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED46F1EA9AFE1007D14B4 /* IdeaCellViewModel.swift */; };
+		86EED4721EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EED4711EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift */; };
 		86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */; };
 		86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FD7D211E8B46E600C412C0 /* Main.storyboard */; };
 		86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86FD7D241E8B46E600C412C0 /* ThinkBiz.xcdatamodeld */; };
@@ -73,18 +107,45 @@
 		860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewModelProtocol.swift; path = Protocols/SignUpViewModelProtocol.swift; sourceTree = "<group>"; };
 		860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModelProtocol.swift; path = Protocols/SignInViewModelProtocol.swift; sourceTree = "<group>"; };
 		860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewModel.swift; path = ViewModel/SignInViewModel.swift; sourceTree = "<group>"; };
+		8614C26A1EAD500E00099F38 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Form.swift; path = Model/Form.swift; sourceTree = "<group>"; };
+		8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCellViewModel.swift; path = ViewModel/TextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		8614C26F1EAD6C8A00099F38 /* TextForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextForm.swift; path = Model/TextForm.swift; sourceTree = "<group>"; };
+		8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCellViewModel.swift; path = ViewModel/TextViewCellViewModel.swift; sourceTree = "<group>"; };
+		8614C2731EADF32E00099F38 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
+		8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewController.swift; path = Controller/IdeaDetailViewController.swift; sourceTree = "<group>"; };
+		8614C2771EB049C400099F38 /* IdeaDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewModel.swift; path = ViewModel/IdeaDetailViewModel.swift; sourceTree = "<group>"; };
+		8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaDetailViewModelProtocol.swift; path = Protocols/IdeaDetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewCell.swift; path = View/BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = View/BaseTableViewCell.swift; sourceTree = "<group>"; };
+		8614C2D71EB57D4200099F38 /* lato-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "lato-regular.ttf"; path = "Resources/lato-regular.ttf"; sourceTree = "<group>"; };
 		8617E47E1EA6BBDF00E17624 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Controller/WebViewController.swift; sourceTree = "<group>"; };
 		8617E4801EA6C48300E17624 /* WebViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewModel.swift; path = ViewModel/WebViewViewModel.swift; sourceTree = "<group>"; };
 		8617E4821EA6CD5E00E17624 /* WebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPage.swift; path = Model/WebPage.swift; sourceTree = "<group>"; };
 		8617E4841EA6E9D800E17624 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
 		8617E4861EA8209200E17624 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Services/ApiService.swift; sourceTree = "<group>"; };
+		861B2CA41EBAB82B00425EFA /* TextFieldCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCellDelegate.swift; path = Delegates/TextFieldCellDelegate.swift; sourceTree = "<group>"; };
+		861B2CA61EBABCA600425EFA /* TextViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCellDelegate.swift; path = Delegates/TextViewCellDelegate.swift; sourceTree = "<group>"; };
+		861B2CA91EBBE39D00425EFA /* FormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormModel.swift; path = Model/FormModel.swift; sourceTree = "<group>"; };
 		863C656B1E8B5A3A0093C3F9 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = Controller/LandingViewController.swift; sourceTree = "<group>"; };
 		864348F756E1A1DDDA2B1B50 /* Pods_ThinkBizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkBizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModelProtocol.swift; path = Protocols/NewIdeaViewModelProtocol.swift; sourceTree = "<group>"; };
+		8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewModel.swift; path = ViewModel/NewIdeaViewModel.swift; sourceTree = "<group>"; };
+		8649AAA91EAB569C00122586 /* IdeaForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaForm.swift; path = Model/IdeaForm.swift; sourceTree = "<group>"; };
+		864A068E1EC2A14A00FA4F24 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controller/TabBarController.swift; sourceTree = "<group>"; };
+		864A06901EC3CF5600FA4F24 /* SettingsTableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableSectionHeader.swift; path = View/SettingsTableSectionHeader.swift; sourceTree = "<group>"; };
+		864A06921EC3CF9000FA4F24 /* SettingsTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsTableSectionHeader.xib; path = View/SettingsTableSectionHeader.xib; sourceTree = "<group>"; };
+		864A06941EC3ED9600FA4F24 /* SettingsTableSectionHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableSectionHeaderViewModel.swift; path = ViewModel/SettingsTableSectionHeaderViewModel.swift; sourceTree = "<group>"; };
+		864A06961EC3EF1000FA4F24 /* SettingsTableSectionHeaderViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableSectionHeaderViewModelProtocol.swift; path = Protocols/SettingsTableSectionHeaderViewModelProtocol.swift; sourceTree = "<group>"; };
 		8652ACC11E8C5AB0005E353A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Controller/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		8658FC561E91DD2500D50AB3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controller/SignInViewController.swift; sourceTree = "<group>"; };
 		8658FC581E931FC100D50AB3 /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTextField.swift; path = View/InputTextField.swift; sourceTree = "<group>"; };
+		868808631EB96FB30045D3A5 /* DecoratedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecoratedView.swift; path = View/DecoratedView.swift; sourceTree = "<group>"; };
+		868808651EB986210045D3A5 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = View/TextFieldCell.swift; sourceTree = "<group>"; };
+		868808661EB986210045D3A5 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldCell.xib; path = View/TextFieldCell.xib; sourceTree = "<group>"; };
+		868808691EB98B3F0045D3A5 /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewCell.swift; path = View/TextViewCell.swift; sourceTree = "<group>"; };
+		8688086A1EB98B3F0045D3A5 /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextViewCell.xib; path = View/TextViewCell.xib; sourceTree = "<group>"; };
 		86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controller/SettingsViewController.swift; sourceTree = "<group>"; };
 		86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewViewModel.swift; path = ViewModel/SettingsTableViewViewModel.swift; sourceTree = "<group>"; };
 		86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewViewModelProtocol.swift; path = Protocols/SettingsTableViewViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -93,6 +154,13 @@
 		86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewCellViewModel.swift; path = ViewModel/SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Model/Setting.swift; sourceTree = "<group>"; };
 		86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSetting.swift; path = Model/URLSetting.swift; sourceTree = "<group>"; };
+		86EED4651EA84502007D14B4 /* IdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeasViewController.swift; path = Controller/IdeasViewController.swift; sourceTree = "<group>"; };
+		86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewIdeaViewController.swift; path = Controller/NewIdeaViewController.swift; sourceTree = "<group>"; };
+		86EED4691EA84BE0007D14B4 /* IdeasViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeasViewViewModel.swift; path = ViewModel/IdeasViewViewModel.swift; sourceTree = "<group>"; };
+		86EED46B1EA86812007D14B4 /* IdeasViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeasViewModelProtocol.swift; path = Protocols/IdeasViewModelProtocol.swift; sourceTree = "<group>"; };
+		86EED46D1EA8A396007D14B4 /* IdeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaCell.swift; path = View/IdeaCell.swift; sourceTree = "<group>"; };
+		86EED46F1EA9AFE1007D14B4 /* IdeaCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaCellViewModel.swift; path = ViewModel/IdeaCellViewModel.swift; sourceTree = "<group>"; };
+		86EED4711EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdeaCellViewModelProtocol.swift; path = Protocols/IdeaCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		86FD7D1A1E8B46E600C412C0 /* ThinkBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86FD7D221E8B46E600C412C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,11 +243,17 @@
 		860567B01E96F38A00FCB03E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8614C26C1EAD611200099F38 /* Cell */,
 				860567B51E99B11900FCB03E /* SignUpViewModel.swift */,
 				860567BE1E9B2D3F00FCB03E /* SignInViewModel.swift */,
 				86BE2E1A1E9EF206008E05E0 /* SettingsTableViewViewModel.swift */,
 				86BE2E221EA03471008E05E0 /* SettingsTableViewCellViewModel.swift */,
 				8617E4801EA6C48300E17624 /* WebViewViewModel.swift */,
+				86EED4691EA84BE0007D14B4 /* IdeasViewViewModel.swift */,
+				86EED46F1EA9AFE1007D14B4 /* IdeaCellViewModel.swift */,
+				8649AAA71EAB4D6300122586 /* NewIdeaViewModel.swift */,
+				8614C2771EB049C400099F38 /* IdeaDetailViewModel.swift */,
+				864A06941EC3ED9600FA4F24 /* SettingsTableSectionHeaderViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -190,8 +264,39 @@
 				860567BA1E99CB5400FCB03E /* SignUpViewModelProtocol.swift */,
 				860567BC1E9B2C5000FCB03E /* SignInViewModelProtocol.swift */,
 				86BE2E1C1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift */,
+				86EED46B1EA86812007D14B4 /* IdeasViewModelProtocol.swift */,
+				86EED4711EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift */,
+				8649AAA51EAB446100122586 /* NewIdeaViewModelProtocol.swift */,
+				8614C2791EB0539100099F38 /* IdeaDetailViewModelProtocol.swift */,
+				864A06961EC3EF1000FA4F24 /* SettingsTableSectionHeaderViewModelProtocol.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		8614C26C1EAD611200099F38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8614C26D1EAD617F00099F38 /* TextFieldCellViewModel.swift */,
+				8614C2711EAD914000099F38 /* TextViewCellViewModel.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		8614C2D01EB57BCB00099F38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8614C2D71EB57D4200099F38 /* lato-regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		861B2CA81EBABCB600425EFA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				861B2CA41EBAB82B00425EFA /* TextFieldCellDelegate.swift */,
+				861B2CA61EBABCA600425EFA /* TextViewCellDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		863C65651E8B525E0093C3F9 /* Model */ = {
@@ -200,6 +305,10 @@
 				86BE2E2A1EA1D7DA008E05E0 /* Setting.swift */,
 				86BE2E2C1EA2D924008E05E0 /* URLSetting.swift */,
 				8617E4821EA6CD5E00E17624 /* WebPage.swift */,
+				8649AAA91EAB569C00122586 /* IdeaForm.swift */,
+				8614C26A1EAD500E00099F38 /* Form.swift */,
+				8614C26F1EAD6C8A00099F38 /* TextForm.swift */,
+				861B2CA91EBBE39D00425EFA /* FormModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,6 +319,16 @@
 				8658FC581E931FC100D50AB3 /* InputTextField.swift */,
 				86BE2E1E1E9F16F8008E05E0 /* SettingsTableViewCell.swift */,
 				86BE2E201E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift */,
+				86EED46D1EA8A396007D14B4 /* IdeaCell.swift */,
+				8614C2CC1EB3443500099F38 /* BaseCollectionViewCell.swift */,
+				8614C2CE1EB3445F00099F38 /* BaseTableViewCell.swift */,
+				868808631EB96FB30045D3A5 /* DecoratedView.swift */,
+				868808651EB986210045D3A5 /* TextFieldCell.swift */,
+				868808661EB986210045D3A5 /* TextFieldCell.xib */,
+				868808691EB98B3F0045D3A5 /* TextViewCell.swift */,
+				8688086A1EB98B3F0045D3A5 /* TextViewCell.xib */,
+				864A06901EC3CF5600FA4F24 /* SettingsTableSectionHeader.swift */,
+				864A06921EC3CF9000FA4F24 /* SettingsTableSectionHeader.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -223,6 +342,10 @@
 				8658FC561E91DD2500D50AB3 /* SignInViewController.swift */,
 				86BE2E181E9EF17C008E05E0 /* SettingsViewController.swift */,
 				8617E47E1EA6BBDF00E17624 /* WebViewController.swift */,
+				86EED4651EA84502007D14B4 /* IdeasViewController.swift */,
+				86EED4671EA847D7007D14B4 /* NewIdeaViewController.swift */,
+				8614C2751EB0399A00099F38 /* IdeaDetailViewController.swift */,
+				864A068E1EC2A14A00FA4F24 /* TabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,6 +364,7 @@
 			children = (
 				8617E4841EA6E9D800E17624 /* AuthService.swift */,
 				8617E4861EA8209200E17624 /* ApiService.swift */,
+				8614C2731EADF32E00099F38 /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -270,14 +394,16 @@
 		86FD7D1C1E8B46E600C412C0 /* ThinkBiz */ = {
 			isa = PBXGroup;
 			children = (
-				860567B91E99CB1500FCB03E /* Protocols */,
-				860567AD1E95E19200FCB03E /* Extensions */,
-				863C656A1E8B53160093C3F9 /* Services */,
-				863C65691E8B530A0093C3F9 /* Utils */,
-				863C65651E8B525E0093C3F9 /* Model */,
-				863C65661E8B52A70093C3F9 /* View */,
-				860567B01E96F38A00FCB03E /* ViewModel */,
+				861B2CA81EBABCB600425EFA /* Delegates */,
+				8614C2D01EB57BCB00099F38 /* Resources */,
 				863C65671E8B52B70093C3F9 /* Controller */,
+				860567B01E96F38A00FCB03E /* ViewModel */,
+				860567B91E99CB1500FCB03E /* Protocols */,
+				863C65661E8B52A70093C3F9 /* View */,
+				863C65651E8B525E0093C3F9 /* Model */,
+				863C656A1E8B53160093C3F9 /* Services */,
+				860567AD1E95E19200FCB03E /* Extensions */,
+				863C65691E8B530A0093C3F9 /* Utils */,
 				86FD7D4E1E8B4B1600C412C0 /* GoogleService-Info.plist */,
 				86FD7D1D1E8B46E600C412C0 /* AppDelegate.swift */,
 				86FD7D211E8B46E600C412C0 /* Main.storyboard */,
@@ -429,9 +555,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				86FD7D2B1E8B46E600C412C0 /* LaunchScreen.storyboard in Resources */,
+				8688086C1EB98B3F0045D3A5 /* TextViewCell.xib in Resources */,
 				86FD7D4F1E8B4B1600C412C0 /* GoogleService-Info.plist in Resources */,
 				86FD7D281E8B46E600C412C0 /* Assets.xcassets in Resources */,
+				8614C2D81EB57D4200099F38 /* lato-regular.ttf in Resources */,
 				86FD7D231E8B46E600C412C0 /* Main.storyboard in Resources */,
+				864A06931EC3CF9000FA4F24 /* SettingsTableSectionHeader.xib in Resources */,
+				868808681EB986210045D3A5 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,32 +710,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				860567BF1E9B2D3F00FCB03E /* SignInViewModel.swift in Sources */,
+				8614C26E1EAD617F00099F38 /* TextFieldCellViewModel.swift in Sources */,
+				8614C2701EAD6C8A00099F38 /* TextForm.swift in Sources */,
+				864A068F1EC2A14A00FA4F24 /* TabBarController.swift in Sources */,
 				860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */,
+				861B2CA71EBABCA600425EFA /* TextViewCellDelegate.swift in Sources */,
 				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,
+				864A06951EC3ED9600FA4F24 /* SettingsTableSectionHeaderViewModel.swift in Sources */,
 				860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */,
 				86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */,
 				8617E4871EA8209200E17624 /* ApiService.swift in Sources */,
+				8614C2781EB049C400099F38 /* IdeaDetailViewModel.swift in Sources */,
+				864A06971EC3EF1000FA4F24 /* SettingsTableSectionHeaderViewModelProtocol.swift in Sources */,
+				86EED46A1EA84BE0007D14B4 /* IdeasViewViewModel.swift in Sources */,
 				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
+				8614C2CF1EB3445F00099F38 /* BaseTableViewCell.swift in Sources */,
+				8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */,
+				86EED4701EA9AFE1007D14B4 /* IdeaCellViewModel.swift in Sources */,
 				86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */,
+				861B2CAA1EBBE39D00425EFA /* FormModel.swift in Sources */,
 				8617E4831EA6CD5E00E17624 /* WebPage.swift in Sources */,
 				86FD7D1E1E8B46E600C412C0 /* AppDelegate.swift in Sources */,
 				86BE2E2D1EA2D924008E05E0 /* URLSetting.swift in Sources */,
 				863C656C1E8B5A3A0093C3F9 /* LandingViewController.swift in Sources */,
+				8649AAAA1EAB569C00122586 /* IdeaForm.swift in Sources */,
 				8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */,
+				8614C26B1EAD500F00099F38 /* Form.swift in Sources */,
+				861B2CA51EBAB82B00425EFA /* TextFieldCellDelegate.swift in Sources */,
 				86BE2E211E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift in Sources */,
+				8688086B1EB98B3F0045D3A5 /* TextViewCell.swift in Sources */,
 				86BE2E2B1EA1D7DA008E05E0 /* Setting.swift in Sources */,
 				86BE2E191E9EF17C008E05E0 /* SettingsViewController.swift in Sources */,
+				8614C2721EAD914000099F38 /* TextViewCellViewModel.swift in Sources */,
+				864A06911EC3CF5600FA4F24 /* SettingsTableSectionHeader.swift in Sources */,
 				8617E47F1EA6BBDF00E17624 /* WebViewController.swift in Sources */,
+				868808671EB986210045D3A5 /* TextFieldCell.swift in Sources */,
 				86FD7D261E8B46E600C412C0 /* ThinkBiz.xcdatamodeld in Sources */,
+				8614C2741EADF32E00099F38 /* DataService.swift in Sources */,
 				8652ACC21E8C5AB0005E353A /* Constants.swift in Sources */,
+				868808641EB96FB30045D3A5 /* DecoratedView.swift in Sources */,
 				860567B81E99C0CF00FCB03E /* Helper.swift in Sources */,
 				8617E4851EA6E9D800E17624 /* AuthService.swift in Sources */,
 				860567BD1E9B2C5000FCB03E /* SignInViewModelProtocol.swift in Sources */,
 				860567B61E99B11900FCB03E /* SignUpViewModel.swift in Sources */,
 				86BE2E1F1E9F16F8008E05E0 /* SettingsTableViewCell.swift in Sources */,
+				8649AAA61EAB446100122586 /* NewIdeaViewModelProtocol.swift in Sources */,
 				8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */,
+				86EED4661EA84502007D14B4 /* IdeasViewController.swift in Sources */,
 				8617E4811EA6C48300E17624 /* WebViewViewModel.swift in Sources */,
+				8649AAA81EAB4D6300122586 /* NewIdeaViewModel.swift in Sources */,
+				8614C2CD1EB3443500099F38 /* BaseCollectionViewCell.swift in Sources */,
+				86EED46E1EA8A396007D14B4 /* IdeaCell.swift in Sources */,
+				86EED46C1EA86812007D14B4 /* IdeasViewModelProtocol.swift in Sources */,
+				86EED4721EA9BD9E007D14B4 /* IdeaCellViewModelProtocol.swift in Sources */,
 				86BE2E1B1E9EF206008E05E0 /* SettingsTableViewViewModel.swift in Sources */,
+				8614C2761EB0399A00099F38 /* IdeaDetailViewController.swift in Sources */,
+				86EED4681EA847D7007D14B4 /* NewIdeaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

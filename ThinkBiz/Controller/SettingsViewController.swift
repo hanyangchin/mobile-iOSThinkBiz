@@ -19,14 +19,26 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        configureView()
+    }
+    
+    private func setupView() {
+        
         self.settingsViewModel = SettingsTableViewViewModel()
         self.settingsViewModel.delegate = self
         
+        self.versionLabel.text = settingsViewModel.versionText
+        
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        let headerNib = UINib(nibName: ID_SETTINGSTABLESECTIONHEADER, bundle: nil)
+        self.tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: ID_SETTINGSTABLESECTIONHEADER)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        self.versionLabel.text = settingsViewModel.versionText
-        configureView()
     }
     
     fileprivate func configureView() {
@@ -64,7 +76,7 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
     func performLogout() {
         
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                 self.settingsViewModel.logout()
             }))
@@ -93,17 +105,11 @@ class SettingsViewController: UIViewController, SettingsTableViewViewModelContro
 // MARK: - TableView UITableViewDelegate, UITableViewDataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("Number sections is \(self.settingsViewModel.numberOfSections)")
         return self.settingsViewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of row in section \(section) is \(self.settingsViewModel.numberOfRows(inSection: section))")
         return self.settingsViewModel.numberOfRows(inSection: section)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.settingsViewModel.settingsTitleTextForSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,12 +128,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return 44
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: ID_SETTINGSSECTIONTITLECELL) as? SettingsTableViewSectionHeaderCell {
-            cell.titleLabel.text = self.settingsViewModel.settingsTitleTextForSection(section: section)
+        if let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: ID_SETTINGSTABLESECTIONHEADER) as? SettingsTableSectionHeader {
+            cell.viewModel = self.settingsViewModel.viewModelForSectionHeader(section: section)
             return cell
         }
-        return UITableViewCell()
+        return UIView()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
