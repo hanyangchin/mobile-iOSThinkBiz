@@ -38,8 +38,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SignInViewMod
         responderFields[emailField.tag] = emailField
         responderFields[passwordField.tag] = passwordField
         
-        let attributedString = NSAttributedString(string: "Forgot your password?", attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
-        forgotPasswordButton.setAttributedTitle(attributedString, for: .normal)
+//        let attributedString = NSAttributedString(string: "Forgot your password?", attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
+//        forgotPasswordButton.setAttributedTitle(attributedString, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
