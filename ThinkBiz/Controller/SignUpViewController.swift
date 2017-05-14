@@ -35,8 +35,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, SignUpViewMod
         responderFields[emailField.tag] = emailField
         responderFields[passwordField.tag] = passwordField
         
-        let attributedString = NSAttributedString(string: (haveAccountButton.titleLabel?.text)!, attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
-        haveAccountButton.setAttributedTitle(attributedString, for: .normal)
+//        let attributedString = NSAttributedString(string: (haveAccountButton.titleLabel?.text)!, attributes: [NSForegroundColorAttributeName:UIColor.red, NSUnderlineStyleAttributeName: 1])
+//        haveAccountButton.setAttributedTitle(attributedString, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
