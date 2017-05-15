@@ -47,7 +47,6 @@
 		8652ACC41E8C620D005E353A /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */; };
 		8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */; };
 		8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* SignInViewController.swift */; };
-		8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC581E931FC100D50AB3 /* InputTextField.swift */; };
 		865A7C9E1EC54A0F0003BA30 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865A7C9D1EC54A0F0003BA30 /* DesignableTextField.swift */; };
 		865A7CA11EC55E850003BA30 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865A7CA01EC55E850003BA30 /* DesignableButton.swift */; };
 		868808641EB96FB30045D3A5 /* DecoratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808631EB96FB30045D3A5 /* DecoratedView.swift */; };
@@ -142,8 +141,7 @@
 		8652ACC31E8C620D005E353A /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnBoardingViewController.swift; path = Controller/OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8658FC541E91C3A400D50AB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		8658FC561E91DD2500D50AB3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controller/SignInViewController.swift; sourceTree = "<group>"; };
-		8658FC581E931FC100D50AB3 /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTextField.swift; path = View/InputTextField.swift; sourceTree = "<group>"; };
-		865A7C9D1EC54A0F0003BA30 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = View/DesignableTextField.swift; sourceTree = "<group>"; };
+		865A7C9D1EC54A0F0003BA30 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = View/Designables/DesignableTextField.swift; sourceTree = "<group>"; };
 		865A7CA01EC55E850003BA30 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = View/Designables/DesignableButton.swift; sourceTree = "<group>"; };
 		868808631EB96FB30045D3A5 /* DecoratedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecoratedView.swift; path = View/DecoratedView.swift; sourceTree = "<group>"; };
 		868808651EB986210045D3A5 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = View/TextFieldCell.swift; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				865A7C9F1EC55E380003BA30 /* Designables */,
-				8658FC581E931FC100D50AB3 /* InputTextField.swift */,
 				86BE2E1E1E9F16F8008E05E0 /* SettingsTableViewCell.swift */,
 				86BE2E201E9F173A008E05E0 /* SettingsTableViewSectionHeaderCell.swift */,
 				86EED46D1EA8A396007D14B4 /* IdeaCell.swift */,
@@ -729,7 +726,6 @@
 				864A068F1EC2A14A00FA4F24 /* TabBarController.swift in Sources */,
 				860567AF1E95E1BE00FCB03E /* UIView+Extensions.swift in Sources */,
 				861B2CA71EBABCA600425EFA /* TextViewCellDelegate.swift in Sources */,
-				8658FC591E931FC100D50AB3 /* InputTextField.swift in Sources */,
 				864A06951EC3ED9600FA4F24 /* SettingsTableSectionHeaderViewModel.swift in Sources */,
 				860567BB1E99CB5400FCB03E /* SignUpViewModelProtocol.swift in Sources */,
 				86BE2E1D1E9EF858008E05E0 /* SettingsTableViewViewModelProtocol.swift in Sources */,

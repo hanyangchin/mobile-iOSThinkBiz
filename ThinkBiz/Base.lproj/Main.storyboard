@@ -193,7 +193,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.5" width="220" height="229"/>
                                                                                 <subviews>
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="AppIcon-white" translatesAutoresizingMaskIntoConstraints="NO" id="oSQ-Gv-04C">
-                                                                                        <rect key="frame" x="24.5" y="29" width="172.5" height="172"/>
+                                                                                        <rect key="frame" x="24.5" y="29.5" width="172.5" height="172"/>
                                                                                         <color key="tintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="oSQ-Gv-04C" secondAttribute="height" multiplier="1:1" id="pNQ-ls-m1N"/>
@@ -913,7 +913,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.5" width="220" height="229"/>
                                                                                 <subviews>
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="AppIcon-white" translatesAutoresizingMaskIntoConstraints="NO" id="wNS-xw-z89">
-                                                                                        <rect key="frame" x="24" y="29" width="172" height="172"/>
+                                                                                        <rect key="frame" x="24" y="29.5" width="172" height="172"/>
                                                                                         <color key="tintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="wNS-xw-z89" secondAttribute="height" multiplier="1:1" id="05C-L9-inC"/>
@@ -1318,6 +1318,6 @@
         <image name="settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ohe-M5-O3W"/>
+        <segue reference="bsz-NP-Cr1"/>
     </inferredMetricsTieBreakers>
 </document>
