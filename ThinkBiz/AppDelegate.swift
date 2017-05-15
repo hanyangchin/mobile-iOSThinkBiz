@@ -15,13 +15,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FIRApp.configure()
         
+        configureNavigationBar()
+        
         return true
+    }
+    
+    private func configureNavigationBar() {
+        
+        // Set bar tint color
+        UINavigationBar.appearance().barTintColor = Styles.accentColor
+        UINavigationBar.appearance().isTranslucent = false
+        
+        // Removes bottom nav bar shadow - make sure to set translucent to false
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        // Set Navigation bar title text attribute
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSForegroundColorAttributeName: Styles.white,
+            NSFontAttributeName: UIFont(name: "Avenir", size: 17)!,
+            NSKernAttributeName:CGFloat(0.5)
+        ]
+
+//        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
