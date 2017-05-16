@@ -66,7 +66,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WaA-H0-dpo">
                                 <rect key="frame" x="0.0" y="434.5" width="320" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NgD-a1-NzE">
                                 <rect key="frame" x="50" y="532" width="220" height="36"/>
@@ -141,12 +141,198 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="onBoardingOne" destination="elL-cj-29f" id="gAY-Ai-HTI"/>
+                        <outlet property="onBoardingThree" destination="YT7-Fh-qgv" id="zJA-TB-Anp"/>
+                        <outlet property="onBoardingTwo" destination="VND-gl-Ced" id="UbK-Vx-pgN"/>
                         <outlet property="paddingLeft" destination="Z0V-yp-znk" id="eMs-PA-X26"/>
                         <outlet property="pageControl" destination="WaA-H0-dpo" id="nX5-mu-SNh"/>
                         <outlet property="scrollView" destination="X55-0Q-f0a" id="R0M-HI-gk8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEV-lk-qNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="YT7-Fh-qgv">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h4e-pk-ORR">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vht-3x-D4S">
+                                    <rect key="frame" x="1.5" y="0.0" width="237.5" height="92"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Cloud Sync">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99781495332717896" green="0.4229665994644165" blue="0.42291375994682312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="25" name="Avenir-Heavy"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="8" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="All data is synchronized to the cloud when connected to Wi-Fi">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="on_boarding_3" translatesAutoresizingMaskIntoConstraints="NO" id="ccz-0a-SLm">
+                                    <rect key="frame" x="20" y="92" width="200" height="36"/>
+                                    <color key="tintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ccz-0a-SLm" firstAttribute="leading" secondItem="h4e-pk-ORR" secondAttribute="leading" constant="20" id="4ym-VD-U8R"/>
+                                <constraint firstAttribute="trailing" secondItem="ccz-0a-SLm" secondAttribute="trailing" constant="20" id="D7C-5Z-EPV"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottomMargin" secondItem="h4e-pk-ORR" secondAttribute="bottom" id="2gJ-Ia-hRA"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="h4e-pk-ORR" secondAttribute="trailing" id="4Tm-BQ-g3W"/>
+                        <constraint firstItem="h4e-pk-ORR" firstAttribute="leading" secondItem="YT7-Fh-qgv" secondAttribute="leadingMargin" id="cp7-vp-4v1"/>
+                        <constraint firstItem="h4e-pk-ORR" firstAttribute="top" secondItem="YT7-Fh-qgv" secondAttribute="topMargin" id="pZQ-gM-skO"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                </view>
+                <view contentMode="scaleToFill" id="VND-gl-Ced">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8GM-Lk-v0l">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76B-YM-PNi">
+                                    <rect key="frame" x="17.5" y="0.0" width="205.5" height="92"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Editing">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99781495332717896" green="0.4229665994644165" blue="0.42291375994682312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="25" name="Avenir-Heavy"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="8" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="You can update your ideas anytime anywhere">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="on_boarding_2" translatesAutoresizingMaskIntoConstraints="NO" id="xhd-Ed-OOp">
+                                    <rect key="frame" x="20" y="92" width="200" height="36"/>
+                                    <color key="tintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="xhd-Ed-OOp" secondAttribute="trailing" constant="20" id="Z17-wy-68Q"/>
+                                <constraint firstItem="xhd-Ed-OOp" firstAttribute="leading" secondItem="8GM-Lk-v0l" secondAttribute="leading" constant="20" id="cRG-GD-5cU"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="8GM-Lk-v0l" firstAttribute="top" secondItem="VND-gl-Ced" secondAttribute="topMargin" id="Cq9-0U-KDu"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="8GM-Lk-v0l" secondAttribute="bottom" id="HlT-AS-H6R"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="8GM-Lk-v0l" secondAttribute="trailing" id="NME-8g-IkC"/>
+                        <constraint firstItem="8GM-Lk-v0l" firstAttribute="leading" secondItem="VND-gl-Ced" secondAttribute="leadingMargin" id="RZH-S4-FEq"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                </view>
+                <view contentMode="scaleToFill" id="elL-cj-29f">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cBV-q8-IWF">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G4-n6-e2a">
+                                    <rect key="frame" x="6.5" y="0.0" width="227" height="128"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Welcome to ThinkBiz">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99781495332717896" green="0.4229665994644165" blue="0.42291375994682312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="25" name="Avenir-Heavy"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="8" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="A place for you to brainstorm your business ideas into a simple list">
+                                            <attributes>
+                                                <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="17" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="on_boarding_1" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-Jp-JH6">
+                                    <rect key="frame" x="20" y="128" width="200" height="0.0"/>
+                                    <color key="tintColor" red="0.99781495330000003" green="0.42296659949999998" blue="0.42291375990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="B7y-Jp-JH6" firstAttribute="leading" secondItem="cBV-q8-IWF" secondAttribute="leading" constant="20" id="cty-YF-1vI"/>
+                                <constraint firstAttribute="trailing" secondItem="B7y-Jp-JH6" secondAttribute="trailing" constant="20" id="k8y-au-fOR"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="cBV-q8-IWF" firstAttribute="leading" secondItem="elL-cj-29f" secondAttribute="leadingMargin" id="Cl0-g1-4pS"/>
+                        <constraint firstItem="cBV-q8-IWF" firstAttribute="top" secondItem="elL-cj-29f" secondAttribute="topMargin" id="hK8-7a-n8v"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="cBV-q8-IWF" secondAttribute="trailing" id="tio-25-m9s"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="cBV-q8-IWF" secondAttribute="bottom" id="yia-pZ-fzJ"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1090.4000000000001" y="-104.7976011994003"/>
         </scene>
@@ -193,7 +379,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.5" width="220" height="229"/>
                                                                                 <subviews>
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="AppIcon-white" translatesAutoresizingMaskIntoConstraints="NO" id="oSQ-Gv-04C">
-                                                                                        <rect key="frame" x="24.5" y="29.5" width="172.5" height="172"/>
+                                                                                        <rect key="frame" x="24.5" y="29" width="172.5" height="172"/>
                                                                                         <color key="tintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="oSQ-Gv-04C" secondAttribute="height" multiplier="1:1" id="pNQ-ls-m1N"/>
@@ -227,9 +413,6 @@
                                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                                        <real key="value" value="0.0"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                         <real key="value" value="0.0"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -913,7 +1096,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.5" width="220" height="229"/>
                                                                                 <subviews>
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="AppIcon-white" translatesAutoresizingMaskIntoConstraints="NO" id="wNS-xw-z89">
-                                                                                        <rect key="frame" x="24" y="29.5" width="172" height="172"/>
+                                                                                        <rect key="frame" x="24" y="29" width="172" height="172"/>
                                                                                         <color key="tintColor" red="0.99607843139999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="wNS-xw-z89" secondAttribute="height" multiplier="1:1" id="05C-L9-inC"/>
@@ -947,9 +1130,6 @@
                                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                                                        <real key="value" value="0.0"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                         <real key="value" value="0.0"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -1315,9 +1495,12 @@
         <image name="left" width="24" height="24"/>
         <image name="menu" width="24" height="24"/>
         <image name="notebook" width="24" height="24"/>
+        <image name="on_boarding_1" width="512" height="512"/>
+        <image name="on_boarding_2" width="512" height="512"/>
+        <image name="on_boarding_3" width="512" height="512"/>
         <image name="settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bsz-NP-Cr1"/>
+        <segue reference="Ohe-M5-O3W"/>
     </inferredMetricsTieBreakers>
 </document>
