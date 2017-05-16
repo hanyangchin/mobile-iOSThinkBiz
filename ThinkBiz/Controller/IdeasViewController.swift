@@ -20,10 +20,13 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     var viewModel: IdeasViewViewModel!
     
     
-    // MARK: -
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Status bar change to white
+        UIApplication.shared.statusBarStyle = .lightContent
         
         // Get context
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -45,6 +48,8 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         configureLayout()
         ideasCollectionView.collectionViewLayout.invalidateLayout()
     }
+    
+    // MARK: - Functions
     
     func setupView() {
         

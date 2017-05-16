@@ -9,16 +9,28 @@
 import UIKit
 
 class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
+    
+    // MARK: - Properties
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var paddingLeft: NSLayoutConstraint!
     
-    var onBoardingScreens = [UIView]()
+    @IBOutlet var onBoardingOne: UIView!
+    @IBOutlet var onBoardingTwo: UIView!
+    @IBOutlet var onBoardingThree: UIView!
 
+    var onBoardingScreens = [UIView]()
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Due to white background, status bar needs to be .default for this VC
+        UIApplication.shared.statusBarStyle = .default
 
         self.scrollView.delegate = self
 
@@ -32,15 +44,12 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         self.updateUIElements()
     }
 
+    // MARK: - Functions
+    
     private func loadOnBoardingScreens() -> Void {
-        
-        let onBoardingScreen1 = generateView(withText: "This is supposed to be text 1", imageName: "lightbulb")
-        let onBoardingScreen2 = generateView(withText: "This is supposed to be text 2", imageName: "lightbulb")
-        let onBoardingScreen3 = generateView(withText: "This is supposed to be text 3", imageName: "lightbulb")
-        
-        self.addOnBoardingScreen(screen: onBoardingScreen1)
-        self.addOnBoardingScreen(screen: onBoardingScreen2)
-        self.addOnBoardingScreen(screen: onBoardingScreen3)
+        self.addOnBoardingScreen(screen: onBoardingOne)
+        self.addOnBoardingScreen(screen: onBoardingTwo)
+        self.addOnBoardingScreen(screen: onBoardingThree)
     }
     
     private func generateView(withText text: String!, imageName: String!) -> UIView {
@@ -72,13 +81,6 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         return stackView
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageWidth: CGFloat = scrollView.frame.width
-        let currentPage: CGFloat = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
-        
-        self.pageControl.currentPage = Int(currentPage)
-    }
-    
     func addOnBoardingScreen(screen: UIView!) -> Void {
         
         self.onBoardingScreens.append(screen)
@@ -107,6 +109,8 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         // Apply padding (using same padding as the bottom) to individual on boarding screens.
         screen.frame = CGRect(x: self.scrollView.frame.width * CGFloat(index) + paddingLeft.constant, y: 0, width: self.scrollView.frame.width - CGFloat(paddingLeft.constant*2), height: scrollView.frame.height)
     }
+    
+    // MARK: - Action Handlers
 
     @IBAction func onGetStartedButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -117,6 +121,15 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: SEGUE_SIGNIN) as! SignInViewController
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidth: CGFloat = scrollView.frame.width
+        let currentPage: CGFloat = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
+        
+        self.pageControl.currentPage = Int(currentPage)
     }
     
 }
