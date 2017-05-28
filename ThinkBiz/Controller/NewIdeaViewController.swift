@@ -160,5 +160,10 @@ extension NewIdeaViewController: TextFieldCellDelegate, TextViewCellDelegate {
     
     func textViewCellTextDidChange(tag: Int, text: String) {
         viewModel.textDidChange(tag: tag, text: text)
+        
+        // When text view is editing, .rowHeight and .estimatedRowHeight has no effect.
+        // Begin updates and end update is a way to force row height change during editing
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
     }
 }
