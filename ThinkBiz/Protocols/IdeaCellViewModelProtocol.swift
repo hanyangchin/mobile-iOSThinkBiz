@@ -17,6 +17,8 @@ protocol IdeaCellViewModelProtocol {
     
     var cellWidth: CGFloat? { get }
     
+    var idea: Idea! { get }
+    
     // MARK: - Functions
     func date() -> String
 }

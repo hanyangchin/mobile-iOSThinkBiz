@@ -23,12 +23,13 @@ class IdeaCellViewModel: IdeaCellViewModelProtocol {
     
     var cellWidth: CGFloat?
     
-    // MARK: - Private
-    private let idea: Idea!
+    var idea: Idea!
     
     init(withIdea idea: Idea) {
         self.idea = idea
     }
+    
+    // MARK: - Functions
     
     func date() -> String {
         let dateFormatter = DateFormatter()

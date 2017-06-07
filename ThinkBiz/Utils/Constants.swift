@@ -31,3 +31,7 @@ let ID_TEXTVIEWCELL = "TextViewCell"
 
 let ID_SETTINGSITEMCELLDISCLOSURE = "SettingsItemCellDisclosure"
 let ID_SETTINGSTABLESECTIONHEADER = "SettingsTableSectionHeader"
+
+// String constants
+let STRING_DELETE = "Delete"
+let STRING_CANCEL = "Cancel"

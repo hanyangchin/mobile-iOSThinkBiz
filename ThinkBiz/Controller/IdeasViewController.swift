@@ -17,8 +17,11 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     @IBOutlet weak var addIdeaButton: UIBarButtonItem!
     
     @IBOutlet var instructionsView: UIView!
+    
     var viewModel: IdeasViewViewModel!
     
+    // MARK: - Private Properties
+    fileprivate var moreActionSheetAlertController: UIAlertController!
     
     // MARK: - Lifecycle
     
@@ -58,6 +61,8 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         configureLayout()
         
         setupCollectionView()
+        
+        setupMoreActionSheetAlertController()
     }
     
     private func setupNavigationBar() {
@@ -93,6 +98,19 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     private func setupCollectionView() {
         ideasCollectionView.alwaysBounceVertical = true
         ideasCollectionView.backgroundView = instructionsView
+    }
+    
+    private func setupMoreActionSheetAlertController() {
+        moreActionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: STRING_DELETE, style: .destructive) { (action: UIAlertAction) in
+            print("Deleted")
+        }
+        
+        let cancelAction = UIAlertAction(title: STRING_CANCEL, style: .cancel, handler: nil)
+        
+        moreActionSheetAlertController.addAction(deleteAction)
+        moreActionSheetAlertController.addAction(cancelAction)
     }
     
     // MARK: - IdeasViewModelControllerDelegate
@@ -152,6 +170,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     }
 }
 
+
 // MARK: - UICollectionViewDelegate, DataSource, DelegateFlowLayout
 extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -166,6 +185,7 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
             // This cell have a fixed width
             ideaCellVM.cellWidth = self.viewModel.cellWidth
             cell.viewModel = ideaCellVM
+            cell.delegate = self
             
             return cell
         }
@@ -182,5 +202,12 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         performSegue(withIdentifier: SEGUE_IDEADETAIL, sender: ideaDetailVM)
     }
     
+}
+
+// MARK: - IdeaCellDelegate
+extension IdeasViewController: IdeaCellDelegate {
+    func onMoreButtonPressed(idea: Idea) {
+        self.present(moreActionSheetAlertController, animated: true, completion: nil)
+    }
 }
 
