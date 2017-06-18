@@ -106,23 +106,18 @@ class NewIdeaViewModel: NewIdeaViewModelProtocol {
         print("\nName is \(name)\nIdea is \(idea)\nNotes is \(notes)")
     }
     
-    func saveIdea(context: NSManagedObjectContext) {
+    func saveIdea() {
         
         trimData()
         
-        let ideaObj = Idea(context: context)
-        ideaObj.name = name
-        ideaObj.idea = idea
-        ideaObj.notes = notes
-        ideaObj.created = NSDate()
+        // Put idea data into a dictionary
+        var ideaData: Dictionary<String, Any> = Dictionary<String, Any>()
+        ideaData[IdeaKV.Name.rawValue] = name
+        ideaData[IdeaKV.Idea.rawValue] = idea
+        ideaData[IdeaKV.Notes.rawValue] = notes
+        ideaData[IdeaKV.Created.rawValue] = NSDate()
         
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print("\(error)")
-        }
-        
-        // TODO: Refactor the saving code to DataService object
-        //        DataService.sharedInstance.saveIdea(ideaObj)
+        // Save
+        DataService.sharedInstance.addIdea(ideaData: ideaData)
     }
 }

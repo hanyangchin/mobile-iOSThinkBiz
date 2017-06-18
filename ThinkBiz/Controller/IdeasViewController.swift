@@ -104,7 +104,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         moreActionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: STRING_DELETE, style: .destructive) { (action: UIAlertAction) in
-            print("Deleted")
+            self.viewModel.ideaMoreDeleteAction()
         }
         
         let cancelAction = UIAlertAction(title: STRING_CANCEL, style: .cancel, handler: nil)
@@ -207,6 +207,7 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
 // MARK: - IdeaCellDelegate
 extension IdeasViewController: IdeaCellDelegate {
     func onMoreButtonPressed(idea: Idea) {
+        self.viewModel.moreActionSheetAlertResponder = idea
         self.present(moreActionSheetAlertController, animated: true, completion: nil)
     }
 }

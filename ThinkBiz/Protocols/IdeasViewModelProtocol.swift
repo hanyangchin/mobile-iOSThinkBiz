@@ -20,6 +20,8 @@ protocol IdeasViewModelProtocol {
     var cellWidth: CGFloat? { get }
     var isInstructionBackgroundHidden: Bool { get }
     
+    var moreActionSheetAlertResponder: Idea? { get }
+    
     // MARK: - Functions
     func numberOfItems(inSection section: Int) -> Int
     func viewModelForCell(at indexPath: IndexPath) -> IdeaCellViewModel
@@ -28,6 +30,8 @@ protocol IdeasViewModelProtocol {
     
     func fetchData()
 
+    // MARK: - Idea cell actions
+    func ideaMoreDeleteAction()
 }
 
 protocol IdeasViewModelControllerDelegate: class {

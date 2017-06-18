@@ -39,6 +39,15 @@ class InputValidator {
     }
 }
 
+// MARK: - Data Helper
+
+enum IdeaKV: String {
+    case Name = "name"
+    case Idea = "idea"
+    case Notes = "notes"
+    case Created = "created"
+}
+
 // MARK: - UITableView Helper
 
 enum SectionType {

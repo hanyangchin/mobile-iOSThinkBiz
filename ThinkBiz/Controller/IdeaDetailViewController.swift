@@ -126,8 +126,7 @@ class IdeaDetailViewController: UIViewController, IdeaDetailViewModelControllerD
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func onSaveButtonPressed(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        viewModel.saveIdea(context: context)
+        viewModel.saveIdea()
     }
 }
 

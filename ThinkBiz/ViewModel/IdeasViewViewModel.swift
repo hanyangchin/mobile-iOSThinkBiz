@@ -33,6 +33,8 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
     
     var cellWidth: CGFloat?
     
+    var moreActionSheetAlertResponder: Idea?
+    
     // MARK: - Private
     
     fileprivate var fetchResultsController: NSFetchedResultsController<Idea>!
@@ -91,6 +93,16 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
             print("\(error)")
         }
         self.delegate?.updateView()
+    }
+    
+    func ideaMoreDeleteAction() {
+        print("Idea more delete action pressed")
+        if let ideaResponder = moreActionSheetAlertResponder {
+            DataService.sharedInstance.deleteIdea(idea: ideaResponder)
+            
+            // TODO: If deletion was sucessful, reset responder back to nil
+            moreActionSheetAlertResponder = nil
+        }
     }
     
 }

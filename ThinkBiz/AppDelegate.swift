@@ -19,10 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FIRApp.configure()
+        configureServices();
         
         configureNavigationBar()
         
         return true
+    }
+    
+    func configureServices() -> Void {
+        // Provide DataService singleton instance a persistence view context
+        DataService.sharedInstance.viewContext = persistentContainer.viewContext
     }
     
     private func configureNavigationBar() {
