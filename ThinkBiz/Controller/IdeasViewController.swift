@@ -23,6 +23,8 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     // MARK: - Private Properties
     fileprivate var moreActionSheetAlertController: UIAlertController!
     
+    private var refreshControl: UIRefreshControl!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -32,13 +34,10 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         
         // Get context
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         
         viewModel = IdeasViewViewModel(initWithContext: context)
         viewModel.delegate = self
-        
-        ideasCollectionView.delegate = self
-        ideasCollectionView.dataSource = self
         
         setupView()
         
@@ -52,15 +51,17 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         ideasCollectionView.collectionViewLayout.invalidateLayout()
     }
     
-    // MARK: - Functions
+    // MARK: - Private Functions
     
     func setupView() {
         
         setupNavigationBar()
         
-        configureLayout()
-        
         setupCollectionView()
+        
+        setupRefreshControl()
+        
+        configureLayout()
         
         setupMoreActionSheetAlertController()
     }
@@ -96,8 +97,26 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     }
     
     private func setupCollectionView() {
+        
+        ideasCollectionView.delegate = self
+        ideasCollectionView.dataSource = self
+        
         ideasCollectionView.alwaysBounceVertical = true
         ideasCollectionView.backgroundView = instructionsView
+    }
+    
+    private func setupRefreshControl() {
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = Styles.gray
+        
+        refreshControl.addTarget(self, action: #selector(self.refreshControlPulledDown), for: .valueChanged)
+        
+        if #available(iOS 10.0, *) {
+            ideasCollectionView.refreshControl = refreshControl
+        } else {
+            ideasCollectionView.addSubview(refreshControl)
+        }
     }
     
     private func setupMoreActionSheetAlertController() {
@@ -117,6 +136,10 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     
     func updateView() {
         ideasCollectionView.backgroundView?.isHidden = viewModel.isInstructionBackgroundHidden
+    }
+    
+    func endRefreshing() {
+        refreshControl.endRefreshing()
     }
     
     // Perform batch operations on ideas collection view from view model
@@ -167,6 +190,11 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     // MARK: - Action handlers
     @IBAction func addIdeaOnButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: SEGUE_NEWIDEA, sender: self)
+    }
+    
+    // Refresh control pull down action
+    func refreshControlPulledDown() {
+        viewModel.fetchDataFromCloud()
     }
 }
 

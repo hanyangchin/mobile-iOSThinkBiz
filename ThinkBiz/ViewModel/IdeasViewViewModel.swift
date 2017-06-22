@@ -95,6 +95,25 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         self.delegate?.updateView()
     }
     
+    func fetchDataFromCloud() {
+        print("Fetching data from cloud")
+        
+        DataService.sharedInstance.fetchIdeas { (result : Result<[String: AnyObject]>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .Success(let data):
+                    // Handle data in the main thread
+                    print(data)
+                case .Error(let message):
+                    print(message)
+                }
+                
+                // End refresh control
+                self.delegate?.endRefreshing()
+            }
+        }
+    }
+    
     func ideaMoreDeleteAction() {
         print("Idea more delete action pressed")
         if let ideaResponder = moreActionSheetAlertResponder {

@@ -37,6 +37,7 @@ protocol IdeasViewModelProtocol {
 protocol IdeasViewModelControllerDelegate: class {
     
     func updateView()
+    func endRefreshing()
     
     func performBatchUpdates(_ batchOperations:(() -> Void)?)
     

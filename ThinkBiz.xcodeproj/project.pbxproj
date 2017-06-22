@@ -49,6 +49,7 @@
 		8658FC571E91DD2500D50AB3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658FC561E91DD2500D50AB3 /* SignInViewController.swift */; };
 		865A7C9E1EC54A0F0003BA30 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865A7C9D1EC54A0F0003BA30 /* DesignableTextField.swift */; };
 		865A7CA11EC55E850003BA30 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865A7CA01EC55E850003BA30 /* DesignableButton.swift */; };
+		867F869D1EFB69DA0053C6A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867F869C1EFB69D90053C6A8 /* CoreDataStack.swift */; };
 		868808641EB96FB30045D3A5 /* DecoratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808631EB96FB30045D3A5 /* DecoratedView.swift */; };
 		868808671EB986210045D3A5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868808651EB986210045D3A5 /* TextFieldCell.swift */; };
 		868808681EB986210045D3A5 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868808661EB986210045D3A5 /* TextFieldCell.xib */; };
@@ -144,6 +145,7 @@
 		8658FC561E91DD2500D50AB3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Controller/SignInViewController.swift; sourceTree = "<group>"; };
 		865A7C9D1EC54A0F0003BA30 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = View/Designables/DesignableTextField.swift; sourceTree = "<group>"; };
 		865A7CA01EC55E850003BA30 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = View/Designables/DesignableButton.swift; sourceTree = "<group>"; };
+		867F869C1EFB69D90053C6A8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Core/CoreDataStack.swift; sourceTree = "<group>"; };
 		868808631EB96FB30045D3A5 /* DecoratedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecoratedView.swift; path = View/DecoratedView.swift; sourceTree = "<group>"; };
 		868808651EB986210045D3A5 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = View/TextFieldCell.swift; sourceTree = "<group>"; };
 		868808661EB986210045D3A5 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldCell.xib; path = View/TextFieldCell.xib; sourceTree = "<group>"; };
@@ -383,6 +385,14 @@
 			name = Designables;
 			sourceTree = "<group>";
 		};
+		867F869B1EFB69BE0053C6A8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				867F869C1EFB69D90053C6A8 /* CoreDataStack.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		86FD7D111E8B46E600C412C0 = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +418,7 @@
 		86FD7D1C1E8B46E600C412C0 /* ThinkBiz */ = {
 			isa = PBXGroup;
 			children = (
+				867F869B1EFB69BE0053C6A8 /* Core */,
 				861B2CA81EBABCB600425EFA /* Delegates */,
 				8614C2D01EB57BCB00099F38 /* Resources */,
 				863C65671E8B52B70093C3F9 /* Controller */,
@@ -738,6 +749,7 @@
 				86EED46A1EA84BE0007D14B4 /* IdeasViewViewModel.swift in Sources */,
 				8658FC551E91C3A400D50AB3 /* SignUpViewController.swift in Sources */,
 				8614C2CF1EB3445F00099F38 /* BaseTableViewCell.swift in Sources */,
+				867F869D1EFB69DA0053C6A8 /* CoreDataStack.swift in Sources */,
 				8614C27A1EB0539100099F38 /* IdeaDetailViewModelProtocol.swift in Sources */,
 				86EED4701EA9AFE1007D14B4 /* IdeaCellViewModel.swift in Sources */,
 				86BE2E231EA03471008E05E0 /* SettingsTableViewCellViewModel.swift in Sources */,

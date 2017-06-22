@@ -11,6 +11,11 @@ import UIKit
 import CoreData
 import Firebase
 
+enum Result<T> {
+    case Success(T)
+    case Error(String)
+}
+
 class DataService {
     
     // MARK: - Shared Instance
@@ -21,8 +26,15 @@ class DataService {
     
     // MARK: - Private
     
+    let dateFormatter: DateFormatter!
+    let dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+    
     // Singleton
-    private init() { }
+    private init() {
+        // Init date formatter with format
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+    }
     
     // MARK: - Functions
     
@@ -133,6 +145,32 @@ class DataService {
         }
     }
     
+    func fetchIdeas(completion: @escaping (Result<[String: AnyObject]>) -> Void) {
+        
+        if let context = viewContext {
+            if let refUserIdeas = ApiService.sharedInstance.REF_USER_IDEAS {
+                // Only fetch once
+                refUserIdeas.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                    // Get user ideas
+                    
+                    let ideasDictionary = snapshot.value as? [String:AnyObject] ?? [:]
+
+                    // First clear all ideas
+                    self.clearIdeasFromCoreData()
+                    
+                    // Resave all updated ideas back to core data
+                    self.saveIdeaInCoreDataWith(array: ideasDictionary)
+                    
+                    return completion(.Success(ideasDictionary))
+                }, withCancel: { (error: Error) in
+                    print("\(error)")
+                    return completion(.Error(error.localizedDescription))
+                })
+            }
+        }
+//        return completion(.Error("Error fetching ideas"))
+    }
+    
     // MARK: - Private functions
     
     private func convertDataForCloud(data: Dictionary<String, Any>) -> Dictionary<String, Any> {
@@ -140,13 +178,67 @@ class DataService {
         for key in tempData.keys {
             let item = tempData[key]
             if let date = item as? NSDate {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
-                
                 let dateString = dateFormatter.string(from: date as Date)
                 tempData[key] = dateString
             }
         }
         return tempData
     }
+    
+    private func saveIdeaInCoreDataWith(array: [String:AnyObject]) {
+        
+        guard array.count > 0 else {
+            return
+        }
+        
+        for (_, item) in array {
+            let idea = item as! [String: AnyObject]
+            _ = self.createIdeaEntityFrom(dictionary: idea)
+        }
+        do {
+            if let context = viewContext {
+                try context.save()
+            }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    private func createIdeaEntityFrom(dictionary: [String: AnyObject]) -> NSManagedObject? {
+        
+        if let context = viewContext {
+            if let ideaEntity = NSEntityDescription.insertNewObject(forEntityName: "Idea", into: context) as? Idea {
+                // By default Firebase DB stores dates as Strings, therefore we need to convert it back to date format
+                if let dateString = dictionary[IdeaKV.Created.rawValue] as? String {
+                    ideaEntity.created = dateFormatter.date(from: dateString) as NSDate?
+                }
+                
+                // Set the fields with values
+                ideaEntity.idea = dictionary[IdeaKV.Idea.rawValue] as? String ?? ""
+                ideaEntity.name = dictionary[IdeaKV.Name.rawValue] as? String ?? ""
+                ideaEntity.notes = dictionary[IdeaKV.Notes.rawValue] as? String ?? ""
+                ideaEntity.uid = dictionary[IdeaKV.UID.rawValue] as? String ?? ""
+                
+                return ideaEntity
+            }
+        }
+        
+        return nil
+    }
+    
+    private func clearIdeasFromCoreData() {
+        do {
+            if let context = viewContext {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Idea")
+                do {
+                    let objects = try context.fetch(fetchRequest) as? [NSManagedObject]
+                    _ = objects.map{$0.map{context.delete($0)}}
+                    CoreDataStack.sharedInstance.saveContext()
+                } catch let error {
+                    print("Error deleting: \(error)")
+                }
+            }
+        }
+    }
+    
 }
