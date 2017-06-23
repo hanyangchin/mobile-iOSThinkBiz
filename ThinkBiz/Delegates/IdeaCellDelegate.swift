@@ -11,5 +11,5 @@ import Foundation
 protocol IdeaCellDelegate {
     
     // MARK: - Functions
-    func onMoreButtonPressed(idea: Idea) -> Void
+    func onMoreButtonPressed(_ sender: Any, idea: Idea) -> Void
 }

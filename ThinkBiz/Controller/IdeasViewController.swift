@@ -234,8 +234,15 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 // MARK: - IdeaCellDelegate
 extension IdeasViewController: IdeaCellDelegate {
-    func onMoreButtonPressed(idea: Idea) {
+    func onMoreButtonPressed(_ sender: Any, idea: Idea) {
         self.viewModel.moreActionSheetAlertResponder = idea
+        
+        // If running on ipad, Pop over controller is used by default
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad, let moreButton = sender as? UIButton {
+            moreActionSheetAlertController.popoverPresentationController?.sourceView = moreButton
+            moreActionSheetAlertController.popoverPresentationController?.sourceRect = moreButton.bounds
+        }
+        
         self.present(moreActionSheetAlertController, animated: true, completion: nil)
     }
 }

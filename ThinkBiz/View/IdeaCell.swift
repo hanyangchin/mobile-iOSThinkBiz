@@ -85,6 +85,6 @@ class IdeaCell: BaseCollectionViewCell {
     // MARK: - Action Handlers
     
     @IBAction func onMoreButtonPressed(_ sender: Any) {
-        delegate?.onMoreButtonPressed(idea: viewModel.idea)
+        delegate?.onMoreButtonPressed(sender, idea: viewModel.idea)
     }
 }
