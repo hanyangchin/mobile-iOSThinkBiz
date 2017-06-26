@@ -26,8 +26,8 @@ class DataService {
     
     // MARK: - Private
     
-    let dateFormatter: DateFormatter!
-    let dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+    private let dateFormatter: DateFormatter!
+    private let dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
     
     // Singleton
     private init() {
@@ -169,6 +169,39 @@ class DataService {
             }
         }
 //        return completion(.Error("Error fetching ideas"))
+    }
+    
+    func fetchAndObserveIdeas(completion: @escaping (Result<[String: AnyObject]>) -> Void) -> UInt {
+        if let refUserIdeas = ApiService.sharedInstance.REF_USER_IDEAS {
+            
+            // Listen for changes, should be fired first time when called, and any value changed
+            let handle: UInt = refUserIdeas.observe(.value, with: { (snapshot: FIRDataSnapshot) in
+                // Get user ideas
+                
+                let ideasDictionary = snapshot.value as? [String:AnyObject] ?? [:]
+                
+                // First clear all ideas
+                self.clearIdeasFromCoreData()
+                
+                // Resave all updated ideas back to core data
+                self.saveIdeaInCoreDataWith(array: ideasDictionary)
+                
+                return completion(.Success(ideasDictionary))
+            }, withCancel: { (error: Error) in
+                print("\(error)")
+                return completion(.Error(error.localizedDescription))
+            })
+            
+            return handle
+        }
+        return 0
+    }
+    
+    func stopObservingUserIdeas(handle: UInt) {
+        if let refUserIdeas = ApiService.sharedInstance.REF_USER_IDEAS {
+            refUserIdeas.removeObserver(withHandle: handle)
+            print("Removed Firebase handle \(handle)")
+        }
     }
     
     // MARK: - Private functions

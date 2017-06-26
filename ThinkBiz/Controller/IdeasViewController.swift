@@ -41,7 +41,22 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         
         setupView()
         
-        viewModel.fetchData()
+        // Attempt to load local data (if exists)
+        viewModel.loadLocalData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Start listening for data changes from cloud
+        viewModel.startObservingData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Stop listening to changes when view isn't visible to the user
+        viewModel.stopObservingData()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -198,7 +213,7 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     
     // Refresh control pull down action
     func refreshControlPulledDown() {
-        viewModel.fetchDataFromCloud()
+        viewModel.fetchData()
     }
 }
 
