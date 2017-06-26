@@ -43,6 +43,15 @@ final class ApiService {
         return nil
     }
     
+    // Reference to path /ideas/{userID}
+    var REF_USER_IDEAS: FIRDatabaseReference? {
+        // Only return ref if user is logged in
+        if let uid = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            return REF_IDEAS.child(uid)
+        }
+        return nil
+    }
+    
     var REF_IDEAS: FIRDatabaseReference {
         return _REF_IDEAS
     }

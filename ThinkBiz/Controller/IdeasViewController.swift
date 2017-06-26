@@ -17,8 +17,13 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     @IBOutlet weak var addIdeaButton: UIBarButtonItem!
     
     @IBOutlet var instructionsView: UIView!
+    
     var viewModel: IdeasViewViewModel!
     
+    // MARK: - Private Properties
+    fileprivate var moreActionSheetAlertController: UIAlertController!
+    
+    private var refreshControl: UIRefreshControl!
     
     // MARK: - Lifecycle
     
@@ -29,17 +34,29 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         
         // Get context
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         
         viewModel = IdeasViewViewModel(initWithContext: context)
         viewModel.delegate = self
         
-        ideasCollectionView.delegate = self
-        ideasCollectionView.dataSource = self
-        
         setupView()
         
-        viewModel.fetchData()
+        // Attempt to load local data (if exists)
+        viewModel.loadLocalData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Start listening for data changes from cloud
+        viewModel.startObservingData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Stop listening to changes when view isn't visible to the user
+        viewModel.stopObservingData()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -49,15 +66,19 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         ideasCollectionView.collectionViewLayout.invalidateLayout()
     }
     
-    // MARK: - Functions
+    // MARK: - Private Functions
     
     func setupView() {
         
         setupNavigationBar()
         
+        setupCollectionView()
+        
+        setupRefreshControl()
+        
         configureLayout()
         
-        setupCollectionView()
+        setupMoreActionSheetAlertController()
     }
     
     private func setupNavigationBar() {
@@ -91,14 +112,53 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     }
     
     private func setupCollectionView() {
+        
+        ideasCollectionView.delegate = self
+        ideasCollectionView.dataSource = self
+        
         ideasCollectionView.alwaysBounceVertical = true
         ideasCollectionView.backgroundView = instructionsView
+    }
+    
+    private func setupRefreshControl() {
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = Styles.gray
+        
+        refreshControl.addTarget(self, action: #selector(self.refreshControlPulledDown), for: .valueChanged)
+        
+        if #available(iOS 10.0, *) {
+            ideasCollectionView.refreshControl = refreshControl
+        } else {
+            ideasCollectionView.addSubview(refreshControl)
+        }
+    }
+    
+    private func setupMoreActionSheetAlertController() {
+        moreActionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: STRING_DELETE, style: .destructive) { (action: UIAlertAction) in
+            self.viewModel.ideaMoreDeleteAction()
+        }
+        
+        let cancelAction = UIAlertAction(title: STRING_CANCEL, style: .cancel, handler: nil)
+        
+        moreActionSheetAlertController.addAction(deleteAction)
+        moreActionSheetAlertController.addAction(cancelAction)
     }
     
     // MARK: - IdeasViewModelControllerDelegate
     
     func updateView() {
         ideasCollectionView.backgroundView?.isHidden = viewModel.isInstructionBackgroundHidden
+    }
+    
+    func beginRefreshing() {
+        refreshControl.beginRefreshing()
+    }
+    
+    func endRefreshing() {
+        refreshControl.endRefreshing()
     }
     
     // Perform batch operations on ideas collection view from view model
@@ -150,7 +210,13 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
     @IBAction func addIdeaOnButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: SEGUE_NEWIDEA, sender: self)
     }
+    
+    // Refresh control pull down action
+    func refreshControlPulledDown() {
+        viewModel.fetchData()
+    }
 }
+
 
 // MARK: - UICollectionViewDelegate, DataSource, DelegateFlowLayout
 extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -166,6 +232,7 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
             // This cell have a fixed width
             ideaCellVM.cellWidth = self.viewModel.cellWidth
             cell.viewModel = ideaCellVM
+            cell.delegate = self
             
             return cell
         }
@@ -182,5 +249,20 @@ extension IdeasViewController: UICollectionViewDelegate, UICollectionViewDataSou
         performSegue(withIdentifier: SEGUE_IDEADETAIL, sender: ideaDetailVM)
     }
     
+}
+
+// MARK: - IdeaCellDelegate
+extension IdeasViewController: IdeaCellDelegate {
+    func onMoreButtonPressed(_ sender: Any, idea: Idea) {
+        self.viewModel.moreActionSheetAlertResponder = idea
+        
+        // If running on ipad, Pop over controller is used by default
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad, let moreButton = sender as? UIButton {
+            moreActionSheetAlertController.popoverPresentationController?.sourceView = moreButton
+            moreActionSheetAlertController.popoverPresentationController?.sourceRect = moreButton.bounds
+        }
+        
+        self.present(moreActionSheetAlertController, animated: true, completion: nil)
+    }
 }
 

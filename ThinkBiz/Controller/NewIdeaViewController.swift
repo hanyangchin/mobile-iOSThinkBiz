@@ -111,8 +111,7 @@ class NewIdeaViewController: UIViewController, NewIdeaViewModelControllerDelegat
     }
     
     @IBAction func onSaveButtonPressed(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        viewModel.saveIdea(context: context)
+        viewModel.saveIdea()
         self.dismiss(animated: true, completion: nil)
     }
     

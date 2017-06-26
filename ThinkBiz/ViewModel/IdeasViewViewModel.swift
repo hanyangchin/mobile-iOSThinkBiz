@@ -31,7 +31,13 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         return hidden
     }
     
+    var isFetchingData: Bool {
+        get { return _isFetchingData }
+    }
+    
     var cellWidth: CGFloat?
+    
+    var moreActionSheetAlertResponder: Idea?
     
     // MARK: - Private
     
@@ -40,6 +46,10 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
     fileprivate var blockOperations = [BlockOperation]()
     
     private let context: NSManagedObjectContext!
+    
+    fileprivate var _isFetchingData: Bool = false
+    
+    private var userIdeasDataHandle: UInt?
     
     // MARK: - IdeasViewModelProtocol
     
@@ -66,7 +76,8 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         return ideaDetailVM
     }
     
-    func fetchData() {
+    func loadLocalData() {
+        print("Loading local data...")
         let fetchRequest: NSFetchRequest<Idea> = Idea.fetchRequest()
         
         // Sort by date - newest first
@@ -90,7 +101,82 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
         } catch let error as NSError {
             print("\(error)")
         }
+        
+        // First update the view after loading local data
         self.delegate?.updateView()
+    }
+    
+    // Fetch data from cloud, this is only a single fetch action
+    func fetchData() {
+        print("Fetching data from cloud...")
+        
+        _isFetchingData = true
+        
+        self.delegate?.beginRefreshing()
+        
+        DataService.sharedInstance.fetchIdeas { (result : Result<[String: AnyObject]>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .Success(let data):
+                    // Handle data in the main thread
+                    print(data)
+                case .Error(let message):
+                    print(message)
+                }
+                
+                self._isFetchingData = false
+                
+                // End refresh control
+                self.delegate?.endRefreshing()
+                self.delegate?.updateView()
+            }
+        }
+    }
+    
+    func startObservingData() {
+        print("Started observing for data changes from the cloud...")
+        
+        if let _ = userIdeasDataHandle {
+            print("Ignoring startObservingData(), it is already observing data changes for this VC")
+        } else {
+            // UserDataHandle is nil
+            
+            userIdeasDataHandle = DataService.sharedInstance.fetchAndObserveIdeas(completion: { (result: Result<[String: AnyObject]>) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .Success(let data):
+                        // Handle data in the main thread
+                        print(data)
+                    case .Error(let message):
+                        print(message)
+                    }
+                    
+                    self.delegate?.updateView()
+                }
+            })
+            
+            if let handle = userIdeasDataHandle {
+                print("Successfully observe cloud data with handle \(handle)")
+            }
+            
+        }
+    }
+    
+    func stopObservingData() {
+        if let handle = userIdeasDataHandle {
+            DataService.sharedInstance.stopObservingUserIdeas(handle: handle)
+            userIdeasDataHandle = nil
+        }
+    }
+    
+    func ideaMoreDeleteAction() {
+        print("Idea more delete action pressed")
+        if let ideaResponder = moreActionSheetAlertResponder {
+            DataService.sharedInstance.deleteIdea(idea: ideaResponder)
+            
+            // TODO: If deletion was sucessful, reset responder back to nil
+            moreActionSheetAlertResponder = nil
+        }
     }
     
 }

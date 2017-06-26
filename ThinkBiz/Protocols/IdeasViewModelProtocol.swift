@@ -19,6 +19,9 @@ protocol IdeasViewModelProtocol {
     var numberOfSections: Int! { get }
     var cellWidth: CGFloat? { get }
     var isInstructionBackgroundHidden: Bool { get }
+    var isFetchingData: Bool { get }
+    
+    var moreActionSheetAlertResponder: Idea? { get }
     
     // MARK: - Functions
     func numberOfItems(inSection section: Int) -> Int
@@ -26,13 +29,21 @@ protocol IdeasViewModelProtocol {
     func viewModelForDetailViewControlller(at indexPath: IndexPath) -> IdeaDetailViewModel
 //    func didSelectRow(inSection section: Int, at index: Int)
     
+    func loadLocalData()
     func fetchData()
+    func startObservingData()
+    func stopObservingData()
 
+    // MARK: - Idea cell actions
+    func ideaMoreDeleteAction()
 }
 
 protocol IdeasViewModelControllerDelegate: class {
     
     func updateView()
+    
+    func beginRefreshing()
+    func endRefreshing()
     
     func performBatchUpdates(_ batchOperations:(() -> Void)?)
     

@@ -17,6 +17,8 @@ class IdeaCell: BaseCollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ideaLabel: UILabel!
     
+    var delegate: IdeaCellDelegate?
+    
     var viewModel: IdeaCellViewModel! {
         didSet {
             configureCell(withViewModel: self.viewModel)
@@ -27,7 +29,7 @@ class IdeaCell: BaseCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         // Prevent conflicts from arising by modifying cell constraints
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -78,5 +80,11 @@ class IdeaCell: BaseCollectionViewCell {
             NSKernAttributeName:CGFloat(0)
             ])
         ideaLabel.attributedText = attributedText
+    }
+    
+    // MARK: - Action Handlers
+    
+    @IBAction func onMoreButtonPressed(_ sender: Any) {
+        delegate?.onMoreButtonPressed(sender, idea: viewModel.idea)
     }
 }

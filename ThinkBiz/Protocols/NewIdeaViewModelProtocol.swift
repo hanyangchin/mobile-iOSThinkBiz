@@ -6,8 +6,6 @@
 //  Copyright © 2017 Han Yang Chin. All rights reserved.
 //
 
-import CoreData
-
 protocol NewIdeaViewModelProtocol {
     
     // MARK: - Properties
@@ -28,7 +26,7 @@ protocol NewIdeaViewModelProtocol {
     
     func textDidChange(tag: Int, text: String!)
     
-    func saveIdea(context: NSManagedObjectContext)
+    func saveIdea()
 }
 
 protocol NewIdeaViewModelControllerDelegate: class {

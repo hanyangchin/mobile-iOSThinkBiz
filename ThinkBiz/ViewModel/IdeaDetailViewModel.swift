@@ -125,32 +125,24 @@ class IdeaDetailViewModel: IdeaDetailViewModelProtocol {
 //        print("\nName is \(name)\nIdea is \(ideaText)\nNotes is \(notes)")
     }
     
-    func saveIdea(context: NSManagedObjectContext) {
+    func saveIdea() {
         
         trimData()
         
-        self.idea?.name = name
-        self.idea?.idea = ideaText
-        self.idea?.notes = notes
+        // Put idea data into a dictionary
+        var ideaData: Dictionary<String, Any> = Dictionary<String, Any>()
+        ideaData[IdeaKV.Name.rawValue] = name
+        ideaData[IdeaKV.Idea.rawValue] = ideaText
+        ideaData[IdeaKV.Notes.rawValue] = notes
         
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print("\(error)")
+        if let ideaObj = idea {
+            DataService.sharedInstance.updateIdea(idea: ideaObj, ideaData: ideaData)
         }
-        
-        // TODO: Refactor the saving code to DataService object
-        //        DataService.sharedInstance.saveIdea(ideaObj)
     }
     
-    func deleteIdea(context: NSManagedObjectContext) {
+    func deleteIdea() {
         if let ideaObj = idea {
-            context.delete(ideaObj)
-            do {
-                try context.save()
-            } catch let error as NSError {
-                print("\(error)")
-            }
+             DataService.sharedInstance.deleteIdea(idea: ideaObj)
         }
     }
     
