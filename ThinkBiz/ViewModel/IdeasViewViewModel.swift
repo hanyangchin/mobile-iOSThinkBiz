@@ -93,10 +93,17 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
             print("\(error)")
         }
         self.delegate?.updateView()
+        
+        // After loading local data with delay, attempt to retrieve latest data from the cloud
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
+            self.fetchDataFromCloud()
+        }
     }
     
     func fetchDataFromCloud() {
         print("Fetching data from cloud")
+        
+        self.delegate?.beginRefreshing()
         
         DataService.sharedInstance.fetchIdeas { (result : Result<[String: AnyObject]>) in
             DispatchQueue.main.async {
@@ -110,6 +117,7 @@ class IdeasViewViewModel: NSObject, IdeasViewModelProtocol {
                 
                 // End refresh control
                 self.delegate?.endRefreshing()
+                self.delegate?.updateView()
             }
         }
     }

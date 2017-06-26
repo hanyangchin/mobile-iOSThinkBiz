@@ -138,6 +138,10 @@ class IdeasViewController: UIViewController, IdeasViewModelControllerDelegate {
         ideasCollectionView.backgroundView?.isHidden = viewModel.isInstructionBackgroundHidden
     }
     
+    func beginRefreshing() {
+        refreshControl.beginRefreshing()
+    }
+    
     func endRefreshing() {
         refreshControl.endRefreshing()
     }
